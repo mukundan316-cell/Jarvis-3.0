@@ -1,0 +1,154 @@
+🎯 Surgical Enhancements for JARVIS Admin Dual-View
+Based on the current implementation, here are specific, incremental enhancements that preserve all existing functionality:
+Enhancement 1: Add View Toggle to Header
+typescript// MODIFY: client/src/components/EnhancedDashboard.tsx
+// ADD after PersonaSwitcher, before clock
+<ViewModeToggle 
+  currentView={viewMode} 
+  onToggle={(mode) => setViewMode(mode)}
+  persona="admin" // Only show for admin persona
+/>
+
+// CREATE: client/src/components/ViewModeToggle.tsx
+// Simple toggle that stores preference in localStorage
+// Integrates with existing ConfigService for labels
+ConfigService Entries to Add:
+sqlINSERT INTO config (key, value, category, scope) VALUES
+('view-mode.config', '{"default": "technical", "enabledPersonas": ["admin"]}', 'display', 'global'),
+('business-terminology.config', '{"orchestrationRate": "Underwriting Capacity", "systemHealth": "Combined Ratio"}', 'display', 'persona:admin');
+
+Enhancement 2: Extend UniversalDashboardMetrics with Business Context
+typescript// MODIFY: client/src/components/UniversalDashboardMetrics.tsx
+// ADD business view logic to existing KpiCard rendering
+
+// When viewMode === 'business' && persona === 'admin':
+const getBusinessLabel = (kpiName: string) => {
+  const mapping = configService.get('business-terminology.config');
+  return mapping[kpiName] || kpiName;
+};
+
+// Add tooltip with technical details in business view
+<Tooltip content={`Technical: ${originalLabel}`}>
+  {getBusinessLabel(kpi.name)}
+</Tooltip>
+No database changes needed - uses existing dashboardKpis table
+
+Enhancement 3: Add Business KPI Row to Insights Tab
+typescript// MODIFY: client/src/components/EnhancedDashboard.tsx
+// In Insights tab, ADD after existing UniversalDashboardMetrics
+
+{viewMode === 'business' && persona === 'admin' && (
+  <BusinessKPISection 
+    data={businessKpis}
+    configKey="business-kpis.config"
+  />
+)}
+
+// CREATE: client/src/components/BusinessKPISection.tsx
+// Reuses existing KpiCard component with business styling
+Database Addition:
+sql-- Add business KPIs to existing dashboardKpis table
+INSERT INTO dashboard_kpis (name, current_value, previous_value, target, unit, category, persona) VALUES
+('Claims Efficiency', 1.8, 2.1, 1.5, 'days', 'business', 'admin'),
+('Revenue Impact', 340000, 280000, 400000, 'USD', 'business', 'admin'),
+('Cost Savings', 147000, 120000, 150000, 'USD', 'business', 'admin'),
+('Agent ROI', 2.3, 3.1, 2.0, 'months', 'business', 'admin');
+
+Enhancement 4: Extend AgentHierarchy with Business Grouping
+typescript// MODIFY: client/src/components/AgentHierarchy.tsx
+// ADD business view rendering option
+
+const BusinessGroupView = () => {
+  const businessGroups = configService.get('agent-business-groups.config');
+  // Map existing agents to business functions using functionalStatus
+  return agents.filter(a => a.functionalStatus === 'FUNCTIONAL')
+    .reduce((groups, agent) => {
+      const group = businessGroups[agent.name] || 'Operations';
+      return { ...groups, [group]: [...(groups[group] || []), agent] };
+    }, {});
+};
+
+// Toggle between LayerView and BusinessGroupView based on viewMode
+ConfigService Addition:
+sqlINSERT INTO config (key, value, category, scope) VALUES
+('agent-business-groups.config', '{
+  "Rachel Thompson (AUW)": "Underwriting Operations",
+  "Commercial Property Agentic Underwriting Flow": "Underwriting Operations",
+  "Claims Processing": "Claims Operations",
+  "John Stevens (IT Support)": "IT Operations"
+}', 'agents', 'persona:admin');
+
+Enhancement 5: Enhance Command Center Metrics
+typescript// MODIFY: client/src/components/AiCommandCenter.tsx
+// ADD business context overlay
+
+const MetricDisplay = ({ label, value, businessLabel }) => (
+  <div>
+    <span>{viewMode === 'business' ? businessLabel : label}</span>
+    <span>{value}</span>
+    {viewMode === 'business' && (
+      <span className="text-xs opacity-60">{label}</span>
+    )}
+  </div>
+);
+
+// Update existing metrics with business labels
+// Processing Power → Underwriting Capacity
+// Memory Usage → Knowledge Base Utilization
+// Active Users → Licensed Professionals
+
+Enhancement 6: Add View Mode to Activity Tracking
+sql-- Track view mode changes in existing activities table
+INSERT INTO activities (user_id, activity, persona, metadata) VALUES 
+(?, 'View mode changed', 'admin', '{"from": "technical", "to": "business"}');
+
+Enhancement 7: Extend ConfigService for View Persistence
+typescript// MODIFY: server/routes/config.ts
+// ADD endpoint for user view preference
+
+app.post('/api/config/user-view-mode', async (req, res) => {
+  // Store in userPreferences table
+  await db.update(userPreferences)
+    .set({ viewMode: req.body.mode })
+    .where(eq(userPreferences.userId, req.user.id));
+});
+
+Implementation Order (Non-Breaking)
+Phase 1 (Day 1-2):
+
+Add ConfigService entries (no code changes)
+Create ViewModeToggle component
+Add business terminology mapping
+
+Phase 2 (Day 3-4):
+
+Extend UniversalDashboardMetrics with tooltips
+Add BusinessKPISection to Insights
+Update database with business KPIs
+
+Phase 3 (Day 5):
+
+Extend AgentHierarchy for dual view
+Update Command Center labels
+Add activity tracking
+
+
+Testing Without Breaking Production
+typescript// Use feature flag in ConfigService
+if (configService.get('dual-view-enabled.config') === true) {
+  // Show new features
+}
+
+// All changes are additive - no removal or modification of existing functionality
+// Business view is overlay only - technical view remains unchanged
+
+Key Principles Followed:
+✅ No existing functionality removed
+✅ All configurations via ConfigService
+✅ Reuses Universal components
+✅ Database-driven with existing schema
+✅ Feature flag for safe rollout
+✅ Maintains TypeScript safety
+✅ Preserves real-time monitoring
+✅ Respects persona architecture
+This surgical approach adds business context without disrupting the technical foundation, allowing JARVIS Admin to serve both technical and executive audiences seamlessly.

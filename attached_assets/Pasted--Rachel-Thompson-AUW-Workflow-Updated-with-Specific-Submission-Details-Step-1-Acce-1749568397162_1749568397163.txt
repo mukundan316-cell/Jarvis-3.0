@@ -1,0 +1,47 @@
+- **Rachel Thompson (AUW) Workflow (Updated with Specific Submission Details):**
+  - **Step 1: Access Dashboard via Switch**
+    - Trigger: Voice command ("Jarvis, Rachel here") or manual text input ("Jarvis, Rachel here") from Jarvis Admin or John Stevens’s dashboard.
+    - Response: "Switching to Rachel Thompson’s AUW dashboard. Good morning Rachel Thompson! Your AUW workspace is now loaded."
+    - Persistence: Update `sessions` table (activePersona: "Rachel Thompson"). Log switch in `activities` table.
+    - Error Handling: If switching fails, display "An error occurred while switching personas. Please try again." Log in `errors` table.
+  - **Step 2: Morning Briefing & Initial Summary**
+    - Trigger: Voice command ("Show submissions") or pill ("Show Submissions").
+    - **Agent Triggered:** Data Analysis Agent (System Layer) for fetching submission data.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Data Analysis Agent (System): Fetching submissions..." (with loading spinner), then "Rachel Thompson, you have 4 new submissions and 1 submission with additional property documentation which you requested." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table. Store submission details in the `submissions` table.
+    - Error Handling: If submission data retrieval fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 3: Identify Submission Issues**
+    - Trigger: Auto-executes after Step 2 (no direct voice/pill command as this is an automated step).
+    - **Agent Triggered:** Document Verification Agent (Process Layer) for identifying issues in submissions.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Document Verification Agent (Process): Analyzing submissions for issues..." (with loading spinner), then "Two of the submissions from John Watkins (WTK Brokers) are incomplete as both the applications are missing the prior policy documents and having invalid identity cards. Would you like to send them back for rectification?" Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store issue details in the `submissions` table (status: "Incomplete", details). Log agent execution in `commands` table.
+    - Error Handling: If issue identification fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 4: Email Workflow Activation**
+    - Trigger: Voice command ("Request missing documents") or pill ("Request Missing Docs").
+    - **Agent Triggered:** Interface Agent (Interface Layer) for sending the email.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Interface Agent (Interface): Sending email to broker..." (with loading spinner), then "I have sent an email to John Watkins at WTK Brokers (john@wtkbrokers.com) requesting the missing documentation and identity card updates." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table. Store email details in the `emails` table (recipient, content, timestamp, status).
+    - Error Handling: If email sending fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 5: Review Other Prospects**
+    - Trigger: Voice command ("Review prospects") or pill ("Review Prospects").
+    - **Agent Triggered:** Risk Assessment Agent (Process Layer) for analyzing prospect risk.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Risk Assessment Agent (Process): Analyzing prospects..." (with loading spinner), then "Submission from Mr Smith (AOM Brokers): Initial risk is Low. 50% line recommended. Submission from Brian: High risk due to property being 25 years old with multiple past claim records." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, agent details, and submission details (Mr Smith and Brian submissions) in the `commands` table. Store prospect details and risk assessment in the `submissions` table.
+    - Error Handling: If risk assessment fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 6: Claims Summary Extraction**
+    - Trigger: Voice command ("Summarize claims") or pill ("Summarize Claims").
+    - **Agent Triggered:** Summarization Agent (System Layer, named "ClaimSummary-Agent" in the prompt).
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Summarization Agent (System): Extracting past claims summary..." (with loading spinner), then "Extracted Past Claims summary for Brian's submission: Multiple claims recorded due to property age and condition." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, agent details, and submission details (Brian's submission) in the `commands` table. Store claims summary in the `claims` table (submissionId, details, timestamp).
+    - Error Handling: If claims summary extraction fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 7: Workflow Completion**
+    - Trigger: Auto-executes after Step 6 (no direct voice/pill command as this is an automated step).
+    - **Agent Triggered:** None (this is a workflow completion step, not involving a Process/System/Interface Agent).
+    - Response: "All tasks have been completed. You can review the updated submissions and claims summary in your dashboard."
+    - Persistence: Store workflow completion status in the `commands` table (status: "Completed").
+    - Error Handling: If completion logging fails, display "An error occurred while completing the workflow. Please try again." Log in `errors` table.

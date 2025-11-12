@@ -1,0 +1,46 @@
+You're right to get confirmation while investigating the broker functionality. Let me ask the Replit agent for specific verification of the HITL implementation.
+
+## Confirmation Questions for Replit Agent
+
+**Morning Briefing HITL Display:**
+```
+Can you confirm that the generateDynamicActionItems function now includes HITL tasks?
+- Are the sample tasks showing in Rachel's morning briefing: "Review field corrections for Willis submission (AI confidence: 65%)", "Override appetite decision for Apex Manufacturing", "Approve quote for Downtown Retail Complex"?
+- Do these appear alongside existing action items without breaking the current briefing layout?
+- Are the HITL tasks properly prioritized and styled consistently with existing action items?
+```
+
+**HITL Modal Functionality:**
+```
+Is the basic click handler working for HITL tasks?
+- When clicking a HITL task, does a modal open showing task description and AI recommendation?
+- Are the three action buttons present: "Approve", "Override", "Defer"?
+- Is there a working text field for rationale when overriding?
+- Does the modal show the demo disclaimer: "This is a demo - actions will be fully implemented in next phase"?
+```
+
+**Decision Logging:**
+```
+Is the auditTrails logging working for HITL decisions?
+- When a user clicks "Approve", "Override", or "Defer", is this logged to the existing auditTrails table?
+- Are the rationale entries being captured and stored properly?
+- Can you show a sample of what gets logged when a HITL decision is made?
+```
+
+**Integration with Existing System:**
+```
+Does the new HITL functionality work with the existing persona system?
+- Are HITL tasks filtered properly for Rachel Thompson's context?
+- Does the morning briefing still show existing metrics (15 emails received, 2 auto-processed, 13 need review)?
+- Are there any conflicts with existing morning briefing functionality?
+```
+
+**UI/UX Verification:**
+```
+Does the implementation match the existing JARVIS design?
+- Is the modal styling consistent with the glassmorphism dark theme?
+- Are the HITL tasks visually distinguishable from regular action items?
+- Does the user experience feel integrated rather than bolted-on?
+```
+
+Please provide confirmation on these specific points so we can verify the HITL foundation is solid before proceeding with the broker email trigger investigation.

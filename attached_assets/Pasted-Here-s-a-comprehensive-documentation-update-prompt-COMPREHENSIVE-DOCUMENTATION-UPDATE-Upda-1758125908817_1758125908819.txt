@@ -1,0 +1,172 @@
+Here's a comprehensive documentation update prompt:
+
+```
+COMPREHENSIVE DOCUMENTATION UPDATE: Update all project documentation to reflect current JARVIS IntelliAgent 3.0 system status, removing outdated content while preserving critical development guidelines and architectural insights from replit.md.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Update documentation to match actual working system capabilities and remove legacy/incorrect information
+ANALYZE: Current docs contain outdated agent counts, broken workflow references, and incorrect setup procedures
+REASON: Documentation should guide users to working features and accurate system understanding
+SYNTHESIZE: Clean, accurate documentation reflecting enhanced UniversalAgentExecutionPopup framework and CP workflow capabilities
+CONCLUDE: Streamlined documentation enabling successful system usage and development
+
+Part 2: Current System Status (Document These Realities)
+
+**WORKING FEATURES TO DOCUMENT:**
+- Enhanced UniversalAgentExecutionPopup framework supporting interactive multi-step workflows
+- Commercial Property workflow with 8 functional steps and real CRUD operations
+- 116+ agent architecture with focus on 8-12 core CP agents for Rachel AUW persona
+- Interactive form inputs, file uploads, and step-by-step data collection
+- 6-layer hierarchical agent execution (Experience→Meta Brain→Role→Process→System→Interface)
+- Database schema with workflow state management and step data persistence
+- Real-time agent orchestration with appropriate agents per workflow step
+- Multi-persona system (Admin, Rachel AUW, John IT) with working voice commands
+
+**RESOLVED ISSUES TO REMOVE FROM DOCS:**
+- References to "broken workflow steps" (CP workflow actually works)
+- Incorrect agent counts (23/68 agents - now 68+ working agents)
+- Separate workflow section complaints (being integrated into hierarchy)
+- Scripted demo references (now interactive with real inputs)
+- Duplicate component issues (consolidated into universal framework)
+
+Part 3: Documentation Structure Optimization
+
+**UPDATE THESE FILES:**
+
+**README.md Enhancement:**
+- Accurate system overview reflecting enhanced popup framework
+- Current feature set with interactive CP workflow capabilities
+- Updated technology stack and dependencies
+- Remove outdated limitations and add current capabilities
+
+**SETUP_INSTRUCTIONS.md Cleanup:**
+- Verified setup steps that actually work with current system
+- Updated agent count expectations (116+ total, 68+ for Rachel)
+- Correct database schema setup including CP extensions
+- Working environment variable configurations
+- Remove references to non-functional features
+
+**replit.md Enhancement (CRITICAL - PRESERVE THESE):**
+```markdown
+### Development Meta-Prompt Guidelines (KEEP INTACT)
+**MANDATORY RESPONSE PROTOCOL**
+- UNDERSTAND: State the core requirement
+- ANALYZE: List key factors, existing components to reuse
+- REASON: Explain integration with current 6-layer architecture  
+- SYNTHESIZE: Propose strategy that extends existing frameworks
+- CONCLUDE: Choose optimal approach (extend vs create new)
+
+**Architecture Integration Requirements**
+- Reuse existing agents and frameworks rather than duplicating
+- Integrate with current UniversalAgentExecutionPopup system
+- Maintain existing persona-based access control
+- Preserve 116-agent architecture integrity
+
+**Implementation Standards**
+- NO HARD-CODING: All business logic stored in database with effective dates
+- TYPESCRIPT SAFETY: Fix errors before adding features
+- MODULAR DESIGN: Create reusable "Lego block" components
+- AUDIT TRAIL: Log all agent executions and user interactions
+```
+
+**NEW: ENHANCED_FRAMEWORK.md Creation:**
+Document the enhanced UniversalAgentExecutionPopup framework:
+- Interactive workflow step architecture
+- Form input and validation patterns
+- File upload and processing capabilities
+- Agent integration per workflow step
+- Database persistence patterns
+
+Part 4: Architecture Documentation Updates
+
+**6-LAYER AGENT ARCHITECTURE (Updated):**
+- Experience Layer: Insurance company configuration
+- Meta Brain Layer: Workflow routing and orchestration
+- Role Layer: Persona-specific agents (Rachel, Admin, John)
+- Process Layer: Workflow-specific agents (CP Email Intake, CP Risk Assessment, etc.)
+- System Layer: Core processing agents (CP Data Enrichment, CP Database Manager)
+- Interface Layer: UI and interaction agents (CP Upload Interface, CP Analytics Dashboard)
+
+**COMMERCIAL PROPERTY WORKFLOW INTEGRATION:**
+- 8 workflow steps integrated into 6-layer hierarchy
+- Real form inputs and file uploads per step
+- Step-specific agent execution within hierarchical view
+- Database persistence of workflow state and step data
+- Professional insurance industry interface
+
+Part 5: Remove Legacy/Incorrect Content
+
+**DELETE REFERENCES TO:**
+- Non-working workflow steps or broken functionality
+- Duplicate dashboard components (Dashboard.tsx vs EnhancedDashboard.tsx issues)
+- Incorrect TypeScript error counts (was claiming 18 errors, actually much fewer)
+- Hardcoded workflow detection (now dynamic and configurable)
+- Missing database integrations (now functional with CRUD operations)
+- Scripted demo limitations (now interactive with real data collection)
+
+**PRESERVE CRITICAL INSIGHTS:**
+- Development Meta-Prompt Guidelines from replit.md
+- 6-layer agent architecture principles and benefits
+- Persona-based access control patterns
+- Database schema design lessons and extensions
+- Security and compliance requirements for insurance industry
+- Modular "Lego block" design principles
+- Error handling and audit trail requirements
+
+Part 6: API and Usage Documentation
+
+**CREATE: API_REFERENCE.md**
+Document working API endpoints:
+- Commercial Property workflow endpoints
+- Agent execution endpoints
+- File upload and processing endpoints
+- Database CRUD operations for workflow steps
+- Authentication and session management
+
+**CREATE: WORKFLOW_GUIDE.md**
+Step-by-step guide for using enhanced framework:
+- How to create interactive workflow steps
+- Form input configuration and validation
+- Agent integration patterns
+- Database persistence setup
+- Testing and validation procedures
+
+Part 7: Current Capabilities Summary
+
+**FUNCTIONAL DEMONSTRATION CAPABILITIES:**
+- Rachel processes complete CP submission with real data entry
+- File upload with ACORD form processing and validation
+- 8-step workflow with appropriate agent execution per step
+- Professional UI suitable for insurance industry demonstration
+- Complete audit trail and decision rationale tracking
+- Multi-channel intake (email, direct upload, broker portal integration)
+- Real-time workflow state persistence and resume capability
+
+**TECHNICAL ARCHITECTURE:**
+- Enhanced UniversalAgentExecutionPopup supporting interactive workflows
+- Database-driven configuration with effective-dated business rules
+- TypeScript safety with comprehensive error handling
+- Responsive design supporting tablet/desktop usage
+- Integration with existing authentication and persona systems
+
+Part 8: Development Guidelines Documentation
+
+**EXTEND REPLIT.MD WITH:**
+- Enhanced popup framework development patterns
+- Interactive workflow step creation guidelines
+- Agent integration best practices
+- Form validation and persistence patterns
+- File upload and processing standards
+- Testing procedures for workflow functionality
+
+**TROUBLESHOOTING SECTION:**
+- Common workflow setup issues and solutions
+- Agent routing and detection debugging
+- Database persistence troubleshooting
+- File upload and processing error resolution
+- Performance optimization recommendations
+
+Provide updated documentation that accurately reflects the enhanced interactive framework while removing outdated/incorrect information and preserving all critical development insights and meta-prompt guidelines.
+```
+
+This prompt will ensure the documentation matches your actual working system while preserving the valuable architectural principles and development guidelines you've established.

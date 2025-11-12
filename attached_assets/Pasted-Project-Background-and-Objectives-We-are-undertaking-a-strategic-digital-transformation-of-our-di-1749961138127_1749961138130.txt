@@ -1,0 +1,201 @@
+Project Background and Objectives
+
+We are undertaking a strategic digital transformation of our distributor platforms to enhance
+
+the productivity and experience of our insurance advisors and sales managers. This
+
+transformation is expected to deliver tangible improvements across key dimensions of sales
+
+enablement and engagement.
+
+Key Objectives:
+
+• Improve advisor productivity through enhanced lead-to-sale efficiency
+
+• Strengthen advisor activation, and retention
+
+• Drive increased adoption and usage of the distributor platform
+
+To enable these outcomes, we are developing an AI-powered omnichannel sales enablement
+
+platform, accessible via chat interfaces such as WhatsApp, web, and more. This solution will
+
+streamline advisor workflows and provide intelligent, real-time support to both insurance
+
+advisors and sales managers. As part of this transformation program, we are also revamping
+
+the assisted customer onboarding journeys for the agency and bancassurance channels which
+
+are currently supporting 26 products across different lines of business.
+
+Core Functional Capabilities of the Sales Enablement Platform:
+
+1. AI assistant with multi-agent orchestration
+
+AI assistant built on a unified orchestration framework that coordinates specialized
+
+agents to autonomously deliver multiple use cases. The framework should also support
+
+integration with third-party agents.
+
+2. Conversational AI capabilities
+
+o Transcription and summarization of voice and text inputs
+
+o Natural, multilingual conversational interfaces with vernacular language
+
+support
+
+o Metadata extraction from user prompts to facilitate integration with internal
+
+and external systems
+
+3. AI-powered outbound calling
+
+Human-like, multilingual voice agents for outbound engagement, capable of conducting
+
+structured conversations and capturing responses accurately.
+
+Revamped Distributor Platform for SBI Life Insurance
+
+Confidential
+
+4. Automated collateral generation
+
+AI-driven generation of sales collaterals and summaries using pre-defined templates,
+
+contextual prompts, and conversation history.
+
+5. AI-based lead scoring and qualification
+
+Intelligent lead evaluation and prioritization using predictive AI models.
+
+6. Seamless integration with WhatsApp and core systems
+
+The platform will be integrated with WhatsApp and core enterprise systems including
+
+CRM, Policy Administration System (PAS), and Document Management System
+
+(DMS) to enable contextual, end-to-end workflows.
+
+7. Multi-language support
+
+Comprehensive support for regional Indian languages to serve a diverse and
+
+geographically distributed user base, including robust handling of code-mixed
+
+conversations and vernacular languages written in the English script
+
+Additional Context:
+
+• The platform will be deployed in AWS or GCP-based cloud environment.
+
+• It must be fully compliant with applicable data privacy, security, and regulatory
+
+guidelines.
+
+• Model learning and improvements derived from our use cases will remain our
+
+intellectual property.
+
+• Data shared or generated through the engagement on the platform must not be used
+
+to train or fine-tune any underlying large language models
+
+• The solution is expected to serve a user base of over 300,000+ advisors and sales
+
+managers across India.
+
+3. Information Requested
+
+To assess your capabilities and suitability for this initiative, we request detailed responses to
+
+the areas outlined below. Following the evaluation of submissions, we intend to conduct
+
+solutioning workshops with shortlisted partners. This exercise will culminate in a closed
+
+Request for Proposal (RFP) process to select the SI partner.
+
+# Information
+
+requested
+
+Description
+
+1 Relevant case
+
+example(s)
+
+Please provide 2–3 relevant case examples (in
+
+insurance, BFSI or other industries) that demonstrate
+
+your capabilities in building omnichannel platforms with:
+
+• Multi-agent orchestration
+
+Revamped Distributor Platform for SBI Life Insurance
+
+• AI-based transcription and summarization
+
+• Automated content generation
+
+• AI-led lead scoring and qualification
+
+• WhatsApp or messaging platform integration
+
+Please provide 2-3 relevant case examples (in
+
+insurance, BFSI or other industries) that demonstrate
+
+your capabilities in building modern applications
+
+featuring assisted and self-serve onboarding
+
+journeys.
+
+For each example, include:
+
+• Solution Overview: Brief description and key technologies used
+
+• Business Impact: Measurable outcomes delivered
+
+• Client Reference: Name, industry, and geography (anonymized if needed)
+
+2 Team Composition For each case example shared, please provide:
+
+Team Structure
+
+• Team size
+
+• Key roles involved (e.g., Solution Architect, AI Engineer, NLP Specialist, Integration Lead)
+
+• Relevant experience of team members in similar
+
+implementations
+
+Specialist Fintech Partners (if any)
+
+• Name of the partner organization
+
+• Specific use cases or components delivered
+
+(e.g., speech-to-text, WhatsApp API, vernacular AI, etc.)
+
+3 Tools and Platforms For each case example shared for the omnichannel platform, please list the key tools, frameworks, and
+
+platforms used across the following areas:
+
+1. Multi-Agent Orchestration
+
+(e.g., LangChain, OpenDialog, CrewAI, custom frameworks)
+
+2. Workflow Automation & System Integration
+
+3. Monitoring, Security & Performance
+
+
+
+
+
+

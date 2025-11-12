@@ -1,0 +1,66 @@
+Process Agents (Multi-step workflow orchestrators)
+Step-level Process Agents:
+
+Intelligent Email (submission capture) - Coordinates multiple agents, maintains state, produces SubmissionStepOutput
+Intelligent Ingestion - Orchestrates parsing, normalization, and completeness scoring
+Data Enrichment - Coordinates multiple enrichment activities with external data sources
+Comparative Analytics - Orchestrates similarity analysis, pricing context, and PML calculations
+Triage: Appetite - Manages go/no-go decision workflow with explanations
+Triage: Propensity - Orchestrates bind probability and prioritization workflow
+Underwriting - Complex workflow coordinating pricing, wordings, and approval flows
+Insurance Core Systems Integration - Orchestrates final binding and learning workflows
+
+System Agents (Single-purpose core processing)
+Document & Data Processing:
+
+Parsing Agent - OCR and layout analysis
+Doc Classifier - File-type and form-type detection
+Intent Extractor - LOB and metadata extraction (explicitly mentioned as System layer example)
+Schema Normalizer - Field mapping to canonical submission schema
+Completeness Scorer - Field-level confidence and missing data analysis
+
+Enrichment & Analysis:
+
+Security Filter - Virus scanning and PII redaction
+Geocode & Geo-features - Address geocoding and property analysis
+Peril Overlays - Flood, wind, wildfire, and earthquake risk analysis
+Protection Signals - Fire protection and safety feature analysis
+Sanctions/KYC - Entity cleansing and compliance checking
+Similarity Agent - Look-alike risk identification
+Pricing Context Builder - Benchmark rate analysis
+TIV Check - Total insured value validation
+MPL/PML Calculator - Maximum probable loss calculations
+
+Decision Support:
+
+Appetite Rules Engine - Carrier playbook rule processing
+Explainability Agent - Decision rationale composition
+Alt-Path Finder - Alternative path suggestions
+Propensity-to-Bind Model - Broker behavior analysis
+Effort/Value Estimator - Premium and exposure estimation
+Next-Best-Action - Quote strategy recommendations
+UW Co-Pilot - Coverage and limit suggestions
+Pricing Agent - Guidewire Rating system integration
+Wordings Agent - Form and endorsement selection
+Quote Pack Generator - Broker-ready quote generation
+
+Data Management:
+
+Document Services - Document storage and PDF generation
+Feedback Loop - Claims and outcome data processing
+Clarification Bot - Broker communication drafting
+
+Interface Agents (External interaction handlers)
+
+Channel Agent - Email monitoring and mailbox management
+Core Adapter Agent - PolicyCenter transaction processing
+Analytics Sink - Data lakehouse integration
+
+Key Classification Insights
+The classification shows a clear separation of concerns:
+
+Process Agents manage the 8 major workflow steps, each with defined SLAs and state management
+System Agents handle specific processing tasks like parsing, scoring, and calculations
+Interface Agents manage external touchpoints (email, core systems, analytics platforms)
+
+This aligns perfectly with the JARVIS architecture where Process Agents coordinate System and Interface Agents to complete complex insurance workflows while maintaining audit trails and SLA compliance.

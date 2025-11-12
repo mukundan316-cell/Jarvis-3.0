@@ -1,0 +1,116 @@
+Based on the Replit Agent's comprehensive analysis and your MDP requirements, here are targeted recommendations for building the minimum demoable product that showcases seamless human-AI collaboration:
+
+## MDP Implementation Strategy
+
+**Core Principle**: Leverage existing infrastructure, add minimal HITL components, maximize config-driven reusability
+
+## Incremental Instructions for Replit Agent
+
+### Phase 1: Extend Existing Workflow States (Database First)
+```
+Add HITL workflow states to the existing commercial_property_workflows table:
+- Add these states to the status enum: "pending_human_review", "awaiting_field_correction", "awaiting_override_decision", "human_approved", "human_rejected"
+- Extend the agentExecutions table with a "requires_human_input" boolean flag
+- Add "human_decision_data" JSONB field to store human inputs/overrides
+- Keep all existing workflow functionality intact - only extend the schema
+```
+
+### Phase 2: ConfigService HITL Rules (Config-Driven Approach)
+```
+Add HITL configuration entries to ConfigService for persona-specific behavior:
+
+hitl-intervention-points.config:
+{
+  "rachel_thompson": {
+    "step_2_field_confidence_threshold": 0.7,
+    "step_5_appetite_override_enabled": true,
+    "step_7_manual_approval_required": ["high_tiv", "complex_occupancy"]
+  },
+  "common": {
+    "decision_ledger_enabled": true,
+    "human_override_logging": true
+  }
+}
+
+This makes the system extensible to other personas later without code changes.
+```
+
+### Phase 3: Enhanced UniversalAgentExecutionPopup (Minimal UI Changes)
+```
+Extend the existing UniversalAgentExecutionPopup to show HITL states:
+- Add "Human Input Required" status badge when requires_human_input = true
+- Show "AI Recommendation" and "Human Decision" side-by-side when in HITL mode
+- Add simple approval buttons: "Accept AI Recommendation", "Override with Custom Decision"
+- Display human input form overlays within existing popup framework
+- Use existing WebSocket infrastructure to update status in real-time
+- Keep all existing 6-layer visualization - just add human intervention indicators
+
+DO NOT create new popup components - extend the existing one minimally.
+```
+
+### Phase 4: Morning Briefing HITL Integration (Reuse Existing)
+```
+Enhance the existing generateDynamicActionItems function to include HITL tasks:
+- Query for workflows with status "pending_human_review"
+- Add action items like "Review field mapping corrections - [Broker Name]"
+- Use existing action item UI - just add new HITL-specific item types
+- Integrate with existing persona filtering (rachel_thompson context)
+
+Extend existing morning briefing UI to highlight HITL items with different styling.
+```
+
+### Phase 5: Decision Ledger (Extend Existing Audit)
+```
+Create simple decision logging using existing auditTrails table:
+- Log human decisions with fields: decision_type, ai_recommendation, human_decision, rationale
+- Use existing audit infrastructure - don't create new tables
+- Display decision history in existing popup execution timeline
+- Show "AI Suggested: X, Human Decided: Y, Reason: Z" in execution steps
+```
+
+## Specific Demo Implementation Questions for Replit Agent
+
+**Step-by-Step Demo Flow:**
+```
+For the MDP demo, I need to implement these specific HITL touchpoints:
+
+1. Step 2 - Field Correction Demo:
+   - When parsing confidence < 70%, pause workflow with status "pending_human_review"
+   - Show Rachel a simple form: "AI extracted TIV as $15M, confidence 65%. Confirm or correct?"
+   - Log her decision and continue workflow
+   - Can you implement this minimal field correction overlay within UniversalAgentExecutionPopup?
+
+2. Step 5 - Appetite Override Demo:
+   - When AI recommends "Yellow - Refer to UW", show Rachel the rationale
+   - Give her options: "Accept Referral" or "Override to Auto-Quote with reason"
+   - Log override decision to existing audit trail
+   - Can you add these approval buttons to the existing popup?
+
+3. Step 7 - Final Approval Demo:
+   - Show Rachel the AI-generated quote with recommendation
+   - Present "Approve Quote", "Request Changes", "Decline with Reason" options
+   - Capture her decision and continue to Step 8
+   - Can you implement this using existing UI patterns?
+```
+
+**ConfigService Extension:**
+```
+Can you implement persona-specific HITL thresholds using the existing ConfigService pattern?
+- Rachel has different confidence thresholds than John Stevens would
+- Some HITL rules are common across personas, others specific
+- Store this in database config so it's easily extensible to new personas
+- Use existing config precedence: Persona > Global
+```
+
+**Reusable Framework:**
+```
+Design the HITL components to be reusable for future personas:
+- Generic "human decision point" overlay component
+- Configurable approval workflows based on persona and step type
+- Decision logging that works for any persona/workflow combination
+- Can this be built as extensions to existing Universal components?
+```
+
+This approach gives you a compelling demo of human-AI collaboration while maintaining architectural integrity and extensibility for future personas and use cases.
+
+**Next Steps**: Please confirm with Replit Agent that these extensions can be built on existing infrastructure before proceeding with implementation.

@@ -1,0 +1,50 @@
+Based on the Replit agent's analysis, the core issue is missing workflow progression after HITL completion. Here's how to create a simple but powerful human-agent coordination demonstration:
+
+## Simple Human-Agent Partnership Flow
+
+**Ideal Sequence:**
+1. **Agent Requests Help**: "I extracted property value as $15M with 65% confidence. Can you verify this from the ACORD form?"
+2. **Human Reviews & Decides**: Rachel sees the form, confirms/corrects, clicks "Task Complete"
+3. **Agent Acknowledges & Continues**: "Thank you. Using corrected value $12M. Proceeding to data enrichment."
+4. **Autonomous Progression**: Step 2 automatically begins with human-validated data
+
+## Implementation Instructions for Replit Agent
+
+**Simple 3-Part Fix:**
+
+```
+1. Enhance HITL Modal with Clear Task Completion:
+   - Show: "AI Agent requesting human assistance"
+   - Display: Side-by-side comparison (AI extraction vs source document)
+   - Action: Single "Task Complete" button (not Approve/Override/Defer)
+   - Result: Clear handoff back to agent
+
+2. Add Agent Acknowledgment:
+   - After human clicks "Task Complete": Show brief agent response
+   - Display: "Task received. Continuing with validated data."
+   - Visual: Progress indicator showing agent resuming work
+   - Action: Automatic progression to next step after 2-second delay
+
+3. Fix Workflow Progression Logic:
+   - In /api/hitl/decisions endpoint: After logging decision, create next workflow action
+   - Create action item: "Continue underwriting for [Submission Name]"
+   - Auto-trigger: Begin Step 2 when Rachel clicks the continuation action
+```
+
+**Simplified User Experience:**
+```
+Step 1: Agent processes email → encounters uncertainty → "Human assistance needed"
+Step 2: Rachel reviews → provides input → clicks "Task Complete"  
+Step 3: Agent confirms → "Thank you, continuing" → Step 2 begins automatically
+Result: Clear handoff pattern that can be repeated throughout 8-step workflow
+```
+
+**Key Design Principles:**
+- **Single Action**: One "Task Complete" button instead of multiple confusing options
+- **Clear Communication**: Agent explicitly requests help and acknowledges completion
+- **Autonomous Resumption**: Agent takes control back immediately after human input
+- **Visual Continuity**: Same popup shows agent requesting → human responding → agent continuing
+
+This creates a natural conversation between Rachel and the AI system, demonstrating true partnership where each party handles what they do best.
+
+**Should the Replit agent implement this simplified human-agent handoff pattern?**

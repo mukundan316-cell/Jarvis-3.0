@@ -1,0 +1,79 @@
+client:536 WebSocket connection to 'wss://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/?token=pEfW4a4-Ss1s' failed: 
+setupWebSocket @ client:536
+(anonymous) @ client:531
+client:536 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'wss://localhost:undefined/?token=pEfW4a4-Ss1s' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+setupWebSocket @ client:536
+fallback @ client:509
+(anonymous) @ client:555
+chunk-RPCDYKBN.js?v=b3ee60ca:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+GlobalVoiceManager.ts:15 Global Voice Manager initialized for: Standard browser
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'rachel', isLoading: true, error: null, hierarchyConfig: undefined, hasLayers: undefined, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+UniversalAgentExecutionPopup.tsx:1901 🔌 UniversalAgentExecutionPopup WebSocket status: {executionId: undefined, isConnected: false, error: null}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+EnhancedDashboard.tsx:336 handlePersonaSwitch called with targetPersona: admin
+EnhancedDashboard.tsx:337 Current persona before switch: rachel
+EnhancedDashboard.tsx:345 Making API call to /api/persona/switch
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'rachel', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+EnhancedDashboard.tsx:353 API response status: 200
+EnhancedDashboard.tsx:362 API response result: {success: true, activePersona: 'admin'}
+EnhancedDashboard.tsx:365 Updating local state to: admin
+EnhancedDashboard.tsx:369 Invalidating all queries for complete dashboard refresh
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'rachel', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+EnhancedDashboard.tsx:563 Briefing trigger from PersonaSwitcher: admin
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+EnhancedDashboard.tsx:396 Persona switch completed successfully
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: true, error: null, hierarchyConfig: undefined, hasLayers: undefined, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: true, error: null, hierarchyConfig: undefined, hasLayers: undefined, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+EnhancedDashboard.tsx:400 Setting briefing persona to: admin
+EnhancedDashboard.tsx:402 Setting showBriefing to true
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+GlobalVoiceManager.ts:104 Global Voice Manager: Starting speech for admin
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+GlobalVoiceManager.ts:133 Global Voice Manager: Using voice: Microsoft David - English (United States)
+GlobalVoiceManager.ts:174 Global Voice Manager: Speech started for admin
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'admin'}

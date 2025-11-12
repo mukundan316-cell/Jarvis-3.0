@@ -1,0 +1,75 @@
+Please provide a comprehensive audit of the JARVIS Admin dual-view implementation. Check and report on the following:
+
+## 1. ConfigService Entries
+Show me all config entries added for dual-view functionality:
+- Does 'dual-view-enabled.config' exist? What's its current value?
+- Does 'view-mode.config' exist? Show the full configuration
+- Does 'business-terminology.config' exist? Show all mappings
+- Does 'agent-business-groups.config' exist? Show the groupings
+- Any other dual-view related configs added?
+
+## 2. Database Changes
+Check the following database modifications:
+- Was 'view_mode' column added to user_preferences table? Show the schema
+- Were business KPIs added to dashboard_kpis table? List them with values
+- Any other database schema changes made?
+
+## 3. Component Implementation
+Verify these components exist and show their implementation:
+- ViewModeToggle.tsx - Does it exist? Show the code
+- BusinessKPISection.tsx - Does it exist? Show the code
+- Any modifications to EnhancedDashboard.tsx? Show the changes
+- Any modifications to UniversalDashboardMetrics.tsx? Show the changes
+- Any modifications to AgentHierarchy.tsx? Show the changes
+- Any modifications to AiCommandCenter.tsx? Show the changes
+
+## 4. API Endpoints
+Check for new endpoints:
+- Does /api/config/user-view-mode endpoint exist? Show the implementation
+- Any modifications to existing /api/kpis endpoint?
+- Any new business metrics endpoints created?
+
+## 5. Feature Flag Status
+- Is the dual-view feature currently enabled or disabled?
+- Which personas can see the toggle (if implemented)?
+- Is there a rollback mechanism in place?
+
+## 6. View Persistence
+- How is the view mode preference stored (localStorage, database, or both)?
+- Does switching views persist across sessions?
+- Is the preference tied to the user account?
+
+## 7. Business Metrics Display
+If business view is implemented, show:
+- Current business KPI values being displayed
+- How technical metrics map to business terminology
+- Any tooltips or overlays showing technical details in business view
+
+## 8. Activity Tracking
+- Are view mode changes being logged in the activities table?
+- Show any recent activity logs related to view switching
+
+## 9. Testing & Validation
+- Have any test cases been written for dual-view functionality?
+- Any console errors or warnings related to the new features?
+- Is the technical view still working exactly as before?
+
+## 10. Current Status Summary
+Please provide:
+- Which phases (1-5) have been completed?
+- Any deviations from the original plan?
+- Any issues encountered during implementation?
+- What still needs to be implemented?
+
+## 11. Live Functionality Check
+- Can you switch between Technical and Business views right now?
+- Take a screenshot if the toggle is visible
+- What happens when you click the toggle (if it exists)?
+
+## 12. Code Quality Check
+- Are all new components following TypeScript patterns?
+- Any use of 'any' types in new code?
+- Are Universal component patterns being followed?
+- ConfigService integration working properly?
+
+Please provide specific code snippets, actual values, and current state for each item above. If something hasn't been implemented yet, explicitly state "NOT IMPLEMENTED" rather than skipping it.

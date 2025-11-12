@@ -1,0 +1,9 @@
+Prevent sensitive information from being pushed to the repository
+
+Block pushes containing secrets, such as GitHub OAuth Access Tokens, to maintain repository security.
+
+Replit-Commit-Author: Agent
+Replit-Commit-Session-Id: b3c2002e-37af-47c0-b7d7-ac91102e7b80
+Replit-Commit-Checkpoint-Type: full_checkpoint
+Replit-Commit-Event-Id: 7a81fdb5-96d4-455b-907c-71372e66dc2d
+Replit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac/b3c2002e-37af-47c0-b7d7-ac91102e7b80/NDWPbbX

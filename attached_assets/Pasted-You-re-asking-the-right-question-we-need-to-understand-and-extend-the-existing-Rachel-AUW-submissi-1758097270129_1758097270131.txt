@@ -1,0 +1,162 @@
+You're asking the right question - we need to understand and extend the existing Rachel AUW submission flow rather than building parallel functionality. Let me search for the current implementation first.Perfect insight! You're absolutely right - we should analyze and extend the existing Rachel AUW submission workflow rather than building parallel functionality. Let me ask Replit Agent to map the current flow and design the extension strategy.
+
+## **📋 Extension Strategy Analysis Prompt**
+
+Please provide this to Replit Agent:
+
+```
+EXISTING RACHEL WORKFLOW EXTENSION ANALYSIS: Analyze the current Rachel AUW submission workflow and design how to extend it for Commercial Property processing without duplication or breaking existing functionality.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Map current Rachel submission workflow agent invocation patterns
+ANALYZE: How Rachel currently processes submissions through Role→Process→System→Interface layers
+REASON: Extend existing workflow framework rather than building parallel Commercial Property system
+SYNTHESIZE: Commercial Property as specialized submission type within existing Rachel workflow
+CONCLUDE: Extension strategy that reuses existing agent framework with minimal additions
+
+Part 2: Current Rachel Workflow Analysis Required
+
+**STEP 1: Map Current Submission Flow**
+Analyze how Rachel currently processes submissions:
+- Which agents are invoked when Rachel processes a submission?
+- What is the current workflow sequence? (Role Agent → Process Agents → System Agents → Interface Agents)
+- How does `"invokingPersonas": ["rachel"]` work in agent configurations?
+- What triggers the current submission workflow?
+- How does UniversalAgentExecutionPopup currently orchestrate Rachel's agents?
+
+**STEP 2: Identify Current Agent Reuse Opportunities**
+Map existing agents to Commercial Property needs:
+
+**Current Rachel Agents That Can Be Extended:**
+- `Submission Processing Workflow` - Can handle Commercial Property submissions
+- `Risk Assessment Workflow` - Can be enhanced for Commercial Property risk analysis  
+- `Document Processing System` - Can be extended for ACORD forms and commercial documents
+- `Underwriting Database Manager` - Can store Commercial Property data
+- `Email System` - Already handles broker communications
+
+**Existing Workflow Pattern:**
+```
+Rachel Trigger → AUW Agent (Role) → 
+Submission Processing Workflow (Process) → 
+Risk Assessment Workflow (Process) → 
+Document Processing System (System) → 
+Underwriting Database Manager (System) → 
+Dashboard Interface (Interface)
+```
+
+**STEP 3: Commercial Property Extension Design**
+Design how to extend existing workflow for Commercial Property:
+
+**Option A: Submission Type-Based Extension**
+```javascript
+// Extend existing Submission Processing Workflow
+{
+  "name": "Submission Processing Workflow",
+  "workflow": "submission_evaluation", 
+  "capabilities": [
+    "document_verification",
+    "completeness_check", 
+    "routing",
+    "commercial_property_processing" // ADD THIS
+  ],
+  "submissionTypes": [
+    "general_liability",
+    "commercial_property", // ADD THIS
+    "workers_comp"
+  ]
+}
+```
+
+**Option B: Agent Configuration Enhancement**
+```javascript
+// Enhance existing agents with CP capabilities
+{
+  "name": "Risk Assessment Workflow",
+  "capabilities": [
+    "risk_scoring",
+    "exposure_analysis", 
+    "portfolio_impact",
+    "cope_analysis", // ADD FOR CP
+    "peril_assessment", // ADD FOR CP
+    "tiv_validation" // ADD FOR CP
+  ]
+}
+```
+
+**STEP 4: Minimal New Agent Strategy** 
+Identify only truly unique agents needed for Commercial Property:
+
+**Reuse Existing (No Changes Needed):**
+- Email intake and processing
+- Document verification and storage
+- Basic risk assessment framework
+- Database operations
+- Dashboard display
+
+**Extend Existing (Add CP Capabilities):**
+- Risk Assessment Workflow → Add COPE analysis
+- Document Processing → Add ACORD form handling
+- Underwriting Database → Add CP data fields
+
+**Create New (Only Where Essential):**
+- COPE Data Extraction Agent (System layer)
+- Property Valuation Agent (System layer) 
+- Peril Analysis Agent (System layer)
+
+**STEP 5: Workflow Orchestration Extension**
+Show how to extend UniversalAgentExecutionPopup to handle Commercial Property without breaking existing flow:
+
+```typescript
+// Current workflow detection
+if (submission.type === 'general_liability') {
+  // Existing GL workflow
+}
+
+// Add Commercial Property handling
+if (submission.type === 'commercial_property') {
+  // Extended workflow with CP-specific steps
+  // But using same agent orchestration framework
+}
+```
+
+**STEP 6: Database Schema Integration**
+Show how Commercial Property data fits into existing submission schema:
+
+```sql
+-- Extend existing submissions table (not create new table)
+ALTER TABLE submissions 
+ADD COLUMN submission_type VARCHAR(50) DEFAULT 'general_liability',
+ADD COLUMN commercial_property_data JSONB;
+
+-- Reuse existing workflow tracking
+-- Reuse existing agent execution logs
+-- Reuse existing email and document tables
+```
+
+Part 3: Implementation Standards (Replit.md Compliance)
+- **NO HARD-CODING**: Business logic stored in agent configurations in database
+- **MODULAR DESIGN**: Extend existing agents rather than duplicate functionality  
+- **MAINTAIN UNITY**: Use existing UniversalAgentExecutionPopup framework
+- **AVOID DUPLICATION**: Enhance existing workflow rather than parallel system
+- **PRESERVE FUNCTIONALITY**: All existing Rachel workflows continue unchanged
+
+Part 4: Success Criteria
+After extension, Rachel should be able to:
+1. Process both existing submissions AND Commercial Property submissions
+2. Use same voice commands, dashboard, and UI patterns
+3. Have Commercial Property data stored in extended database schema
+4. Execute Commercial Property workflows through same agent framework
+5. Maintain all existing functionality for non-CP submissions
+
+Please provide:
+1. **Current Rachel workflow map** (exact agent invocation sequence)
+2. **Extension strategy** for each existing agent
+3. **Minimal new agent requirements** (only where absolutely needed)  
+4. **Database schema extensions** (reuse existing tables where possible)
+5. **UniversalAgentExecutionPopup modifications** (minimal changes)
+6. **Implementation plan** that maintains existing functionality
+
+This analysis will show how to leverage the existing sophisticated Rachel workflow framework for Commercial Property processing.
+```
+
+This approach treats Commercial Property as a specialized submission type within Rachel's existing workflow rather than a completely separate system, which aligns perfectly with the modular architecture principles.

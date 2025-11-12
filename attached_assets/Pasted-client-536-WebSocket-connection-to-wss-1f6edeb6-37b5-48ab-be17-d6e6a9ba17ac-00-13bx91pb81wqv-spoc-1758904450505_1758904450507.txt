@@ -1,0 +1,162 @@
+client:536 WebSocket connection to 'wss://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/?token=4thriteIEZV8' failed: 
+setupWebSocket @ client:536
+(anonymous) @ client:531
+client:536 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'wss://localhost:undefined/?token=4thriteIEZV8' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+setupWebSocket @ client:536
+fallback @ client:509
+(anonymous) @ client:555
+chunk-RPCDYKBN.js?v=b3ee60ca:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+GlobalVoiceManager.ts:15 Global Voice Manager initialized for: Standard browser
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'rachel', isLoading: true, error: null, hierarchyConfig: undefined, hasLayers: undefined, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: null, companyName: 'Markel Insurance', agentsDataKeys: null, experienceLayer: undefined, metaBrainLayer: undefined, …}
+UniversalAgentExecutionPopup.tsx:1770 🔌 UniversalAgentExecutionPopup WebSocket status: {executionId: undefined, isConnected: false, error: null}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: null, companyName: 'Markel Insurance', agentsDataKeys: null, experienceLayer: undefined, metaBrainLayer: undefined, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: null, companyName: 'Markel Insurance', agentsDataKeys: null, experienceLayer: undefined, metaBrainLayer: undefined, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: null, companyName: 'Markel Insurance', agentsDataKeys: null, experienceLayer: undefined, metaBrainLayer: undefined, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+EnhancedDashboard.tsx:260 Dashboard handleCommand called: {command: 'Review Submissions', persona: 'rachel', mode: 'Pill'}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+EnhancedDashboard.tsx:193 Command executed successfully, updating activities only
+EnhancedDashboard.tsx:202 🔍 Command Success Debug: {command: 'Review Submissions', persona: 'rachel', isAuthCommand: false}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+EnhancedDashboard.tsx:243 🚀 Starting agent execution popup with executionId: exec_nTNoDt0J5Ct5
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+@radix-ui_react-dialog.js?v=b3ee60ca:341 Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+(anonymous) @ @radix-ui_react-dialog.js?v=b3ee60ca:341
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=b3ee60ca:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=b3ee60ca:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=b3ee60ca:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=b3ee60ca:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=b3ee60ca:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=b3ee60ca:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=b3ee60ca:19447
+commitRootImpl @ chunk-RPCDYKBN.js?v=b3ee60ca:19416
+commitRoot @ chunk-RPCDYKBN.js?v=b3ee60ca:19277
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=b3ee60ca:18895
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=b3ee60ca:9119
+commitRootImpl @ chunk-RPCDYKBN.js?v=b3ee60ca:19432
+commitRoot @ chunk-RPCDYKBN.js?v=b3ee60ca:19277
+finishConcurrentRender @ chunk-RPCDYKBN.js?v=b3ee60ca:18805
+performConcurrentWorkOnRoot @ chunk-RPCDYKBN.js?v=b3ee60ca:18718
+workLoop @ chunk-RPCDYKBN.js?v=b3ee60ca:197
+flushWork @ chunk-RPCDYKBN.js?v=b3ee60ca:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=b3ee60ca:384
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1770 🔌 UniversalAgentExecutionPopup WebSocket status: {executionId: 'exec_nTNoDt0J5Ct5', isConnected: true, error: null}
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758904426479_2x360s212
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfigKeys: Array(6), companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, metaBrainLayer: {…}, …}

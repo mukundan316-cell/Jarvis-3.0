@@ -1,0 +1,65 @@
+Here's the next critical priority prompt based on the audit sequence:
+
+```
+REPLACE HARDCODED PERSONA DATA - Following replit.md guidelines, eliminate hardcoded PERSONA_DATA object in EnhancedDashboard.tsx and replace with database-driven ConfigService queries to achieve proper configuration management.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Hardcoded PERSONA_DATA object in EnhancedDashboard.tsx violates "NO HARD-CODING" principle and prevents dynamic persona management
+ANALYZE: Lines 36-52 contain hardcoded persona definitions that should be stored in database via ConfigService
+REASON: Hardcoded persona data prevents adding new personas without code deployment and violates architecture standards
+SYNTHESIZE: Database-driven persona configuration through ConfigService with proper caching and validation
+CONCLUDE: Configurable persona data managed through database queries with fallback handling
+
+Part 2: Hardcoded Data Identification
+
+**PROBLEMATIC CODE PATTERN:**
+```typescript
+// FOUND IN EnhancedDashboard.tsx Lines 36-52 - NEEDS REPLACEMENT:
+const PERSONA_DATA = {
+  admin: { name: 'Jarvis Admin', role: 'System Administrator' },
+  rachel: { name: 'Rachel Thompson', role: 'Senior Underwriter' },
+  john: { name: 'John Stevens', role: 'IT Support Analyst' }
+};
+```
+
+**REPLACEMENT STRATEGY:**
+```typescript
+// REPLACE WITH database-driven approach:
+const personaData = await ConfigService.getSetting(
+  'personas.config',
+  { fallback: defaultPersonaConfig }
+);
+```
+
+Part 3: Database-Driven Implementation
+
+**USE EXISTING CONFIGSERVICE INFRASTRUCTURE:**
+- Leverage existing ConfigService pattern found in codebase
+- Store persona definitions in database configurations
+- Implement proper caching for performance
+- Add fallback handling for system reliability
+
+**IMPLEMENTATION REQUIREMENTS:**
+- Replace hardcoded PERSONA_DATA with ConfigService calls
+- Maintain existing component functionality and UI rendering
+- Ensure persona switching still works correctly
+- Add proper error handling for missing persona configurations
+
+Part 4: Success Criteria
+
+**ZERO HARDCODED PERSONA DATA:**
+- No hardcoded persona definitions in EnhancedDashboard.tsx
+- All persona information retrieved from database via ConfigService
+- Persona data configurable through admin interface
+- System remains functional if persona data temporarily unavailable
+
+**FUNCTIONAL VALIDATION:**
+- Dashboard displays correct persona names and roles
+- Persona switching maintains all existing functionality
+- Admin can modify persona definitions without code deployment
+- Performance remains acceptable with database queries
+
+Transform hardcoded persona data into configurable database-driven system using existing ConfigService patterns.
+```
+
+This addresses the specific hardcoded persona data issue identified in the audit results.

@@ -1,0 +1,70 @@
+Here's the next priority prompt based on the audit sequence:
+
+```
+REPLACE HARDCODED PERSONA LOGIC - Following replit.md guidelines, eliminate hardcoded persona filtering logic in routes.ts and replace with database-driven ConfigService queries to achieve proper database-persisted configuration.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Hardcoded persona logic in routes.ts lines 1164-1174 violates "NO HARD-CODING" principle
+ANALYZE: Agent filtering uses hardcoded string matching instead of database-driven persona access rules
+REASON: Hardcoded logic prevents dynamic configuration and violates replit.md architecture standards
+SYNTHESIZE: Database-driven persona filtering through ConfigService and persona_access_rules
+CONCLUDE: Configurable persona permissions managed through database queries
+
+Part 2: Hardcoded Logic Identification
+
+**PROBLEMATIC CODE PATTERN:**
+```typescript
+// FOUND IN routes.ts - NEEDS REPLACEMENT:
+if (currentPersona === 'rachel') {
+  filteredAgents = agents.filter(agent => 
+    agent.name.toLowerCase().includes('auw') ||
+    agent.name.toLowerCase().includes('underwriter') ||
+    // ... more hardcoded conditions
+  );
+} else if (currentPersona === 'john') {
+  // More hardcoded filtering logic
+}
+```
+
+**REPLACEMENT STRATEGY:**
+```typescript
+// REPLACE WITH database-driven approach:
+const personaRules = await ConfigService.getSetting(
+  'persona-agent-access', 
+  { persona: currentPersona }
+);
+const filteredAgents = await getAgentsByPersonaRules(personaRules);
+```
+
+Part 3: Database-Driven Implementation
+
+**CREATE PERSONA ACCESS RULES:**
+- Use existing ConfigService infrastructure
+- Store persona filtering rules in database configurations
+- Make agent access permissions configurable and auditable
+- Support effective dating for permission changes
+
+**IMPLEMENTATION REQUIREMENTS:**
+- Replace all hardcoded persona checks with database queries
+- Maintain existing functionality while making it configurable
+- Ensure persona permissions are properly enforced
+- Add audit trail for permission rule changes
+
+Part 4: Success Criteria
+
+**ZERO HARDCODED PERSONA LOGIC:**
+- No hardcoded persona string matching in routes.ts
+- All persona filtering uses database-stored configurations
+- Agent access permissions configurable through admin interface
+- Effective dating support for permission rule changes
+
+**FUNCTIONAL VALIDATION:**
+- Rachel still sees only her authorized agents
+- John maintains IT-specific agent access
+- Admin retains full system access
+- Permission changes can be made without code deployment
+
+Transform hardcoded persona logic into configurable database-driven permissions system.
+```
+
+This addresses the third critical issue - replacing hardcoded persona logic with proper database-driven configuration.

@@ -1,0 +1,64 @@
+Based on Replit Agent's analysis showing multiple agent seeding files and potential duplicates, here's the next incremental prompt:
+
+```
+AGENT DUPLICATION CLEANUP - Following replit.md guidelines, consolidate multiple agent seeding sources and eliminate duplicate agents in database to establish accurate agent count and proper persona-based agent distribution.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Multiple agent seeding files creating duplicates and inconsistent agent counts across personas
+ANALYZE: Found 5+ different seeding files (hierarchySeedData.ts, rachelAUWAgentsSeed.ts, rachelAUWAgentsExpansion.ts, optimalCPAgents.ts, intelligentEmailAgents.ts)
+REASON: Duplicate agents cause confusion in agent execution and inaccurate persona filtering
+SYNTHESIZE: Single source of truth for agent definitions with proper duplicate prevention
+CONCLUDE: Clean agent database with accurate counts and no duplicates
+
+Part 2: Database Agent Audit Required
+
+**RUN AGENT COUNT QUERIES:**
+```sql
+-- Total agent count by persona
+SELECT persona, COUNT(*) as agent_count FROM agents GROUP BY persona;
+
+-- Agent duplicates by name
+SELECT name, COUNT(*) as duplicate_count FROM agents GROUP BY name HAVING COUNT(*) > 1;
+
+-- Agent type distribution
+SELECT type, layer, COUNT(*) as count FROM agents GROUP BY type, layer;
+```
+
+**IDENTIFY SEEDING ISSUES:**
+- Which seeding functions have been executed multiple times
+- Which agents exist in multiple seeding files
+- Whether `createAgentIfNotExists()` is properly preventing duplicates
+- Inconsistencies between different persona agent sets
+
+Part 3: Consolidation Strategy
+
+**MERGE SEEDING FILES:**
+- Consolidate all agent definitions into single authoritative source
+- Remove duplicate agent definitions across files
+- Establish clear agent ownership per persona
+- Use consistent naming conventions and configurations
+
+**DATABASE CLEANUP:**
+- Remove duplicate agents (keep most recent/complete version)
+- Standardize agent configurations and capabilities
+- Ensure proper foreign key relationships
+- Verify persona access permissions are correct
+
+Part 4: Success Criteria
+
+**CLEAN AGENT DATABASE:**
+- No duplicate agents by name within same persona
+- Consistent agent type and layer assignments
+- Proper persona-based filtering working
+- Accurate total agent count established
+
+**SINGLE SEEDING SOURCE:**
+- One consolidated agent seeding file
+- Proper duplicate prevention logic
+- Clear documentation of agent counts per persona
+- Reliable agent creation and updates
+
+Execute database queries first to understand current state, then provide cleanup strategy based on actual duplicate findings.
+```
+
+This addresses the fundamental agent duplication issue that Replit Agent discovered, which needs to be resolved before other workflow functionality can work properly.

@@ -1,0 +1,83 @@
+Based on the complete 8-step workflow with specific HITL points, I need to ask the Replit Agent targeted questions about how these human intervention points are currently implemented:
+
+## Specific HITL Questions for Replit Agent
+
+**1. Step 2 HITL - Field Mapping Correction:**
+```
+Is the "UW Fix & Learn" workbench mentioned in exception flows currently implemented?
+- How does Rachel correct field mappings when parsing confidence is low?
+- Where is the UI for field mapping corrections?
+- How are corrected fields stored as "parser hints" for learning?
+- Does the system pause Step 2 execution waiting for human field validation?
+```
+
+**2. Step 5 HITL - Appetite Decision Override:**
+```
+How are UW overrides currently handled in the triage decision process?
+- Can Rachel override Green/Yellow/Red appetite decisions in the existing system?
+- Where does she provide the "required rationale" for overrides?
+- How are override decisions "logged to Ledger" - what table/format?
+- Does the UniversalAgentExecutionPopup show override options during Step 5?
+```
+
+**3. Step 7 HITL - Underwriting Decisions:**
+```
+What exists for the "required HITL at bind, declines, and wording exceptions"?
+- How does Rachel review and approve quotes before binding?
+- Where are decline rationales captured and stored?
+- What UI exists for wording exception reviews?
+- How does the "maker-checker" approval flow work currently?
+```
+
+**4. Exception Flow HITL Integration:**
+```
+Are these exception handling UIs currently implemented:
+- "Route to UW Fix & Learn UI" for low parse confidence
+- "Fall back to deterministic rules + HITL" for model uncertainty  
+- "Manual rating task" for rating failures
+- How do these integrate with the 6-layer architecture display?
+```
+
+**5. Workflow State Management for HITL:**
+```
+What workflow states exist for human intervention points?
+- Is there "pending_human_review", "awaiting_override", "human_validation_required"?
+- How does the commercial_property_workflows table track HITL states?
+- When execution pauses for human input, how is this displayed in UniversalAgentExecutionPopup?
+```
+
+**6. Human-AI Partnership Display:**
+```
+In the current UniversalAgentExecutionPopup 6-layer view:
+- How are HITL decision points shown within the layer execution?
+- Can the popup display "AI Recommendation" + "Human Decision" side-by-side?
+- How are human approval/rejection actions integrated into the execution timeline?
+- Does it show when workflow is paused waiting for Rachel's input?
+```
+
+**7. Decision Ledger and Audit Trail:**
+```
+How are human decisions currently tracked in the Decision Ledger?
+- What's captured when Rachel overrides AI recommendations?
+- How are "inputs, prompts, tool calls, outputs, approvals, versions" stored?
+- Where is the audit trail for human-AI collaboration decisions?
+- How does this integrate with the existing agentExecutionSteps table?
+```
+
+**8. Cross-Step HITL Coordination:**
+```
+How does human context carry forward across the 8 steps?
+- If Rachel makes corrections in Step 2, how do they affect Steps 3-8?
+- Are human preferences/overrides persistent across the workflow?
+- How does the system learn from Rachel's decisions to improve future automation?
+```
+
+**9. Morning Briefing HITL Integration:**
+```
+How are pending HITL tasks currently shown in Rachel's morning briefing?
+- Are items awaiting her review/approval displayed in action items?
+- How does she know when workflows are paused waiting for her input?
+- What's the connection between HITL tasks and the submission queue?
+```
+
+These answers will help determine what HITL infrastructure already exists versus what needs to be built, ensuring we leverage existing patterns rather than creating duplicate or conflicting functionality.

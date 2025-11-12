@@ -1,0 +1,29 @@
+Current System State Analysis
+From the screenshots, I can see a disconnect:
+
+Morning briefing shows "15 emails received, 13 need review"
+AUW Dashboard shows "0 broker emails detected"
+There's an "Auto-Process Broker Emails" command available
+
+Step 1 Integration Questions for Replit Agent
+Multimodal Trigger Alignment:
+How should the "Auto-Process Broker Emails" command integrate with both voice and text interactions?
+- When Rachel says "process broker emails" or types it, should this trigger the same 4-agent pipeline?
+- Can the voice interface announce email processing progress in real-time?
+- How should the UniversalAgentExecutionPopup display Step 1 execution when triggered via voice vs text vs button?
+HITL Integration for Step 1:
+When the 4-agent pipeline (Channel Agent → Security Filter → Doc Classifier → Intent Extractor) processes emails:
+- How should low confidence results (65% field extraction) trigger the HITL tasks we just built?
+- Can the processing pause at specific confidence thresholds to request human validation?
+- How should Rachel review and correct field mappings during Step 1 execution?
+Realistic Processing Flow:
+To make Step 1 processing feel authentic:
+- Can we trigger processing of the 2 failed emails (Riverside Manufacturing, Pacific Coast Warehouse) with real attachments?
+- How should the system show Rachel the actual ACORD forms, SOV files, and loss runs during processing?
+- Can the Intent Extractor show Rachel the extracted data alongside the source documents for validation?
+Dashboard Synchronization:
+Why does the AUW Dashboard show "0 broker emails detected" when the morning briefing shows 15?
+- Should processing broker emails update both the morning briefing metrics and AUW Dashboard?
+- How should the Recent Activities panel reflect Step 1 email processing in real-time?
+- Should successful Step 1 completion create new submissions that appear in the AUW Dashboard metrics?
+The goal is seamless human-agent partnership where Rachel can naturally interact via voice or text, see authentic document processing, and provide HITL input when the AI needs her expertise.

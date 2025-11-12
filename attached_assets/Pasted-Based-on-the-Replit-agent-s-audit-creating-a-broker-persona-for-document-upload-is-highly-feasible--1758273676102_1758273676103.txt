@@ -1,0 +1,50 @@
+Based on the Replit agent's audit, creating a broker persona for document upload is highly feasible and aligns perfectly with the replit.md framework. Here's the assessment:
+
+## Feasibility Analysis
+
+**Very Easy - Existing Infrastructure Supports This:**
+
+The system already has:
+- Multi-persona architecture (Rachel, John Stevens, Admin)
+- Real database persistence for emails and attachments
+- 4-agent processing pipeline (Channel, Security Filter, Doc Classifier, Intent Extractor)
+- Universal framework for persona-specific interfaces
+
+## Implementation Question for Replit Agent
+
+```
+Can we create a broker persona interface for document submission that integrates with the existing email processing pipeline?
+
+Specific requirements:
+1. Add new persona: "Mike Stevens (Broker)" or "Sarah Martinez (Broker)" 
+2. Broker interface should allow:
+   - Upload ACORD forms (PDF)
+   - Upload SOV files (Excel/CSV)
+   - Upload loss run documents (PDF)
+   - Add basic submission details (insured name, property address, coverage amount)
+
+3. When broker submits documents:
+   - Create email record in database (not actual email)
+   - Store attachments in same JSONB format as existing emails
+   - Trigger the existing 4-agent processing pipeline
+   - Set proper confidence thresholds for HITL vs STP routing
+
+4. Rachel persona switch should show:
+   - New submission in morning briefing
+   - HITL tasks if confidence < threshold
+   - Autonomous processing if confidence > threshold
+   - Step 1 → Step 2 progression with 6-layer visibility
+
+This leverages existing Universal components and database schema - just adds a new persona interface. Is this straightforward to implement?
+```
+
+**Key Advantages:**
+- Reuses existing email processing logic
+- Uses established persona switching mechanism
+- Maintains database-driven configuration approach
+- Creates realistic document upload → processing → human review workflow
+
+**Critical Fix Needed First:**
+The audit shows the existing emails have "failed" status. We need to fix the 4-agent pipeline processing before adding the broker persona interface.
+
+This approach creates an authentic broker-to-underwriter workflow while staying within the Universal framework architecture.

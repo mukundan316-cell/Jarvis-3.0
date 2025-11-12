@@ -1,0 +1,280 @@
+
+"Develop **JarvisIntelligenceV2.0 (JARVIS® IntelliAgent)**, an AI-powered workflow automation framework for the insurance industry, designed for Hexaware Technologies Ltd. The system serves as a centralized intelligence coordinator managing specialized AI agents across six layers: **Experience Agent - Personalization Layer** (customization engine for insurer-specific tailoring), **Meta Brain Layer** (central orchestrator), **Cognitive Layer** (role-based agents: AUW, CSR, Product Analyst, Risk Analyst, Support Engineer, IT CSR, Monitoring Agent, Test Analyst, IT Support Analyst), **Process Layer** (process agents: Risk Assessment, Document Evaluation, Document Verification, Logging Tickets, User Story/Defect Triage, User Story Creation), **System Layer** (infrastructure agents: Summarization, Interpretation, Content Creation, Automation Code Generation, Data Analysis, Personalization Creative Assistance, Debugging, Test Designing, Translation), and **Interface Layer** (multi-modal interaction via chat, voice, email, API). The application must support three personas—**Jarvis Admin**, **AUW (Rachel Thompson)**, and **IT Support Analyst (John Stevens)**—each with distinct dashboards and workflows, all persisted in a PostgreSQL database with minimal in-memory processing.
+
+**Experience Agent - Personalization Layer (New Layer):**
+- Add an **Experience Agent - Personalization Layer** above the Meta Brain Layer to enable insurers to personalize the Jarvis framework for their specific needs.
+- **Capabilities for Personalization:**
+  - **Dynamic Role Customization:** Allow insurers to define and modify roles (e.g., AUW, IT Support Analyst) with custom attributes (permissions, workflows, KPIs), role-specific branding (e.g., dashboard themes, logos), and compliance mappings (e.g., GDPR, HIPAA).
+  - **Workflow Personalization:** Provide a configuration interface to customize Process Layer workflows (e.g., add/remove steps, apply conditional logic based on insurer rules), and integrate insurer-specific data sources (e.g., legacy systems, third-party APIs).
+  - **System Agent Tailoring:** Enable configuration of System Layer agents with custom models, algorithms, or datasets (e.g., proprietary fraud detection), and parameterize agent behavior (e.g., risk thresholds, summarization styles).
+  - **Interface Personalization:** Allow customization of the Interface Layer (e.g., voice tone, language, style to match brand voice), support localization (e.g., language, currency, date formats), and tailor interaction modes (e.g., enable/disable voice).
+  - **Personalization Dashboard:** Add a Personalization Dashboard in the Jarvis Admin Dashboard for real-time configuration (e.g., drag-and-drop workflow builder, role permission editor, branding upload tool).
+  - **Learning and Adaptation:** Implement a feedback loop for the Experience Agent to learn from user interactions and suggest optimizations, using machine learning to recommend settings based on data patterns, while ensuring compliance with data privacy laws.
+- **Integration:** The Experience Agent applies personalization rules before the Meta Brain orchestrates other agents, dynamically adjusting role, process, system, and interface behaviors based on insurer-specific settings.
+- **Persistence:** Store personalization settings in a new `personalization_configs` table: `(id: serial primary key, insurerId: integer, roleConfig: jsonb, workflowConfig: jsonb, systemConfig: jsonb, interfaceConfig: jsonb, branding: jsonb, createdAt: timestamp)`.
+
+**User Personas and Authentication:**
+- **Jarvis Admin:** Oversees the entire system, with access to all agent activities, performance metrics, orchestration controls, and the new Personalization Dashboard.
+- **Rachel Thompson (AUW):** Rachel Thompson, a Senior Underwriter, focuses on submission processing, risk analysis, and broker communication.
+- **John Stevens (IT Support Analyst):** Manages schedules, incident resolution, fix deployment, and business user coordination.
+- Implement multi-modal authentication (voice, chat, email, API) for the Jarvis Admin persona. Post-authentication, load the **Jarvis Admin Dashboard** by default. Allow seamless switching to **Rachel Thompson (AUW) Dashboard** or **John Stevens (IT Support Analyst) Dashboard** using voice or text commands without requiring logout and re-login. Maintain a single session for the user, tracking the active persona in the session state and database.
+
+**Unified Interaction Mode (Consistent for All Personas):**
+- Provide a unified **Interaction Mode** section on each persona’s dashboard, supporting both voice-based and pill-based triggers for seamless multi-modal interaction.
+- **Mode Toggle:** Allow toggling between interaction modes (Voice, Chat, Email, API) with a button group, visually indicating the current mode (e.g., Voice: Blue microphone, Chat: White text bubble, Email: Envelope icon, API: Code brackets).
+- **Voice-Based Interaction:** Retain voice interaction with a floating voice button (Blue: ready, Red: listening, Green: speaking). Support voice commands for authentication, workflow triggers, and persona switching (e.g., "Jarvis, show admin dashboard", "Jarvis, Rachel here", "Jarvis, John here"). Responses are delivered via text-to-speech, with the option to display text on the dashboard.
+- **Command Input:** Below the mode toggle, include a terminal-style input field ("Type your command to JARVIS...") for manual text input, with a send button (arrow icon).
+- **Pill-Based Commands:** Under the input field, display a row of clickable pill-shaped buttons (rounded, `bg-blue-500/30`, white text, hover: `bg-blue-400`) tailored to each persona’s workflow. Clicking a pill auto-fills the command input and triggers the action, complementing voice commands.
+  - **Jarvis Admin Pills:** "Show Metrics", "View Hierarchy", "Create Agent", "Check Integrations".
+  - **Rachel Thompson (AUW) Pills:** "Show Submissions", "Request Missing Docs", "Review Prospects", "Summarize Claims", "Switch to Admin".
+  - **John Stevens (IT Support Analyst) Pills:** "Show Schedule", "Evaluate Incident", "Send Acknowledgment", "Propose Fix", "Apply Fix", "Raise Ticket", "Check Approval", "Switch to Admin".
+- **Agent Execution Popup:**
+  - Whenever a **Process Agent** (e.g., Risk Assessment, Document Verification), **System Agent** (e.g., Summarization, Data Analysis), or **Interface Agent** (e.g., email sending) is triggered by a voice or pill command, display the agent’s execution in a **popup** next to the Interaction Mode section.
+  - **Popup Design:**
+    - Position: Appears to the right of the Interaction Mode section (or below on mobile) with a subtle animation (Framer Motion: `scale` from 0 to 1, `opacity` from 0 to 1).
+    - Style: Glass morphism card (`bg-black/40`, `backdrop-blur-md`, blue border: `border-blue-500/30`), rounded corners (`border-radius: 12px`), max-width: `400px`, padding: `p-4`.
+    - Content: 
+      - Header: Agent name and type (e.g., "Risk Assessment Agent (Process)").
+      - Body: Action being performed (e.g., "Analyzing submission for risk...") with a loading spinner (Lucide React `loader` icon, rotating, `text-blue-400`).
+      - Result: Final output, including specific submission details when applicable (e.g., "Submission from Mr Smith (AOM Brokers): Initial risk is Low. 50% line recommended. Submission from Brian: High risk due to property age and past claims.").
+      - Footer: Close button (Lucide React `x` icon, `text-gray-400`, hover: `text-blue-400`).
+    - Behavior: Auto-opens when the agent is triggered, displays a loading state during processing, shows the result, and auto-closes after 5 seconds (or on manual dismissal via the close button).
+    - Accessibility: Keyboard navigable (close on `Esc` key), screen reader compatible (ARIA labels: `aria-label="Agent Execution Popup"`).
+  - **Persistence:** Log the popup content (agent name, action, result, submission details) in the `commands` table alongside the command details.
+- Persist all interactions (mode toggles, voice/text commands, responses, persona switches, agent execution popup content) in the database under the `commands` table, including the interaction mode used (Voice/Chat/Email/API), the active persona, agent details (if applicable), submission details (if applicable), and timestamp.
+
+**Persona Switching Mechanism (Consistent Across Personas):**
+- After initial authentication as Jarvis Admin, allow seamless switching to other personas (Rachel Thompson - AUW, John Stevens - IT Support Analyst) via voice commands (e.g., "Jarvis, Rachel here", "Jarvis, John here") or manual text input in the command field (e.g., typing "Jarvis, Rachel here").
+- Update the dashboard to the selected persona’s view without requiring logout and re-login. Maintain the same session, updating the session state to reflect the active persona.
+- Store the active persona in the session and database (`sessions` table: `activePersona` field). Log each persona switch as an activity in the `activities` table with a timestamp and status.
+
+**Error Handling (Consistent Across Personas):**
+- Implement uniform error handling for all personas:
+  - **Authentication Errors:** If authentication fails (e.g., incorrect voice command or credentials), display "Authentication failed. Please try again or use an alternative method." Log the error in the `errors` table (error message, timestamp, userId).
+  - **Command Errors:** If a command fails (e.g., invalid voice/text input), display "I didn’t understand that command. Please try again or use a pill command." Log the error in the `errors` table (command input, error message, persona, timestamp).
+  - **API/Integration Errors:** If an API call or integration (e.g., Salesforce, Duck Creek, SendGrid) fails, display "An error occurred while processing your request. Please try again later." Log the error in the `errors` table (endpoint, error message, persona, timestamp).
+  - **Database Errors:** If a database operation fails, display "A database error occurred. Please try again or contact support." Log the error in the `errors` table (query, error message, persona, timestamp).
+  - **Agent Execution Errors:** If an agent (Process, System, or Interface) fails to execute, display in the popup: "Agent execution failed. Please try again." Log the error in the `errors` table (agent name, error message, persona, submissionId, timestamp).
+- Ensure error messages are displayed in the Interaction Mode section with a red alert banner (`bg-red-500/30`, white text) and logged for debugging. For agent-related errors, display the error message within the popup itself.
+
+**Workflows for Each Persona (Updated with Specific Submission Details in Popups):**
+
+- **Jarvis Admin Workflow:**
+  - **Step 1: Authentication**
+    - Trigger: Voice command ("Jarvis, show admin dashboard") or text input ("Jarvis@Hexaware.com"/"Admin").
+    - Response: "Welcome to the Jarvis Admin Dashboard. Authentication successful. Loading your workspace."
+    - Persistence: Store authentication event in the `sessions` table (userId, activePersona: "Admin", createdAt).
+    - Error Handling: If authentication fails, display "Authentication failed. Please try again or use an alternative method." Log in `errors` table.
+  - **Step 2: View System Metrics**
+    - Trigger: Voice command ("Show metrics") or pill ("Show Metrics").
+    - **Agent Triggered:** Data Analysis Agent (System Layer).
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Data Analysis Agent (System): Fetching Meta Brain metrics..." (with loading spinner), then "Here are the current Meta Brain performance metrics: CPU usage at 45%, response time at 200ms, task completion rate at 98%." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table (input, response, mode, persona, agent: "Data Analysis", timestamp).
+    - Error Handling: If metrics retrieval fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 3: View Agent Hierarchy**
+    - Trigger: Voice command ("Show agent hierarchy") or pill ("View Hierarchy").
+    - **Agent Triggered:** None (this is a UI rendering step, not involving a Process/System/Interface Agent).
+    - Response: "Displaying the agent hierarchy: Meta Brain Layer → Cognitive Layer (AUW, IT Support Analyst) → Process Layer (Risk Assessment, Logging Tickets)."
+    - Persistence: Store command and response in the `commands` table.
+    - Error Handling: If hierarchy data is unavailable, display "An error occurred while fetching the agent hierarchy. Please try again." Log in `errors` table.
+  - **Step 4: Create New Agent**
+    - Trigger: Voice command ("Create a new agent") or pill ("Create Agent").
+    - **Agent Triggered:** None (this opens a form; the actual agent creation would involve a System Agent, but that’s not triggered here).
+    - Response: "I’ve opened the New Agent Factory form. Please provide the agent name, role, and configuration."
+    - Persistence: Store command and response in the `commands` table. On form submission, store new agent in the `agents` table (name, type, config, createdAt).
+    - Error Handling: If form submission fails, display "An error occurred while creating the agent. Please try again." Log in `errors` table.
+  - **Step 5: Check Integrations**
+    - Trigger: Voice command ("Check integrations") or pill ("Check Integrations").
+    - **Agent Triggered:** Data Analysis Agent (System Layer) for integration status checks.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Data Analysis Agent (System): Checking integration status..." (with loading spinner), then "Salesforce integration is active. Duck Creek integration is active. All systems are operational." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table.
+    - Error Handling: If an integration check fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 6: Persona Switching**
+    - Trigger: Voice command ("Jarvis, Rachel here") or manual text input ("Jarvis, Rachel here").
+    - **Agent Triggered:** None (persona switching is a session management task, not involving a Process/System/Interface Agent).
+    - Response: "Switching to Rachel Thompson’s AUW dashboard."
+    - Persistence: Update `sessions` table (activePersona: "Rachel Thompson"). Log switch in `activities` table.
+    - Error Handling: If switching fails, display "An error occurred while switching personas. Please try again." Log in `errors` table.
+
+- **Rachel Thompson (AUW) Workflow (Updated with Specific Submission Details):**
+  - **Step 1: Access Dashboard via Switch**
+    - Trigger: Voice command ("Jarvis, Rachel here") or manual text input ("Jarvis, Rachel here") from Jarvis Admin or John Stevens’s dashboard.
+    - Response: "Switching to Rachel Thompson’s AUW dashboard. Good morning Rachel Thompson! Your AUW workspace is now loaded."
+    - Persistence: Update `sessions` table (activePersona: "Rachel Thompson"). Log switch in `activities` table.
+    - Error Handling: If switching fails, display "An error occurred while switching personas. Please try again." Log in `errors` table.
+  - **Step 2: Morning Briefing & Initial Summary**
+    - Trigger: Voice command ("Show submissions") or pill ("Show Submissions").
+    - **Agent Triggered:** Data Analysis Agent (System Layer) for fetching submission data.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Data Analysis Agent (System): Fetching submissions..." (with loading spinner), then "Rachel Thompson, you have 4 new submissions and 1 submission with additional property documentation which you requested." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table. Store submission details in the `submissions` table.
+    - Error Handling: If submission data retrieval fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 3: Identify Submission Issues**
+    - Trigger: Auto-executes after Step 2 (no direct voice/pill command as this is an automated step).
+    - **Agent Triggered:** Document Verification Agent (Process Layer) for identifying issues in submissions.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Document Verification Agent (Process): Analyzing submissions for issues..." (with loading spinner), then "Two of the submissions from John Watkins (WTK Brokers) are incomplete as both the applications are missing the prior policy documents and having invalid identity cards. Would you like to send them back for rectification?" Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store issue details in the `submissions` table (status: "Incomplete", details). Log agent execution in `commands` table.
+    - Error Handling: If issue identification fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 4: Email Workflow Activation**
+    - Trigger: Voice command ("Request missing documents") or pill ("Request Missing Docs").
+    - **Agent Triggered:** Interface Agent (Interface Layer) for sending the email.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Interface Agent (Interface): Sending email to broker..." (with loading spinner), then "I have sent an email to John Watkins at WTK Brokers (john@wtkbrokers.com) requesting the missing documentation and identity card updates." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table. Store email details in the `emails` table (recipient, content, timestamp, status).
+    - Error Handling: If email sending fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 5: Review Other Prospects**
+    - Trigger: Voice command ("Review prospects") or pill ("Review Prospects").
+    - **Agent Triggered:** Risk Assessment Agent (Process Layer) for analyzing prospect risk.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Risk Assessment Agent (Process): Analyzing prospects..." (with loading spinner), then "Submission from Mr Smith (AOM Brokers): Initial risk is Low. 50% line recommended. Submission from Brian: High risk due to property being 25 years old with multiple past claim records." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, agent details, and submission details (Mr Smith and Brian submissions) in the `commands` table. Store prospect details and risk assessment in the `submissions` table.
+    - Error Handling: If risk assessment fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 6: Claims Summary Extraction**
+    - Trigger: Voice command ("Summarize claims") or pill ("Summarize Claims").
+    - **Agent Triggered:** Summarization Agent (System Layer, named "ClaimSummary-Agent" in the prompt).
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Summarization Agent (System): Extracting past claims summary..." (with loading spinner), then "Extracted Past Claims summary for Brian's submission: Multiple claims recorded due to property age and condition." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, agent details, and submission details (Brian's submission) in the `commands` table. Store claims summary in the `claims` table (submissionId, details, timestamp).
+    - Error Handling: If claims summary extraction fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 7: Workflow Completion**
+    - Trigger: Auto-executes after Step 6 (no direct voice/pill command as this is an automated step).
+    - **Agent Triggered:** None (this is a workflow completion step, not involving a Process/System/Interface Agent).
+    - Response: "All tasks have been completed. You can review the updated submissions and claims summary in your dashboard."
+    - Persistence: Store workflow completion status in the `commands` table (status: "Completed").
+    - Error Handling: If completion logging fails, display "An error occurred while completing the workflow. Please try again." Log in `errors` table.
+
+- **John Stevens (IT Support Analyst) Workflow:**
+  - **Step 1: Access Dashboard via Switch**
+    - Trigger: Voice command ("Jarvis, John here") or manual text input ("Jarvis, John here") from Jarvis Admin or Rachel Thompson’s dashboard.
+    - Response: "Switching to John Stevens’s IT Support Analyst dashboard. Good morning John Stevens! Your IT Support Analyst workspace is now loaded."
+    - Persistence: Update `sessions` table (activePersona: "John Stevens"). Log switch in `activities` table.
+    - Error Handling: If switching fails, display "An error occurred while switching personas. Please try again." Log in `errors` table.
+  - **Step 2: Morning Briefing & Initial Summary**
+    - Trigger: Voice command ("Show my schedule") or pill ("Show Schedule").
+    - **Agent Triggered:** Data Analysis Agent (System Layer) for fetching schedule data.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Data Analysis Agent (System): Fetching schedule..." (with loading spinner), then "John Stevens, you have 3 scheduled tasks which need your attention. Also, there is an incident email and alert in the common mailbox which needs your immediate attention. It might be a P2 incident." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table. Store schedule details in the `schedule` table (userId, tasks, timestamp).
+    - Error Handling: If schedule retrieval fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 3: Incident Evaluation**
+    - Trigger: Voice command ("Please evaluate the incident for me") or pill ("Evaluate Incident").
+    - **Agent Triggered:** Data Analysis Agent (System Layer) for evaluating the incident and Logging Tickets Agent (Process Layer) for raising a Silva ticket.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Data Analysis Agent (System): Evaluating incident..." (with loading spinner), followed by "Logging Tickets Agent (Process): Raising Silva ticket..." (with loading spinner), then "John Stevens, I found 1 unprocessed record with Transaction Number as 'A12345678', and I also found a similar incident. I’ve also raised a Silva ticket as a duplicate record. We should cancel it. Would you like to send a confirmation email to business users?" Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table. Store incident details in the `incidents` table (transactionNumber, status: "Duplicate", details).
+    - Error Handling: If incident evaluation fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 4: Email Workflow Activation**
+    - Trigger: Voice command ("Yes, please send the mail to the business users") or pill ("Send Acknowledgment").
+    - **Agent Triggered:** Interface Agent (Interface Layer) for sending the email.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Interface Agent (Interface): Sending notification email..." (with loading spinner), then "I have sent a notification email to the business user and IT operations group." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table. Store email details in the `emails` table (recipient, content, timestamp, status).
+    - Error Handling: If email sending fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 5: Propose Fix for Incident**
+    - Trigger: Voice command ("Can you propose a fix to resolve this issue?") or pill ("Propose Fix").
+    - **Agent Triggered:** Automation Code Generation Agent (System Layer) for generating the SQL script.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Automation Code Generation Agent (System): Generating fix script..." (with loading spinner), then "John Stevens, I’ve created an SQL script to cancel the record as duplicate: UPDATE PRBROO0OTB SET TRN_STATUS='CN' WHERE TRN_NO='A12345678'. The fix looks good. Would you like to apply this in the lower environment and run a regression test?" Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table. Store proposed fix in the `fixes` table (incidentId, script, environment, status).
+    - Error Handling: If fix proposal fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 6: Apply Fix and Run Regression Test**
+    - Trigger: Voice command ("Yes, apply the fix") or pill ("Apply Fix").
+    - **Agent Triggered:** Automation Code Generation Agent (System Layer) for applying the fix, Test Designing Agent (System Layer) for triggering the regression test.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Automation Code Generation Agent (System): Applying fix to DEV1..." (with loading spinner), followed by "Test Designing Agent (System): Triggering regression test..." (with loading spinner), then "I have applied the fix to the lower environment DEV1 and triggered the automated regression suite. The test results have been uploaded. You can review them in your dashboard." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table. Update `fixes` table (status: "Applied"). Store test results in the `test_results` table (fixId, testCase, status, timestamp).
+    - Error Handling: If fix application or testing fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 7: Raise Silva Ticket for Production Deployment**
+    - Trigger: Voice command ("Raise a Silva ticket to deploy this fix in production") or pill ("Raise Ticket").
+    - **Agent Triggered:** Logging Tickets Agent (Process Layer) for raising the Silva ticket.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Logging Tickets Agent (Process): Raising Silva ticket..." (with loading spinner), then "I have raised a Silva ticket to apply the fix in production. It is now waiting for approval." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table. Store ticket details in the `tickets` table (userId, type: "Production Deployment", status: "Pending", details).
+    - Error Handling: If ticket creation fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 8: Receive Approval and Update Business Users**
+    - Trigger: Voice command ("Let me know when you get business approval") or pill ("Check Approval").
+    - **Agent Triggered:** Data Analysis Agent (System Layer) for checking approval, Automation Code Generation Agent (System Layer) for applying the fix, Interface Agent (Interface Layer) for sending the email.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Data Analysis Agent (System): Checking approval status..." (with loading spinner), followed by "Automation Code Generation Agent (System): Applying fix..." (with loading spinner), followed by "Interface Agent (Interface): Sending email to business users..." (with loading spinner), then "John Stevens, I have received the approval, and the updated query has cancelled the unprocessed record successfully. I’ve sent an email to business users and updated the hotfix release documentation for this incident, as well as the KEDB." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table. Update `tickets` table (status: "Approved"). Store email details in the `emails` table. Store documentation updates in the `documents` table (incidentId, content, timestamp).
+    - Error Handling: If approval check or updates fail, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 9: Workflow Completion**
+    - Trigger: Auto-executes after Step 8 (no direct voice/pill command as this is an automated step).
+    - **Agent Triggered:** None (this is a workflow completion step, not involving a Process/System/Interface Agent).
+    - Response: "All tasks have been completed. You can review the incident details, test results, and ticket status in your dashboard."
+    - Persistence: Store workflow completion status in the `commands` table (status: "Completed").
+    - Error Handling: If completion logging fails, display "An error occurred while completing the workflow. Please try again." Log in `errors` table.
+
+**Visual Design & Branding (Hexaware Brand, Consistent Across Personas):**
+- **Color Scheme:** Primary Blue: `#3B82F6`, Secondary Blue: `#1E40AF`, Background: Dark gradient (`slate-900` via `blue-950` to `slate-900`), Accent Colors: `blue-500/30`, `blue-400`, Text: White primary, `gray-400` secondary, `blue-400` accents.
+- **Typography & Layout:** Primary Font: System font stack (Inter-like), Headers: Bold, white with blue accents, Body: Regular weight, high contrast, Logo: "JARVIS®" in large bold white, "META BRAIN" in smaller `blue-400`, Tagline: "Powers all your complex Insurance Workflows Autonomously and Intelligently" in `gray-400`.
+- **Design Aesthetic:** Futuristic theme with glass morphism effects, backdrop blur, subtle gradients, Grid Background: Subtle blue grid pattern (`linear-gradient` with `20px` spacing), Glass Cards: `bg-black/40` with `backdrop-blur-md` and blue borders, Animations: Smooth transitions with Framer Motion, subtle hover effects, Responsiveness: Mobile-first design with TailwindCSS breakpoints.
+- **Icons & Images:** Use **Lucide React** for icons (e.g., brain for Meta Brain, microphone for voice, calendar for schedule, alert-triangle for incidents, check-circle for approvals, loader for loading states in popups), Voice States: Blue microphone (ready), Red microphone (listening), Green microphone (speaking), Status Badge: AI Active/Ready with green dot.
+- **Pill Commands Styling:** Rounded pills (`border-radius: 9999px`), `bg-blue-500/30`, white text, padding (`px-4 py-2`), hover effect (`bg-blue-400`), clickable with cursor pointer.
+
+**Dashboards for Each Persona (Consistent Design):**
+- **Jarvis Admin Dashboard:** Header with JARVIS® META BRAIN logo, Interaction Mode (toggle, voice button, input, pills: "Show Metrics", "View Hierarchy", "Create Agent", "Check Integrations"), Meta Brain Metrics (charts), Agent Hierarchy (tree), Activity Monitor (feed), New Agent Factory (form), Integration Status (Salesforce, Duck Creek), Personalization Dashboard (new section for role, workflow, system, and interface configuration).
+- **Rachel Thompson (AUW) Dashboard:** Header with user profile ("Rachel Thompson, Senior Underwriter"), Interaction Mode (toggle, voice button, input, pills: "Show Submissions", "Request Missing Docs", "Review Prospects", "Summarize Claims", "Switch to Admin"), Submissions Pipeline (4 submissions), Risk Analysis Results (color-coded: Green/Yellow/Red), Claims Summary (past claims for Brian).
+- **John Stevens (IT Support Analyst) Dashboard:** Header with user profile ("John Stevens, IT Support Analyst"), Interaction Mode (toggle, voice button, input, pills: "Show Schedule", "Evaluate Incident", "Send Acknowledgment", "Propose Fix", "Apply Fix", "Raise Ticket", "Check Approval", "Switch to Admin"), Schedule Overview (3 tasks), Incident Details (e.g., Transaction Number 'A12345678'), Fix Proposal (SQL script), Regression Test Results (table), Silva Ticket Status (progress indicator), Activity Feed.
+
+**Technical Requirements for Replit (Updated with Submission Details):**
+- **Frontend:**
+  - Use **React 18 with TypeScript**, bundled with **Vite**.
+  - Implement routing with **Wouter** (`/` for Dashboard, `/admin` for Jarvis Admin, `/auw` for Rachel Thompson, `/it-support` for John Stevens).
+  - Manage state with **TanStack Query** (server state) and **React Context** (UI state, including active persona).
+  - Use **shadcn/ui** and **Radix UI** for components, styled with **TailwindCSS** (Hexaware palette: `#3B82F6`, `#1E40AF`).
+  - Use **Lucide React** for icons, **Framer Motion** for animations (including popup transitions), **React Hook Form** with **Zod** for validation.
+  - Build UI components:
+    - Interaction Mode (toggle, voice button, input, pills).
+    - **Agent Execution Popup:** A reusable popup component triggered when a Process, System, or Interface Agent executes. Props: `agentName`, `agentType`, `action`, `result`, `isLoading`, `submissionDetails` (new prop to display specific submission data, e.g., `{ submitter: "Mr Smith (AOM Brokers)", risk: "Low" }`). Uses Framer Motion for animations, TailwindCSS for styling, and Radix UI for accessibility (e.g., `Dialog` component for focus trapping).
+    - Agent Hierarchy, Activity Feed, Submissions Pipeline (Rachel Thompson), Risk Analysis Results (Rachel Thompson), Claims Summary (Rachel Thompson), Schedule Overview (John Stevens), Incident Details (John Stevens), Fix Proposal (John Stevens), Test Results (John Stevens), Silva Ticket Status (John Stevens), Personalization Dashboard (for Jarvis Admin).
+  - Implement voice interaction using a mock speech-to-text solution (e.g., text input simulating voice), ensuring responses are displayed and optionally "spoken" via text-to-speech simulation.
+  - Trigger the Agent Execution Popup whenever a command invokes a Process, System, or Interface Agent, passing the relevant agent details, results, and submission details to the popup component.
+- **Backend:**
+  - Use **Express.js with TypeScript**.
+  - Design **RESTful APIs** with endpoints: `GET /api/agents`, `GET /api/activities`, `POST /api/commands`, `GET /api/submissions`, `GET /api/schedule`, `POST /api/fix`, `GET /api/test-results`, `POST /api/ticket`, `POST /api/switch-persona`, `GET /api/metrics`, `POST /api/emails`, `POST /api/personalization`.
+  - Update the `POST /api/commands` endpoint to include agent execution details and submission details (if applicable): `{ input: string, mode: string, persona: string, agentName: string, agentType: string, action: string, result: string, submissionDetails: jsonb }`.
+  - Implement middleware for session management (using **connect-pg-simple**), CORS, request validation, and authentication.
+  - Implement **WebSocket** for real-time updates (e.g., activity feed, approval notifications, agent execution updates for the popup).
+  - Add a `/switch-persona` endpoint to update the active persona in the session and database:
+    - Input: `{ "persona": "Rachel Thompson" }` or `{ "persona": "John Stevens" }` or `{ "persona": "Admin" }`.
+    - Update session state and log the switch in the `activities` table.
+- **Data Storage and Persistence (Updated):**
+  - Use **PostgreSQL** with **Drizzle ORM** for type-safe operations.
+  - Run database migrations to create tables.
+  - Define models for:
+    - **Users:** (id: serial primary key, username: varchar unique, email: varchar, password: varchar, firstName: varchar, lastName: varchar, createdAt: timestamp) for Admin ("Admin", "Jarvis@Hexaware.com", "Admin"), Rachel Thompson ("Rachel Thompson"), John Stevens ("John Stevens").
+    - **Sessions:** (id: serial primary key, userId: integer, activePersona: varchar, createdAt: timestamp) to track the active persona.
+    - **Agents:** (id: serial primary key, name: varchar, type: varchar, icon: varchar, status: varchar, description: text, parentId: integer, config: jsonb, createdAt: timestamp).
+    - **Activities:** (id: serial primary key, message: text, agentId: integer, timestamp: timestamp, level: varchar).
+    - **Commands:** (id: serial primary key, input: text, status: varchar, response: text, agentId: integer, mode: varchar, persona: varchar, agentName: varchar, agentType: varchar, action: text, result: text, submissionDetails: jsonb, timestamp: timestamp) – updated to include `submissionDetails` for storing specific submission data (e.g., `{ "submitter": "Mr Smith (AOM Brokers)", "risk": "Low" }`).
+    - **Errors:** (id: serial primary key, errorMessage: text, userId: integer, persona: varchar, commandInput: text, endpoint: varchar, query: text, agentName: varchar, submissionId: integer, timestamp: timestamp) – updated to include `submissionId` for agent-related errors.
+    - **Submissions:** (id: serial primary key, userId: integer, brokerId: integer, status: varchar, details: jsonb, timestamp: timestamp).
+    - **Claims:** (id: serial primary key, submissionId: integer, details: jsonb, timestamp: timestamp) for Rachel Thompson’s past claims data.
+    - **Schedule:** (id: serial primary key, userId: integer, tasks: jsonb, timestamp: timestamp) for John Stevens’s schedule.
+    - **Incidents:** (id: serial primary key, userId: integer, transactionNumber: varchar, status: varchar, details: jsonb, timestamp: timestamp).
+    - **Fixes:** (id: serial primary key, incidentId: integer, script: text, environment: varchar, status: varchar, timestamp: timestamp).
+    - **TestResults:** (id: serial primary key, fixId: integer, testCase: varchar, status: varchar, timestamp: timestamp).
+    - **Tickets:** (id: serial primary key, userId: integer, type: varchar, status: varchar, details: jsonb, timestamp: timestamp).
+    - **Emails:** (id: serial primary key, userId: integer, recipient: varchar, content: text, timestamp: timestamp, status: varchar).
+    - **Documents:** (id: serial primary key, incidentId: integer, content: text, timestamp: timestamp) for hotfix and KEDB updates.
+    - **PersonalizationConfigs:** (id: serial primary key, insurerId: integer, roleConfig: jsonb, workflowConfig: jsonb, systemConfig: jsonb, interfaceConfig: jsonb, branding: jsonb, createdAt: timestamp) for storing personalization settings.
+  - Persist all data (authentication, commands with mode, persona, agent execution details, submission details, submissions, claims, schedule, incidents, fixes, test results, tickets, emails, documents, session state, personalization settings) in PostgreSQL.
+  - Use **connect-pg-simple** with Express sessions for session persistence.
+- **External Dependencies:**
+  - Mock **OpenAI GPT-4** for NLP and **SendGrid** for email on Replit.
+  - Frontend: **React Hook Form**, **Radix UI**, **Lucide React**, **Framer Motion**, **TailwindCSS**, **date-fns**, **clsx**, **tailwind-merge**, **Zod**.
+  - Backend: **Drizzle ORM**, **PostgreSQL driver**, **connect-pg-simple**, **Passport.js**, **Zod**.
+**Deployment on Replit:**
+- Optimize for single-command deployment (`npm run dev`).
+- Configure environment variables: `DATABASE_URL`, `SESSION_SECRET`, `NODE_ENV=development`.
+- Run database migrations (`npm run db:push`) to create tables.
+- Include health checks for monitoring.
+**Additional Requirements:**
+- **Accessibility:** Keyboard navigation, screen reader compatibility, high contrast mode, voice interface accessibility (including popup accessibility).
+- **Security:** Session-based authentication, input validation with Zod, SQL injection prevention, XSS protection, secure cookies.
+- **Performance:** Fast load times, smooth animations (including popup transitions), efficient state management, minimal API calls with caching.
+

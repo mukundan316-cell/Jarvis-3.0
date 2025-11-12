@@ -1,0 +1,208 @@
+```
+UI→DB→UI FLOW VALIDATION AND CLEANUP: Following replit.md Development Meta-Prompt Guidelines, ensure complete data flow integrity, eliminate code duplication, validate persona-based filtering uses database-persisted values, and confirm universal popup framework usage throughout application.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Validate complete UI→DB→UI data flow with proper persona filtering and universal framework usage
+ANALYZE: Identify hardcoded values, duplicate components, and broken data persistence patterns
+REASON: System must use database-driven configuration and reusable frameworks per replit.md standards
+SYNTHESIZE: Consolidated, properly functioning system with unified data flow patterns
+CONCLUDE: Clean architecture with database-persisted configuration and zero duplication
+
+Part 2: UI→DB→UI Flow Validation Requirements
+
+**COMPLETE DATA FLOW TEST:**
+For each user interaction, verify:
+```
+User Input → Frontend Component → API Endpoint → Database Operation → Query Result → API Response → UI Update
+```
+
+**Test Each Flow:**
+- Rachel submits CP data → saves to database → displays in dashboard
+- Admin creates agent → persists to agents table → appears in agent lists
+- John logs incident → stores in incidents table → shows in activity feed
+- Voice commands → trigger agent execution → log to commands table → update UI status
+- File uploads → process and store → display processing status → show results
+
+**Database Persistence Validation:**
+- All form submissions actually save to database tables
+- Workflow state persists across browser sessions
+- Agent execution results stored in activities table
+- Persona preferences saved to user_preferences table
+- No data lost during navigation or page refresh
+
+Part 3: Persona-Based Filtering Audit
+
+**ELIMINATE HARDCODED PERSONA LOGIC:**
+Find and replace hardcoded persona checks with database queries:
+
+```typescript
+// WRONG (hardcoded):
+if (persona === 'rachel') {
+  showAgents = ['Risk Assessment', 'Underwriting'];
+}
+
+// CORRECT (database-driven):
+const userAgents = await getAgentsByPersona(userId, persona);
+const availableAgents = userAgents.filter(agent => agent.status === 'active');
+```
+
+**PERSONA FILTERING VALIDATION:**
+- Rachel sees only her authorized agents (from database query, not hardcoded list)
+- Admin has access to all agents based on database permissions
+- John sees IT-specific agents based on database configuration
+- Dashboard KPIs filter by persona using database-stored rules
+- Voice commands route based on database-stored persona capabilities
+
+**DATABASE-DRIVEN PERSONA CONFIG:**
+Verify these tables drive persona behavior:
+- `user_profiles` → persona assignments
+- `agents` → persona access via `invokingPersonas` column
+- `user_preferences` → persona-specific settings
+- `dashboard_kpis` → persona-specific metrics
+- `commands` → persona command history and permissions
+
+Part 4: Code Duplication Elimination
+
+**CONSOLIDATE DUPLICATE COMPONENTS:**
+Identify and merge:
+- Dashboard.tsx vs EnhancedDashboard.tsx → Single unified dashboard
+- RachelAgentCategorization.tsx vs JohnAgentCategorization.tsx → UniversalAgentCategorization with persona parameter
+- Multiple voice management hooks → Single unified voice interface
+- Persona-specific wrappers → Universal components with persona props
+
+**UNIVERSAL FRAMEWORK USAGE AUDIT:**
+Verify these components are used everywhere (no duplicates):
+- UniversalAgentExecutionPopup → All agent workflows
+- UniversalAgentCategorization → All persona agent displays  
+- UnifiedDashboardMetrics → All persona dashboards
+- UnifiedRecentActivities → All activity displays
+
+**ELIMINATE HARDCODED VALUES:**
+Replace with database queries:
+- Agent capabilities and configurations
+- Workflow step definitions and validation rules
+- Email templates and notification settings
+- Dashboard KPI definitions and calculations
+- Voice command mappings and responses
+
+Part 5: Universal Popup Framework Validation
+
+**CONSISTENCY CHECK:**
+Every agent execution should use UniversalAgentExecutionPopup:
+- Commercial Property workflow steps
+- Standard agent executions
+- Voice-triggered commands
+- Dashboard-initiated workflows
+
+**FRAMEWORK REUSE VERIFICATION:**
+- No parallel popup implementations
+- Consistent UI patterns across all workflows
+- Unified error handling and status display
+- Same navigation and progression logic
+- Identical agent hierarchy visualization
+
+**CONFIGURATION-DRIVEN BEHAVIOR:**
+Popup behavior controlled by database values:
+- Workflow steps from `orchestration_workflows` table
+- Agent sequences from `agents` table configurations
+- Form schemas from `meta_brain_settings`
+- Validation rules from database-stored configurations
+
+Part 6: Database Schema Integrity
+
+**REFERENTIAL INTEGRITY CHECK:**
+- All foreign key relationships properly established
+- No orphaned records in dependent tables
+- Cascade deletes configured where appropriate
+- Database constraints prevent invalid data states
+
+**EFFECTIVE DATING VALIDATION:**
+Per replit.md requirements, verify:
+- Business rules have effective dates and version control
+- Configuration changes are auditable with timestamps
+- Historical data preserved for compliance
+- Rollback capability for configuration changes
+
+**DATA PERSISTENCE TESTING:**
+- Workflow state survives browser refresh
+- Persona settings persist across sessions
+- Agent execution history maintained
+- File uploads properly stored and retrievable
+
+Part 7: Implementation Standards Compliance
+
+**NO HARD-CODING VERIFICATION:**
+Scan codebase for hardcoded:
+- Business logic and decision rules
+- Agent capabilities and configurations  
+- Workflow step definitions
+- Persona access permissions
+- Email templates and messages
+- Dashboard KPI calculations
+
+**TYPESCRIPT SAFETY VALIDATION:**
+- Run `npx tsc --noEmit --strict` → zero errors
+- All database queries properly typed
+- API responses match defined schemas
+- Component props fully typed
+- No `any` types in production code
+
+**MODULAR DESIGN ASSESSMENT:**
+- Components reusable across personas
+- Lego-block architecture maintained
+- Clear separation of concerns
+- No tight coupling between components
+- Service layer properly abstracts database operations
+
+Part 8: Testing and Validation Protocol
+
+**END-TO-END FLOW TESTING:**
+For each persona (Rachel, Admin, John):
+1. Login and persona selection
+2. Execute primary workflow (CP processing, agent management, incident handling)
+3. Verify data saves to database correctly
+4. Confirm UI updates reflect database state
+5. Test navigation and state preservation
+6. Validate audit trail capture
+
+**UNIVERSAL COMPONENT TESTING:**
+- UniversalAgentExecutionPopup handles all agent types
+- Persona filtering works with database queries
+- No component duplication or parallel implementations
+- Configuration changes reflect immediately in UI
+- Error handling consistent across all interactions
+
+**DATABASE INTEGRITY VALIDATION:**
+- All CRUD operations functional
+- Data relationships properly maintained
+- Performance acceptable under normal load
+- Backup and recovery procedures tested
+- Migration scripts execute without errors
+
+Part 9: Success Criteria
+
+**FUNCTIONAL REQUIREMENTS:**
+- Complete UI→DB→UI flow working for all personas
+- Zero hardcoded business logic or configurations
+- All persona filtering uses database queries
+- Universal popup framework used consistently
+- No duplicate components or parallel implementations
+
+**TECHNICAL VALIDATION:**
+- TypeScript compilation successful with zero errors
+- All database operations return expected results
+- Performance metrics within acceptable ranges
+- No data loss during normal operations
+- Comprehensive audit trail for all interactions
+
+**COMPLIANCE VERIFICATION:**
+- replit.md standards fully implemented
+- Database-driven configuration throughout
+- Effective dating and version control working
+- Modular Lego-block architecture maintained
+- Security and access control properly implemented
+
+Provide detailed validation results for each area with specific examples of fixes implemented and remaining issues identified.
+```
+
+This prompt systematically addresses all the architectural concerns you've identified while ensuring compliance with your development standards.

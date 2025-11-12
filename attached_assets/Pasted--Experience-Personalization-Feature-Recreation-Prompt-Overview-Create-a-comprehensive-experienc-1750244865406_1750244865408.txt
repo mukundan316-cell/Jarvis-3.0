@@ -1,0 +1,1382 @@
+# Experience Personalization Feature Recreation Prompt
+
+## Overview
+Create a comprehensive experience personalization system for the JARVIS® META BRAIN framework that allows users to customize their workspace, preferences, and AI behavior. The system includes enterprise configuration options, user preference management, and AI-powered personalization suggestions.
+
+---
+
+## 1. Personalization Architecture
+
+### Core Components Structure
+```typescript
+interface PersonalizationSystem {
+  // User Profile Management
+  userProfile: UserProfile;
+  preferences: UserPreferences;
+  
+  // Enterprise Configuration
+  enterpriseConfig: EnterpriseConfiguration;
+  workflowCustomizations: WorkflowCustomizations;
+  
+  // AI Personalization
+  aiPersonalization: AIPersonalizationEngine;
+  behaviorAdaptation: BehaviorAdaptation;
+  
+  // UI/UX Customization
+  themeCustomization: ThemeCustomization;
+  layoutPreferences: LayoutPreferences;
+  
+  // Data & Integration
+  dataSourcePreferences: DataSourcePreferences;
+  integrationSettings: IntegrationSettings;
+}
+
+interface UserProfile {
+  id: string;
+  name: string;
+  role: string;
+  department: string;
+  experienceLevel: 'beginner' | 'intermediate' | 'expert';
+  primaryWorkflows: string[];
+  accessLevel: 'standard' | 'advanced' | 'admin';
+}
+
+interface UserPreferences {
+  // Communication Style
+  communicationStyle: 'formal' | 'casual' | 'technical';
+  responseLength: 'brief' | 'detailed' | 'comprehensive';
+  explanationLevel: 'basic' | 'intermediate' | 'expert';
+  
+  // Interaction Preferences
+  preferredInputMethod: 'voice' | 'text' | 'both';
+  autoSuggestions: boolean;
+  confirmBeforeActions: boolean;
+  
+  // Notification Settings
+  notificationSettings: {
+    systemAlerts: boolean;
+    workflowUpdates: boolean;
+    agentCompletions: boolean;
+    urgentAlerts: boolean;
+    emailNotifications: boolean;
+  };
+  
+  // Custom Instructions
+  customInstructions: string;
+  workflowInstructions: Record<string, string>;
+}
+```
+
+### Enterprise Configuration System
+```typescript
+interface EnterpriseConfiguration {
+  // Company Information
+  companyName: string;
+  industry: string;
+  companySize: 'small' | 'medium' | 'large' | 'enterprise';
+  businessUnits: string[];
+  
+  // IT Environment
+  integrations: {
+    crm: string;
+    policyAdmin: string;
+    claimsSystem: string;
+    documentManagement: string;
+    other: string[];
+  };
+  
+  // Operational Settings
+  workflowCustomizations: Record<string, boolean>;
+  dataSourceConnections: string[];
+  regulatoryCompliance: string[];
+  
+  // Security & Governance
+  dataRetentionPolicies: Record<string, number>;
+  accessControlPolicies: AccessControlPolicy[];
+  auditRequirements: string[];
+}
+
+interface WorkflowCustomizations {
+  'automated-underwriting': boolean;
+  'document-extraction': boolean;
+  'claims-triage': boolean;
+  'fraud-detection': boolean;
+  'customer-service-automation': boolean;
+  'policy-renewals': boolean;
+  'risk-assessment': boolean;
+  'compliance-checking': boolean;
+}
+```
+
+---
+
+## 2. Personalization Wizard Component
+
+### Main Wizard Interface
+```typescript
+const PersonalizationWizard = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [configuration, setConfiguration] = useState<PersonalizationConfig>(defaultConfig);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [aiSuggestions, setAiSuggestions] = useState<string>("");
+  
+  const steps = [
+    {
+      id: "profile",
+      title: "User Profile",
+      description: "Set up your personal information and role",
+      component: <ProfileStep />
+    },
+    {
+      id: "preferences",
+      title: "Interaction Preferences", 
+      description: "Configure how JARVIS® interacts with you",
+      component: <PreferencesStep />
+    },
+    {
+      id: "workflows",
+      title: "Workflow Customization",
+      description: "Customize your insurance workflows",
+      component: <WorkflowStep />
+    },
+    {
+      id: "enterprise",
+      title: "Enterprise Configuration",
+      description: "Configure company-wide settings",
+      component: <EnterpriseStep />
+    },
+    {
+      id: "ai-behavior",
+      title: "AI Behavior",
+      description: "Personalize JARVIS® behavior and responses",
+      component: <AIBehaviorStep />
+    },
+    {
+      id: "review",
+      title: "Review & Save",
+      description: "Review and save your personalization settings",
+      component: <ReviewStep />
+    }
+  ];
+  
+  return (
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
+        <Button variant="outline" className="w-full">
+          <Settings2 className="w-4 h-4 mr-2" />
+          Personalize Experience
+        </Button>
+      </DialogTrigger>
+      
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="flex items-center gap-2">
+            <Sparkles className="w-5 h-5" />
+            JARVIS® Experience Personalization
+          </DialogTitle>
+          <DialogDescription>
+            Customize your JARVIS® experience to match your work style and preferences
+          </DialogDescription>
+        </DialogHeader>
+        
+        {/* Progress Indicator */}
+        <div className="flex items-center justify-between mb-6">
+          {steps.map((step, index) => (
+            <div
+              key={step.id}
+              className={`flex items-center ${index < steps.length - 1 ? 'flex-1' : ''}`}
+            >
+              <div className={`
+                w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium
+                ${index <= currentStep ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-600'}
+              `}>
+                {index + 1}
+              </div>
+              {index < steps.length - 1 && (
+                <div className={`
+                  flex-1 h-0.5 mx-2 
+                  ${index < currentStep ? 'bg-blue-500' : 'bg-gray-200'}
+                `} />
+              )}
+            </div>
+          ))}
+        </div>
+        
+        {/* Current Step Content */}
+        <div className="min-h-[400px]">
+          {steps[currentStep].component}
+        </div>
+        
+        {/* Navigation */}
+        <div className="flex justify-between pt-4 border-t">
+          <Button
+            variant="outline"
+            onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
+            disabled={currentStep === 0}
+          >
+            Previous
+          </Button>
+          
+          <div className="flex gap-2">
+            {currentStep === steps.length - 1 ? (
+              <Button onClick={handleSaveConfiguration} disabled={isGenerating}>
+                {isGenerating ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Saving...
+                  </>
+                ) : (
+                  <>
+                    <SaveAll className="w-4 h-4 mr-2" />
+                    Save Configuration
+                  </>
+                )}
+              </Button>
+            ) : (
+              <Button
+                onClick={() => setCurrentStep(Math.min(steps.length - 1, currentStep + 1))}
+              >
+                Next
+              </Button>
+            )}
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
+```
+
+### Profile Configuration Step
+```typescript
+const ProfileStep = ({ configuration, setConfiguration }: StepProps) => {
+  const handleProfileChange = (field: string, value: any) => {
+    setConfiguration(prev => ({
+      ...prev,
+      userProfile: {
+        ...prev.userProfile,
+        [field]: value
+      }
+    }));
+  };
+  
+  return (
+    <div className="space-y-6">
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Personal Information</h3>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="name">Full Name</Label>
+            <Input
+              id="name"
+              value={configuration.userProfile.name}
+              onChange={(e) => handleProfileChange('name', e.target.value)}
+              placeholder="Enter your full name"
+            />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="role">Job Role</Label>
+            <Select
+              value={configuration.userProfile.role}
+              onValueChange={(value) => handleProfileChange('role', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select your role" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="underwriter">Underwriter</SelectItem>
+                <SelectItem value="claims-adjuster">Claims Adjuster</SelectItem>
+                <SelectItem value="agent">Insurance Agent</SelectItem>
+                <SelectItem value="customer-service">Customer Service</SelectItem>
+                <SelectItem value="manager">Manager</SelectItem>
+                <SelectItem value="analyst">Analyst</SelectItem>
+                <SelectItem value="admin">Administrator</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="department">Department</Label>
+            <Select
+              value={configuration.userProfile.department}
+              onValueChange={(value) => handleProfileChange('department', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select your department" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="commercial-lines">Commercial Lines</SelectItem>
+                <SelectItem value="personal-lines">Personal Lines</SelectItem>
+                <SelectItem value="claims">Claims</SelectItem>
+                <SelectItem value="underwriting">Underwriting</SelectItem>
+                <SelectItem value="customer-service">Customer Service</SelectItem>
+                <SelectItem value="risk-management">Risk Management</SelectItem>
+                <SelectItem value="compliance">Compliance</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="experience">Experience Level</Label>
+            <Select
+              value={configuration.userProfile.experienceLevel}
+              onValueChange={(value) => handleProfileChange('experienceLevel', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select experience level" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="beginner">Beginner (0-2 years)</SelectItem>
+                <SelectItem value="intermediate">Intermediate (3-7 years)</SelectItem>
+                <SelectItem value="expert">Expert (8+ years)</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Primary Workflows</h3>
+        <div className="grid grid-cols-2 gap-2">
+          {workflowOptions.map(workflow => (
+            <div key={workflow.id} className="flex items-center space-x-2">
+              <Checkbox
+                id={workflow.id}
+                checked={configuration.userProfile.primaryWorkflows.includes(workflow.id)}
+                onCheckedChange={(checked) => {
+                  if (checked) {
+                    handleProfileChange('primaryWorkflows', [
+                      ...configuration.userProfile.primaryWorkflows,
+                      workflow.id
+                    ]);
+                  } else {
+                    handleProfileChange('primaryWorkflows', 
+                      configuration.userProfile.primaryWorkflows.filter(w => w !== workflow.id)
+                    );
+                  }
+                }}
+              />
+              <Label htmlFor={workflow.id} className="text-sm">
+                {workflow.label}
+              </Label>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+```
+
+### Interaction Preferences Step
+```typescript
+const PreferencesStep = ({ configuration, setConfiguration }: StepProps) => {
+  const handlePreferenceChange = (field: string, value: any) => {
+    setConfiguration(prev => ({
+      ...prev,
+      userPreferences: {
+        ...prev.userPreferences,
+        [field]: value
+      }
+    }));
+  };
+  
+  const handleNotificationChange = (field: string, checked: boolean) => {
+    setConfiguration(prev => ({
+      ...prev,
+      userPreferences: {
+        ...prev.userPreferences,
+        notificationSettings: {
+          ...prev.userPreferences.notificationSettings,
+          [field]: checked
+        }
+      }
+    }));
+  };
+  
+  return (
+    <div className="space-y-6">
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Communication Style</h3>
+        <div className="grid grid-cols-1 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="communicationStyle">Preferred Communication Style</Label>
+            <Select
+              value={configuration.userPreferences.communicationStyle}
+              onValueChange={(value) => handlePreferenceChange('communicationStyle', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select communication style" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="formal">Formal - Professional and structured</SelectItem>
+                <SelectItem value="casual">Casual - Friendly and conversational</SelectItem>
+                <SelectItem value="technical">Technical - Detailed and precise</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="responseLength">Response Length</Label>
+            <Select
+              value={configuration.userPreferences.responseLength}
+              onValueChange={(value) => handlePreferenceChange('responseLength', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select response length" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="brief">Brief - Quick and concise</SelectItem>
+                <SelectItem value="detailed">Detailed - Thorough explanations</SelectItem>
+                <SelectItem value="comprehensive">Comprehensive - Complete information</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="explanationLevel">Explanation Level</Label>
+            <Select
+              value={configuration.userPreferences.explanationLevel}
+              onValueChange={(value) => handlePreferenceChange('explanationLevel', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select explanation level" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="basic">Basic - Simple explanations</SelectItem>
+                <SelectItem value="intermediate">Intermediate - Moderate detail</SelectItem>
+                <SelectItem value="expert">Expert - Technical depth</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Interaction Preferences</h3>
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="inputMethod">Preferred Input Method</Label>
+            <Select
+              value={configuration.userPreferences.preferredInputMethod}
+              onValueChange={(value) => handlePreferenceChange('preferredInputMethod', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select input method" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="voice">Voice - Speak to JARVIS®</SelectItem>
+                <SelectItem value="text">Text - Type commands</SelectItem>
+                <SelectItem value="both">Both - Voice and text</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="autoSuggestions"
+              checked={configuration.userPreferences.autoSuggestions}
+              onCheckedChange={(checked) => handlePreferenceChange('autoSuggestions', checked)}
+            />
+            <Label htmlFor="autoSuggestions">Enable auto-suggestions</Label>
+          </div>
+          
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="confirmBeforeActions"
+              checked={configuration.userPreferences.confirmBeforeActions}
+              onCheckedChange={(checked) => handlePreferenceChange('confirmBeforeActions', checked)}
+            />
+            <Label htmlFor="confirmBeforeActions">Confirm before executing actions</Label>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Notification Settings</h3>
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <Label htmlFor="systemAlerts">System Alerts</Label>
+              <p className="text-sm text-muted-foreground">Important system notifications</p>
+            </div>
+            <Switch
+              id="systemAlerts"
+              checked={configuration.userPreferences.notificationSettings.systemAlerts}
+              onCheckedChange={(checked) => handleNotificationChange('systemAlerts', checked)}
+            />
+          </div>
+          
+          <div className="flex items-center justify-between">
+            <div>
+              <Label htmlFor="workflowUpdates">Workflow Updates</Label>
+              <p className="text-sm text-muted-foreground">Progress on active workflows</p>
+            </div>
+            <Switch
+              id="workflowUpdates"
+              checked={configuration.userPreferences.notificationSettings.workflowUpdates}
+              onCheckedChange={(checked) => handleNotificationChange('workflowUpdates', checked)}
+            />
+          </div>
+          
+          <div className="flex items-center justify-between">
+            <div>
+              <Label htmlFor="agentCompletions">Agent Completions</Label>
+              <p className="text-sm text-muted-foreground">When agents complete tasks</p>
+            </div>
+            <Switch
+              id="agentCompletions"
+              checked={configuration.userPreferences.notificationSettings.agentCompletions}
+              onCheckedChange={(checked) => handleNotificationChange('agentCompletions', checked)}
+            />
+          </div>
+          
+          <div className="flex items-center justify-between">
+            <div>
+              <Label htmlFor="urgentAlerts">Urgent Alerts</Label>
+              <p className="text-sm text-muted-foreground">High-priority notifications only</p>
+            </div>
+            <Switch
+              id="urgentAlerts"
+              checked={configuration.userPreferences.notificationSettings.urgentAlerts}
+              onCheckedChange={(checked) => handleNotificationChange('urgentAlerts', checked)}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+```
+
+---
+
+## 3. AI Behavior Customization
+
+### Custom Instructions Component
+```typescript
+const AIBehaviorStep = ({ configuration, setConfiguration }: StepProps) => {
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [aiSuggestions, setAiSuggestions] = useState<string>("");
+  
+  const handleCustomInstructionsChange = (value: string) => {
+    setConfiguration(prev => ({
+      ...prev,
+      userPreferences: {
+        ...prev.userPreferences,
+        customInstructions: value
+      }
+    }));
+  };
+  
+  const generateAISuggestions = async () => {
+    setIsGenerating(true);
+    try {
+      const prompt = `Based on the user profile:
+      - Role: ${configuration.userProfile.role}
+      - Department: ${configuration.userProfile.department}
+      - Experience: ${configuration.userProfile.experienceLevel}
+      - Communication Style: ${configuration.userPreferences.communicationStyle}
+      
+      Generate personalized instructions for JARVIS® META BRAIN to optimize the user experience for insurance workflows. Include specific preferences for:
+      1. How to present information
+      2. Workflow priorities
+      3. Communication preferences
+      4. Decision-making approach
+      
+      Keep suggestions professional and insurance-industry focused.`;
+      
+      const response = await getAIResponse(prompt);
+      setAiSuggestions(response.text);
+    } catch (error) {
+      console.error('Failed to generate AI suggestions:', error);
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+  
+  const applyAISuggestions = () => {
+    handleCustomInstructionsChange(aiSuggestions);
+    setAiSuggestions("");
+  };
+  
+  return (
+    <div className="space-y-6">
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Custom Instructions for JARVIS®</h3>
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="customInstructions">Custom Instructions</Label>
+            <Textarea
+              id="customInstructions"
+              placeholder="Enter specific instructions for how JARVIS® should interact with you and handle your workflows..."
+              className="h-[200px]"
+              value={configuration.userPreferences.customInstructions}
+              onChange={(e) => handleCustomInstructionsChange(e.target.value)}
+            />
+            <p className="text-sm text-muted-foreground">
+              These instructions help JARVIS® understand your preferences and work style. 
+              Be specific about how you want information presented and workflows handled.
+            </p>
+          </div>
+          
+          <div className="border rounded-lg p-4 bg-muted/50">
+            <div className="flex items-center gap-2 mb-2">
+              <Sparkles className="w-4 h-4" />
+              <h4 className="font-medium">AI-Powered Suggestions</h4>
+            </div>
+            <p className="text-sm text-muted-foreground mb-3">
+              Get personalized instruction suggestions based on your profile and preferences.
+            </p>
+            <Button
+              onClick={generateAISuggestions}
+              disabled={isGenerating}
+              variant="outline"
+              size="sm"
+            >
+              {isGenerating ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Generating...
+                </>
+              ) : (
+                <>
+                  <Sparkles className="w-4 h-4 mr-2" />
+                  Generate Suggestions
+                </>
+              )}
+            </Button>
+          </div>
+          
+          {aiSuggestions && (
+            <div className="border rounded-lg p-4 space-y-3">
+              <h4 className="font-medium">AI-Generated Suggestions</h4>
+              <div className="text-sm bg-muted/50 p-3 rounded">
+                {aiSuggestions}
+              </div>
+              <div className="flex gap-2">
+                <Button onClick={applyAISuggestions} size="sm">
+                  Apply Suggestions
+                </Button>
+                <Button onClick={() => setAiSuggestions("")} variant="outline" size="sm">
+                  Dismiss
+                </Button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+      
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Workflow-Specific Instructions</h3>
+        <div className="space-y-4">
+          {configuration.userProfile.primaryWorkflows.map(workflow => (
+            <div key={workflow} className="space-y-2">
+              <Label htmlFor={`workflow-${workflow}`}>
+                {getWorkflowLabel(workflow)} Instructions
+              </Label>
+              <Textarea
+                id={`workflow-${workflow}`}
+                placeholder={`Enter specific instructions for ${getWorkflowLabel(workflow)} workflows...`}
+                className="h-[80px]"
+                value={configuration.userPreferences.workflowInstructions[workflow] || ''}
+                onChange={(e) => {
+                  setConfiguration(prev => ({
+                    ...prev,
+                    userPreferences: {
+                      ...prev.userPreferences,
+                      workflowInstructions: {
+                        ...prev.userPreferences.workflowInstructions,
+                        [workflow]: e.target.value
+                      }
+                    }
+                  }));
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+```
+
+---
+
+## 4. Enterprise Configuration
+
+### Company Setup Component
+```typescript
+const EnterpriseStep = ({ configuration, setConfiguration }: StepProps) => {
+  const handleEnterpriseChange = (field: string, value: any) => {
+    setConfiguration(prev => ({
+      ...prev,
+      enterpriseConfig: {
+        ...prev.enterpriseConfig,
+        [field]: value
+      }
+    }));
+  };
+  
+  const handleIntegrationChange = (field: string, value: string) => {
+    setConfiguration(prev => ({
+      ...prev,
+      enterpriseConfig: {
+        ...prev.enterpriseConfig,
+        integrations: {
+          ...prev.enterpriseConfig.integrations,
+          [field]: value
+        }
+      }
+    }));
+  };
+  
+  const handleWorkflowToggle = (workflow: string, enabled: boolean) => {
+    setConfiguration(prev => ({
+      ...prev,
+      enterpriseConfig: {
+        ...prev.enterpriseConfig,
+        workflowCustomizations: {
+          ...prev.enterpriseConfig.workflowCustomizations,
+          [workflow]: enabled
+        }
+      }
+    }));
+  };
+  
+  return (
+    <Tabs defaultValue="company" className="w-full">
+      <TabsList className="grid w-full grid-cols-4">
+        <TabsTrigger value="company">Company</TabsTrigger>
+        <TabsTrigger value="integrations">Integrations</TabsTrigger>
+        <TabsTrigger value="workflows">Workflows</TabsTrigger>
+        <TabsTrigger value="compliance">Compliance</TabsTrigger>
+      </TabsList>
+      
+      <TabsContent value="company" className="space-y-4">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="companyName">Company Name</Label>
+            <Input
+              id="companyName"
+              value={configuration.enterpriseConfig.companyName}
+              onChange={(e) => handleEnterpriseChange('companyName', e.target.value)}
+              placeholder="Enter company name"
+            />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="industry">Industry</Label>
+            <Select
+              value={configuration.enterpriseConfig.industry}
+              onValueChange={(value) => handleEnterpriseChange('industry', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select industry" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="property-casualty">Property & Casualty</SelectItem>
+                <SelectItem value="life-health">Life & Health</SelectItem>
+                <SelectItem value="commercial-lines">Commercial Lines</SelectItem>
+                <SelectItem value="personal-lines">Personal Lines</SelectItem>
+                <SelectItem value="reinsurance">Reinsurance</SelectItem>
+                <SelectItem value="specialty-lines">Specialty Lines</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="companySize">Company Size</Label>
+            <Select
+              value={configuration.enterpriseConfig.companySize}
+              onValueChange={(value) => handleEnterpriseChange('companySize', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select company size" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="small">Small (1-50 employees)</SelectItem>
+                <SelectItem value="medium">Medium (51-500 employees)</SelectItem>
+                <SelectItem value="large">Large (501-5000 employees)</SelectItem>
+                <SelectItem value="enterprise">Enterprise (5000+ employees)</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+        
+        <div className="space-y-2">
+          <Label>Business Units</Label>
+          <div className="grid grid-cols-2 gap-2">
+            {businessUnitOptions.map(unit => (
+              <div key={unit.id} className="flex items-center space-x-2">
+                <Checkbox
+                  id={unit.id}
+                  checked={configuration.enterpriseConfig.businessUnits.includes(unit.label)}
+                  onCheckedChange={(checked) => {
+                    if (checked) {
+                      handleEnterpriseChange('businessUnits', [
+                        ...configuration.enterpriseConfig.businessUnits,
+                        unit.label
+                      ]);
+                    } else {
+                      handleEnterpriseChange('businessUnits',
+                        configuration.enterpriseConfig.businessUnits.filter(u => u !== unit.label)
+                      );
+                    }
+                  }}
+                />
+                <Label htmlFor={unit.id} className="text-sm">{unit.label}</Label>
+              </div>
+            ))}
+          </div>
+        </div>
+      </TabsContent>
+      
+      <TabsContent value="integrations" className="space-y-4">
+        <div className="grid grid-cols-1 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="crm">CRM System</Label>
+            <Select
+              value={configuration.enterpriseConfig.integrations.crm}
+              onValueChange={(value) => handleIntegrationChange('crm', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select CRM system" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="salesforce">Salesforce</SelectItem>
+                <SelectItem value="microsoft-dynamics">Microsoft Dynamics</SelectItem>
+                <SelectItem value="hubspot">HubSpot</SelectItem>
+                <SelectItem value="pipedrive">Pipedrive</SelectItem>
+                <SelectItem value="custom">Custom System</SelectItem>
+                <SelectItem value="none">None</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="policyAdmin">Policy Administration System</Label>
+            <Select
+              value={configuration.enterpriseConfig.integrations.policyAdmin}
+              onValueChange={(value) => handleIntegrationChange('policyAdmin', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select policy admin system" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="guidewire-policycenter">Guidewire PolicyCenter</SelectItem>
+                <SelectItem value="duck-creek-policy">Duck Creek Policy</SelectItem>
+                <SelectItem value="sapiens-pace">Sapiens PACE</SelectItem>
+                <SelectItem value="insurity-policy">Insurity Policy</SelectItem>
+                <SelectItem value="custom">Custom System</SelectItem>
+                <SelectItem value="none">None</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="claimsSystem">Claims Management System</Label>
+            <Select
+              value={configuration.enterpriseConfig.integrations.claimsSystem}
+              onValueChange={(value) => handleIntegrationChange('claimsSystem', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select claims system" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="guidewire-claimcenter">Guidewire ClaimCenter</SelectItem>
+                <SelectItem value="duck-creek-claims">Duck Creek Claims</SelectItem>
+                <SelectItem value="mitchell-claims">Mitchell Claims</SelectItem>
+                <SelectItem value="sapiens-claims">Sapiens Claims</SelectItem>
+                <SelectItem value="custom">Custom System</SelectItem>
+                <SelectItem value="none">None</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="documentManagement">Document Management</Label>
+            <Select
+              value={configuration.enterpriseConfig.integrations.documentManagement}
+              onValueChange={(value) => handleIntegrationChange('documentManagement', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select document management system" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="onbase">OnBase</SelectItem>
+                <SelectItem value="sharepoint">SharePoint</SelectItem>
+                <SelectItem value="documentum">Documentum</SelectItem>
+                <SelectItem value="box">Box</SelectItem>
+                <SelectItem value="google-drive">Google Drive</SelectItem>
+                <SelectItem value="custom">Custom System</SelectItem>
+                <SelectItem value="none">None</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+      </TabsContent>
+      
+      <TabsContent value="workflows" className="space-y-4">
+        <div className="space-y-4">
+          <h4 className="font-medium">Enable Automated Workflows</h4>
+          {Object.entries(workflowDescriptions).map(([key, description]) => (
+            <div key={key} className="flex items-center justify-between p-3 border rounded-lg">
+              <div>
+                <h5 className="font-medium">{description.title}</h5>
+                <p className="text-sm text-muted-foreground">{description.description}</p>
+              </div>
+              <Switch
+                checked={configuration.enterpriseConfig.workflowCustomizations[key] || false}
+                onCheckedChange={(checked) => handleWorkflowToggle(key, checked)}
+              />
+            </div>
+          ))}
+        </div>
+      </TabsContent>
+      
+      <TabsContent value="compliance" className="space-y-4">
+        <div className="space-y-4">
+          <h4 className="font-medium">Regulatory Compliance Requirements</h4>
+          <div className="grid grid-cols-2 gap-2">
+            {complianceOptions.map(option => (
+              <div key={option.id} className="flex items-center space-x-2">
+                <Checkbox
+                  id={option.id}
+                  checked={configuration.enterpriseConfig.regulatoryCompliance.includes(option.label)}
+                  onCheckedChange={(checked) => {
+                    if (checked) {
+                      handleEnterpriseChange('regulatoryCompliance', [
+                        ...configuration.enterpriseConfig.regulatoryCompliance,
+                        option.label
+                      ]);
+                    } else {
+                      handleEnterpriseChange('regulatoryCompliance',
+                        configuration.enterpriseConfig.regulatoryCompliance.filter(c => c !== option.label)
+                      );
+                    }
+                  }}
+                />
+                <Label htmlFor={option.id} className="text-sm">{option.label}</Label>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="space-y-4">
+          <h4 className="font-medium">Data Sources</h4>
+          <div className="space-y-2">
+            {configuration.enterpriseConfig.dataSourceConnections.map((source, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <Input
+                  value={source}
+                  onChange={(e) => {
+                    const newSources = [...configuration.enterpriseConfig.dataSourceConnections];
+                    newSources[index] = e.target.value;
+                    handleEnterpriseChange('dataSourceConnections', newSources);
+                  }}
+                  placeholder="Enter data source name"
+                />
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    const newSources = configuration.enterpriseConfig.dataSourceConnections.filter((_, i) => i !== index);
+                    handleEnterpriseChange('dataSourceConnections', newSources);
+                  }}
+                >
+                  Remove
+                </Button>
+              </div>
+            ))}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                handleEnterpriseChange('dataSourceConnections', [
+                  ...configuration.enterpriseConfig.dataSourceConnections,
+                  ''
+                ]);
+              }}
+            >
+              Add Data Source
+            </Button>
+          </div>
+        </div>
+      </TabsContent>
+    </Tabs>
+  );
+};
+```
+
+---
+
+## 5. Personalization Persistence
+
+### Storage System
+```typescript
+interface PersonalizationStorage {
+  saveConfiguration(userId: string, config: PersonalizationConfig): Promise<void>;
+  loadConfiguration(userId: string): Promise<PersonalizationConfig | null>;
+  updatePreferences(userId: string, preferences: Partial<UserPreferences>): Promise<void>;
+  getDefaultConfiguration(): PersonalizationConfig;
+}
+
+class LocalPersonalizationStorage implements PersonalizationStorage {
+  private storageKey = 'jarvis-personalization';
+  
+  async saveConfiguration(userId: string, config: PersonalizationConfig): Promise<void> {
+    const key = `${this.storageKey}-${userId}`;
+    localStorage.setItem(key, JSON.stringify({
+      ...config,
+      lastUpdated: new Date().toISOString()
+    }));
+  }
+  
+  async loadConfiguration(userId: string): Promise<PersonalizationConfig | null> {
+    const key = `${this.storageKey}-${userId}`;
+    const stored = localStorage.getItem(key);
+    if (!stored) return null;
+    
+    try {
+      return JSON.parse(stored);
+    } catch (error) {
+      console.error('Failed to parse stored configuration:', error);
+      return null;
+    }
+  }
+  
+  async updatePreferences(userId: string, preferences: Partial<UserPreferences>): Promise<void> {
+    const existing = await this.loadConfiguration(userId);
+    if (existing) {
+      const updated = {
+        ...existing,
+        userPreferences: {
+          ...existing.userPreferences,
+          ...preferences
+        }
+      };
+      await this.saveConfiguration(userId, updated);
+    }
+  }
+  
+  getDefaultConfiguration(): PersonalizationConfig {
+    return {
+      userProfile: {
+        id: '',
+        name: '',
+        role: '',
+        department: '',
+        experienceLevel: 'intermediate',
+        primaryWorkflows: [],
+        accessLevel: 'standard'
+      },
+      userPreferences: {
+        communicationStyle: 'formal',
+        responseLength: 'detailed',
+        explanationLevel: 'intermediate',
+        preferredInputMethod: 'both',
+        autoSuggestions: true,
+        confirmBeforeActions: true,
+        notificationSettings: {
+          systemAlerts: true,
+          workflowUpdates: true,
+          agentCompletions: true,
+          urgentAlerts: true,
+          emailNotifications: false
+        },
+        customInstructions: '',
+        workflowInstructions: {}
+      },
+      enterpriseConfig: {
+        companyName: '',
+        industry: '',
+        companySize: 'medium',
+        businessUnits: [],
+        integrations: {
+          crm: 'none',
+          policyAdmin: 'none',
+          claimsSystem: 'none',
+          documentManagement: 'none',
+          other: []
+        },
+        workflowCustomizations: {},
+        dataSourceConnections: [],
+        regulatoryCompliance: [],
+        dataRetentionPolicies: {},
+        accessControlPolicies: [],
+        auditRequirements: []
+      }
+    };
+  }
+}
+```
+
+---
+
+## 6. Personalization Application
+
+### Context Provider
+```typescript
+const PersonalizationContext = createContext<PersonalizationContextType | null>(null);
+
+export const PersonalizationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [configuration, setConfiguration] = useState<PersonalizationConfig | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const storage = new LocalPersonalizationStorage();
+  
+  useEffect(() => {
+    loadUserConfiguration();
+  }, []);
+  
+  const loadUserConfiguration = async () => {
+    try {
+      const userId = getCurrentUserId(); // Get from auth context
+      const config = await storage.loadConfiguration(userId);
+      setConfiguration(config || storage.getDefaultConfiguration());
+    } catch (error) {
+      console.error('Failed to load personalization:', error);
+      setConfiguration(storage.getDefaultConfiguration());
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
+  const updateConfiguration = async (newConfig: PersonalizationConfig) => {
+    try {
+      const userId = getCurrentUserId();
+      await storage.saveConfiguration(userId, newConfig);
+      setConfiguration(newConfig);
+    } catch (error) {
+      console.error('Failed to save personalization:', error);
+    }
+  };
+  
+  const updatePreferences = async (preferences: Partial<UserPreferences>) => {
+    if (!configuration) return;
+    
+    const updated = {
+      ...configuration,
+      userPreferences: {
+        ...configuration.userPreferences,
+        ...preferences
+      }
+    };
+    
+    await updateConfiguration(updated);
+  };
+  
+  const getPersonalizedResponse = (baseResponse: string): string => {
+    if (!configuration) return baseResponse;
+    
+    const { communicationStyle, responseLength, customInstructions } = configuration.userPreferences;
+    
+    // Apply personalization based on preferences
+    let personalizedResponse = baseResponse;
+    
+    if (communicationStyle === 'casual') {
+      personalizedResponse = personalizedResponse.replace(/Dear/g, 'Hi');
+    } else if (communicationStyle === 'technical') {
+      // Add more technical details
+    }
+    
+    if (responseLength === 'brief') {
+      // Summarize response
+      personalizedResponse = summarizeText(personalizedResponse);
+    }
+    
+    return personalizedResponse;
+  };
+  
+  return (
+    <PersonalizationContext.Provider value={{
+      configuration,
+      isLoading,
+      updateConfiguration,
+      updatePreferences,
+      getPersonalizedResponse
+    }}>
+      {children}
+    </PersonalizationContext.Provider>
+  );
+};
+
+export const usePersonalization = () => {
+  const context = useContext(PersonalizationContext);
+  if (!context) {
+    throw new Error('usePersonalization must be used within PersonalizationProvider');
+  }
+  return context;
+};
+```
+
+---
+
+## 7. Integration with JARVIS® System
+
+### Agent Response Personalization
+```typescript
+const personalizeAgentResponse = (
+  agentResponse: string,
+  agentType: string,
+  userConfig: PersonalizationConfig
+): string => {
+  const { userPreferences } = userConfig;
+  
+  let response = agentResponse;
+  
+  // Apply communication style
+  if (userPreferences.communicationStyle === 'casual') {
+    response = response
+      .replace(/I am pleased to inform you/g, "Good news!")
+      .replace(/I regret to inform you/g, "Unfortunately,")
+      .replace(/Please be advised/g, "Just so you know");
+  } else if (userPreferences.communicationStyle === 'technical') {
+    response = response
+      .replace(/issue/g, "technical issue")
+      .replace(/problem/g, "system exception")
+      .replace(/error/g, "processing error");
+  }
+  
+  // Apply response length preference
+  if (userPreferences.responseLength === 'brief') {
+    response = summarizeResponse(response);
+  } else if (userPreferences.responseLength === 'comprehensive') {
+    response = expandResponse(response, agentType);
+  }
+  
+  // Apply custom instructions
+  if (userPreferences.customInstructions) {
+    response = applyCustomInstructions(response, userPreferences.customInstructions);
+  }
+  
+  // Apply workflow-specific instructions
+  const workflowInstructions = userPreferences.workflowInstructions[agentType];
+  if (workflowInstructions) {
+    response = applyWorkflowInstructions(response, workflowInstructions);
+  }
+  
+  return response;
+};
+```
+
+### Workflow Customization
+```typescript
+const applyWorkflowPersonalization = (
+  workflow: string,
+  config: PersonalizationConfig
+): WorkflowConfiguration => {
+  const { enterpriseConfig, userPreferences } = config;
+  
+  const workflowConfig: WorkflowConfiguration = {
+    enabled: enterpriseConfig.workflowCustomizations[workflow] || false,
+    confirmBeforeActions: userPreferences.confirmBeforeActions,
+    notificationsEnabled: userPreferences.notificationSettings.workflowUpdates,
+    customInstructions: userPreferences.workflowInstructions[workflow] || ''
+  };
+  
+  // Apply enterprise-specific customizations
+  if (enterpriseConfig.companySize === 'enterprise') {
+    workflowConfig.requiresApproval = true;
+    workflowConfig.auditTrail = true;
+  }
+  
+  // Apply regulatory compliance requirements
+  if (enterpriseConfig.regulatoryCompliance.includes('GDPR')) {
+    workflowConfig.dataRetentionDays = 30;
+    workflowConfig.anonymizeData = true;
+  }
+  
+  return workflowConfig;
+};
+```
+
+---
+
+## 8. Testing and Validation
+
+### Personalization Test Scenarios
+```typescript
+const personalizationTests = [
+  {
+    name: "User Profile Configuration",
+    steps: [
+      "Open personalization wizard",
+      "Fill in user profile information",
+      "Select primary workflows",
+      "Save configuration"
+    ],
+    expectedResult: "User profile saved and applied to JARVIS® interactions",
+    validation: [
+      "Profile information persists across sessions",
+      "Workflow preferences affect available options",
+      "Role-based permissions applied correctly"
+    ]
+  },
+  
+  {
+    name: "Communication Style Personalization",
+    steps: [
+      "Set communication style to 'casual'",
+      "Set response length to 'brief'",
+      "Interact with agents",
+      "Verify response style"
+    ],
+    expectedResult: "Agent responses match selected communication preferences",
+    validation: [
+      "Responses use casual language",
+      "Responses are appropriately brief",
+      "Tone matches user preference"
+    ]
+  },
+  
+  {
+    name: "Custom Instructions Application",
+    steps: [
+      "Add custom instructions for specific workflows",
+      "Trigger relevant workflows",
+      "Verify custom instructions are followed"
+    ],
+    expectedResult: "JARVIS® follows custom instructions in responses",
+    validation: [
+      "Custom instructions applied to relevant workflows",
+      "Instructions persist across sessions",
+      "Workflow-specific instructions override general ones"
+    ]
+  },
+  
+  {
+    name: "Enterprise Configuration",
+    steps: [
+      "Configure company information",
+      "Set up system integrations",
+      "Enable workflow customizations",
+      "Apply compliance requirements"
+    ],
+    expectedResult: "Enterprise settings affect system behavior",
+    validation: [
+      "Company branding appears in communications",
+      "Integration settings affect data sources",
+      "Compliance requirements enforced",
+      "Workflow availability matches configuration"
+    ]
+  }
+];
+```
+
+### Success Criteria
+- ✅ Personalization wizard completes successfully with all steps
+- ✅ User preferences persist across browser sessions
+- ✅ Agent responses reflect communication style preferences
+- ✅ Custom instructions are applied to relevant workflows
+- ✅ Enterprise configuration affects system behavior
+- ✅ Notification preferences control alert delivery
+- ✅ Workflow customizations enable/disable features appropriately
+- ✅ AI-generated suggestions provide relevant personalization options
+- ✅ Configuration can be exported and imported
+- ✅ Multiple user profiles can be managed independently
+
+This comprehensive personalization system provides users with extensive customization options for their JARVIS® experience, from basic communication preferences to enterprise-wide configuration settings, ensuring the system adapts to individual work styles and organizational requirements.

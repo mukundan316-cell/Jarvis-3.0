@@ -1,0 +1,227 @@
+ WebSocket connection to 'wss://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/?token=OHzyG0kuaTDm' failed: 
+setupWebSocket @ client:536
+client:536 Uncaught (in promise) 
+ Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+ Global Voice Manager initialized for: Standard browser
+ AgentHierarchy Debug: Object
+ 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+EnhancedDashboard.tsx:336 handlePersonaSwitch called with targetPersona: rachel
+EnhancedDashboard.tsx:337 Current persona before switch: admin
+EnhancedDashboard.tsx:345 Making API call to /api/persona/switch
+EnhancedDashboard.tsx:353 API response status: 200
+EnhancedDashboard.tsx:362 API response result: Object
+EnhancedDashboard.tsx:365 Updating local state to: rachel
+EnhancedDashboard.tsx:369 Invalidating all queries for complete dashboard refresh
+EnhancedDashboard.tsx:561 Briefing trigger from PersonaSwitcher: rachel
+EnhancedDashboard.tsx:396 Persona switch completed successfully
+chunk-RPCDYKBN.js?v=b3ee60ca:521 Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758906261313:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758906261313&v=zuHQAAo82SaVm1aUZSel0:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+chunk-RPCDYKBN.js?v=b3ee60ca:521 Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758906261313:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758906261313&v=zuHQAAo82SaVm1aUZSel0:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+chunk-RPCDYKBN.js?v=b3ee60ca:521 Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758906261313:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758906261313&v=zuHQAAo82SaVm1aUZSel0:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+chunk-RPCDYKBN.js?v=b3ee60ca:521 Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758906261313:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758906261313&v=zuHQAAo82SaVm1aUZSel0:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+GlobalVoiceManager.ts:104 Global Voice Manager: Starting speech for rachel
+chunk-RPCDYKBN.js?v=b3ee60ca:521 Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758906261313:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758906261313&v=zuHQAAo82SaVm1aUZSel0:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+GlobalVoiceManager.ts:133 Global Voice Manager: Using voice: Microsoft Zira - English (United States)
+chunk-RPCDYKBN.js?v=b3ee60ca:521 Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758906261313:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758906261313&v=zuHQAAo82SaVm1aUZSel0:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+chunk-RPCDYKBN.js?v=b3ee60ca:521 Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758906261313:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758906261313&v=zuHQAAo82SaVm1aUZSel0:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+GlobalVoiceManager.ts:174 Global Voice Manager: Speech started for rachel
+chunk-RPCDYKBN.js?v=b3ee60ca:521 Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758906261313:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758906261313&v=zuHQAAo82SaVm1aUZSel0:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+chunk-RPCDYKBN.js?v=b3ee60ca:521 Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758906261313:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758906261313&v=zuHQAAo82SaVm1aUZSel0:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+GlobalVoiceManager.ts:28 Global Voice Manager: Stopping all speech synthesis
+chunk-RPCDYKBN.js?v=b3ee60ca:521 Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758906261313:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758906261313&v=zuHQAAo82SaVm1aUZSel0:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+GlobalVoiceManager.ts:184 Global Voice Manager: Speech error: interrupted
+utterance.onerror @ GlobalVoiceManager.ts:184
+chunk-RPCDYKBN.js?v=b3ee60ca:521 Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758906261313:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758906261313&v=zuHQAAo82SaVm1aUZSel0:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+EnhancedDashboard.tsx:261 Dashboard handleCommand called: Object
+EnhancedDashboard.tsx:194 Command executed successfully, updating activities only
+EnhancedDashboard.tsx:203 🔍 Command Success Debug: Object
+EnhancedDashboard.tsx:244 🚀 Starting agent execution popup with executionId: exec_9DzhFQxdvBXj
+@radix-ui_react-dialog.js?v=b3ee60ca:341 Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+(anonymous) @ @radix-ui_react-dialog.js?v=b3ee60ca:341
+UniversalAgentExecutionPopup.tsx:1853 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758906319092_3nudf3tbm
+GlobalVoiceManager.ts:104 Global Voice Manager: Starting speech for rachel
+GlobalVoiceManager.ts:133 Global Voice Manager: Using voice: Microsoft Zira - English (United States)
+GlobalVoiceManager.ts:174 Global Voice Manager: Speech started for rachel
+UniversalAgentExecutionPopup.tsx:1853 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+UniversalAgentExecutionPopup.tsx:1853 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758906324490_h56aelh2p
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758906325403_rk9bg6rve
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758906326331_zqvdmkv88
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758906327255_otrfzxudd
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758906328186_nzrg7ygkg
+GlobalVoiceManager.ts:178 Global Voice Manager: Speech ended
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758906329135_brlk63dyp
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758906330045_fbd3gh2xo
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758906330972_43vjn0fuw
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758906331907_ffkv3tlmd
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758906332834_9ou4fn7qy
+UniversalAgentExecutionPopup.tsx:1853 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)

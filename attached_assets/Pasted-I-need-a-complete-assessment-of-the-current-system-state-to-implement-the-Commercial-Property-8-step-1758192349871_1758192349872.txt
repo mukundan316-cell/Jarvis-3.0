@@ -1,0 +1,68 @@
+I need a complete assessment of the current system state to implement the Commercial Property 8-step workflow MDP. Please provide detailed answers to these questions:
+
+1. WORKFLOW EXECUTION INFRASTRUCTURE:
+- How does the current processCommand function handle multi-step workflows?
+- Does commercialPropertyWorkflows table track step progression? Show the current schema
+- Can the system execute steps sequentially (1→2→3) automatically?
+- How are step transitions currently handled?
+
+2. HIERARCHICAL POPUP CURRENT STATE:
+- Show the complete UniversalAgentExecutionPopup component code
+- How does it currently populate the 6 layers?
+- Does it support showing different agents for different steps?
+- Can it display parallel agent execution within a layer?
+- Does it update in real-time during execution?
+
+3. AGENT EXECUTION REALITY:
+- Which agents currently exist in the agents table for Commercial Property?
+- Are there system prompts defined for any agents?
+- Does any agent actually call OpenAI/LLM or all mocked?
+- Show example of current agentExecution object structure
+- How is agent selection currently done (hardcoded vs rules-based)?
+
+4. RACHEL'S CURRENT CAPABILITIES:
+- Can Rachel upload ACORD forms now? Show the upload handling
+- Does document parsing extract any real data or return mock?
+- Are there UI components for: risk assessment display, quote viewing, evidence book?
+- How does Rachel trigger workflow execution currently?
+- What happens when Rachel clicks "Process Submission"?
+
+5. DATA PERSISTENCE FOR 8 STEPS:
+- Which tables exist for storing outputs of each step:
+  * Step 1: Email intake - where stored?
+  * Step 2: Parsed ACORD data - where stored?
+  * Step 3: Enrichment data - where stored?
+  * Step 4: Comparative analytics - where stored?
+  * Step 5: Triage decision - where stored?
+  * Step 6: Propensity score - where stored?
+  * Step 7: Quote data - quotes table exists?
+  * Step 8: Integration logs - where stored?
+
+6. ADMIN CONFIGURATION CAPABILITIES:
+- Can Admin create/edit agent system prompts through UI?
+- Are agent selection rules configurable or hardcoded?
+- Can Admin define workflow steps through UI?
+- Show current Admin agent management UI capabilities
+
+7. MISSING COMPONENTS FOR 8-STEP WORKFLOW:
+- Which of these components exist vs need creation:
+  * Evidence Book viewer
+  * Decision Ledger display
+  * Workflow step navigator
+  * Risk assessment dashboard
+  * Quote comparison view
+  * KPI tracking per step
+
+8. UNIVERSAL COMPONENT PATTERNS:
+- Show how Universal components handle persona-specific behavior
+- How do they communicate with backend (REST, WebSocket)?
+- Are there reusable patterns for: progress tracking, data tables, file uploads?
+- How is real-time update handled in existing components?
+
+9. CURRENT BLOCKERS:
+- What's preventing real AI execution today?
+- Are there WebSocket connections set up?
+- Do we have OpenAI API integration code anywhere?
+- What's the biggest technical gap for the 8-step workflow?
+
+Please provide code snippets and specific file locations where relevant. This assessment will help create precise incremental prompts that build on existing infrastructure rather than duplicating work.

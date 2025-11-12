@@ -1,0 +1,171 @@
+You're absolutely right - we need to avoid over-granular agent design and align properly with the JARVIS framework layers. Let me provide a refined agent architecture.
+
+## **Optimal Commercial Property Agent Design**
+
+Please provide this to Replit Agent:
+
+```
+OPTIMAL COMMERCIAL PROPERTY AGENT ARCHITECTURE: Design realistic, properly-layered agents for Commercial Property workflow that extend existing Rachel framework without over-complication.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Create optimal agent design aligned with Process/System/Interface layers
+ANALYZE: Map 8-step CP workflow to appropriate agent types without excessive granularity
+REASON: Agents should be realistic and maintainable, not overly specialized
+SYNTHESIZE: Balanced agent architecture that follows JARVIS framework principles
+CONCLUDE: Minimal, optimal agent set that delivers CP functionality
+
+Part 2: Agent Layer Architecture (Follow JARVIS Framework)
+
+**INTERFACE LAYER (External Interactions)**
+- **Commercial Property Intake Agent**
+  - Capabilities: Email processing, document upload, broker communication
+  - Handles: Steps 1 (Email Intake) and final client communication
+  - Extends: Existing email and broker portal interfaces
+
+**PROCESS LAYER (Business Workflows)**  
+- **CP Submission Orchestrator** 
+  - Capabilities: Workflow coordination, step progression, decision routing
+  - Handles: Overall 8-step workflow management
+  - Extends: Existing Submission Processing Workflow
+
+- **CP Risk Assessment Agent**
+  - Capabilities: COPE analysis, peril evaluation, comparative analytics, appetite triage
+  - Handles: Steps 4-5 (Comparative Analytics, Appetite Triage)  
+  - Extends: Existing Risk Assessment Workflow
+
+- **CP Underwriting Decision Agent**
+  - Capabilities: Propensity scoring, decision support, quote recommendations
+  - Handles: Steps 6-7 (Propensity Scoring, Underwriting Copilot)
+  - Extends: Existing AUW Agent capabilities
+
+**SYSTEM LAYER (Core Processing)**
+- **CP Document Processor**
+  - Capabilities: ACORD form parsing, document classification, data extraction  
+  - Handles: Step 2 (Document Processing)
+  - Extends: Existing Document Processing System
+
+- **CP Data Enrichment Engine**
+  - Capabilities: External API calls, geocoding, peril data, property valuation
+  - Handles: Step 3 (Data Enrichment)
+  - New agent (consolidates multiple external data sources)
+
+- **CP Integration Manager**
+  - Capabilities: PolicyCenter integration, core system updates, analytics tracking
+  - Handles: Step 8 (Core Integration) 
+  - Extends: Existing Integration Manager
+
+Part 3: Agent Configuration Extensions (Reuse Existing)
+
+**Extend Current Agents (No New Agents Needed):**
+```json
+{
+  "name": "Submission Processing Workflow",
+  "type": "Process Agent", 
+  "capabilities": [
+    "document_verification",
+    "completeness_check",
+    "routing",
+    "commercial_property_coordination"
+  ],
+  "submissionTypes": ["general_liability", "commercial_property"]
+}
+
+{
+  "name": "Risk Assessment Workflow", 
+  "type": "Process Agent",
+  "capabilities": [
+    "risk_scoring",
+    "exposure_analysis", 
+    "portfolio_impact",
+    "cope_analysis",
+    "appetite_evaluation"
+  ]
+}
+```
+
+**Create Minimal New Agents (Only 2-3 Essential):**
+```json
+{
+  "name": "CP Data Enrichment Engine",
+  "type": "System Agent",
+  "layer": "System",
+  "capabilities": [
+    "external_api_integration",
+    "geocoding_services", 
+    "peril_data_aggregation",
+    "property_valuation"
+  ]
+}
+```
+
+Part 4: Workflow Orchestration Logic
+
+**Single Process Agent Manages Entire Flow:**
+```
+CP Submission Orchestrator (Process Layer):
+├── Invoke CP Document Processor (System)
+├── Invoke CP Data Enrichment Engine (System) 
+├── Invoke CP Risk Assessment Agent (Process)
+├── Invoke CP Underwriting Decision Agent (Process)
+└── Invoke CP Integration Manager (System)
+```
+
+**Not This (Over-Granular):**
+```
+❌ Email Intake Agent
+❌ ACORD Form Parser Agent  
+❌ Geocoding Agent
+❌ Flood Zone Agent
+❌ Fire Station Distance Agent
+❌ Crime Index Agent
+❌ Similar Risk Finder Agent
+❌ Rate Comparison Agent
+❌ TIV Validator Agent
+❌ Appetite Rules Engine Agent
+❌ Override Handler Agent
+❌ Broker Behavior Agent
+❌ Hit Rate Calculator Agent
+❌ Quote Strategy Agent
+❌ PolicyCenter Connector Agent
+❌ Analytics Sink Agent
+```
+
+Part 5: Implementation Requirements
+
+**Agent Responsibilities (Right-Sized):**
+- Each agent handles 1-2 workflow steps maximum
+- Agents combine related functionality (not micro-services)
+- Business logic stays in Process layer
+- System operations stay in System layer
+- External interfaces stay in Interface layer
+
+**Configuration-Driven Capabilities:**
+- Agent capabilities stored in database (not hard-coded)
+- Workflow routing based on submission type
+- Decision logic configurable through Meta Brain settings
+
+**Integration with Existing Framework:**
+- All agents work through UniversalAgentExecutionPopup
+- Rachel's persona controls agent access
+- Existing activity logging captures all operations
+- Voice commands work with new agent names
+
+Part 6: Success Criteria
+
+**Optimal Agent Count:** 6 total agents (3 extended, 3 new)
+**Layer Distribution:** 1 Interface, 3 Process, 2 System  
+**Workflow Coverage:** Complete 8-step CP processing
+**Framework Integration:** Uses existing orchestration patterns
+**Maintenance:** Each agent has clear, bounded responsibilities
+
+Please provide:
+1. **Final agent architecture** with proper layer alignment
+2. **Agent configuration specifications** for each agent
+3. **Workflow orchestration logic** showing agent interaction
+4. **Extension strategy** for existing agents
+5. **Database schema updates** needed for new capabilities
+
+Focus on optimal, maintainable agent design that delivers Commercial Property functionality without over-engineering.
+```
+
+This approach creates a balanced architecture - powerful enough to handle the 8-step workflow but simple enough to maintain and extend. The key is having each agent handle related functionality rather than creating micro-agents for every small operation.

@@ -1,0 +1,84 @@
+Step 1: Intelligent Email (Submission Capture) - Detailed Steps
+Pre-Conditions:
+
+Broker sends email to rachel@abcinsurance.com with attachments
+Email contains ACORD forms, SOV files, loss runs, property photos
+System is monitoring inbox for new broker emails
+
+Detailed Execution Steps:
+1.1 Email Receipt & Channel Agent Processing
+
+System detects new email in monitored mailbox
+Channel Agent extracts: sender email, subject, timestamp, attachment count
+Correlates sender domain to known broker (wtkbrokers.com → WTK Brokers)
+Checks for existing account/submission threads (deduplication)
+Creates initial email record in database with status: "processing"
+Logs broker metadata: name, contact info, historical relationship data
+
+1.2 Security Filter Agent Processing
+
+Scans all attachments for viruses/malware
+Validates file types against allowed list (PDF, XLSX, CSV, JPG, PNG)
+Checks file sizes against limits (25MB per attachment)
+Redacts any PII found in email content
+Flags suspicious content for quarantine
+Updates email record with security scan results
+
+1.3 Document Classifier Agent Processing
+
+Analyzes each attachment filename and content
+Identifies ACORD forms: detects ACORD-125, ACORD-140, ACORD-27 types
+Recognizes SOV files by keywords: "schedule of values", "property schedule"
+Classifies loss runs via: "loss run", "claims history", "claim report"
+Identifies property photos by file extensions and image content
+Assigns confidence scores to each classification (0-1 scale)
+Stores document classification results in database
+
+1.4 Intent Extractor Agent Processing
+
+Extracts business information from classified documents:
+
+Line of Business (Commercial Property, Auto, etc.)
+Insured company name and address
+Policy effective dates and renewal information
+Coverage types and limits requested
+Property values and exposure amounts
+
+
+Calculates overall extraction confidence based on available data
+Determines completeness score for submission requirements
+
+1.5 Decision Routing Logic
+
+Evaluates overall confidence score from all agents
+High confidence (≥0.8): Route to STP (Straight-Through Processing)
+Low confidence (<0.8): Route to HITL (Human-in-the-Loop) review
+Creates appropriate next actions based on routing decision
+
+Expected Outputs:
+For STP Cases (High Confidence):
+
+Intake Ticket created with: submission ID, insured name, broker info, LOBs, indexed files
+Queue Event: "submission.created" for automatic Step 2 progression
+Action Item: "2 emails successfully auto-processed and ready for next workflow step"
+
+For HITL Cases (Low Confidence):
+
+Intake Ticket created with confidence flags and missing data indicators
+HITL Task: "Review field corrections for [Insured Name] submission (AI confidence: 65%)"
+System pauses progression until human review completed
+
+Database Updates:
+
+Email status: "processing" → "completed" or "requires_review"
+Document classifications stored in JSONB field
+Extracted intent data persisted for next steps
+Audit trail logged for all agent actions
+
+SLA Compliance:
+
+Complete processing within 60 seconds
+Real-time progress updates via WebSocket
+Error handling with fallback to manual review
+
+This is how Step 1 should function end-to-end. Which specific part of these granular steps needs verification or implementation?

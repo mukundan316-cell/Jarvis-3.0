@@ -1,0 +1,136 @@
+client:536 WebSocket connection to 'wss://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/?token=Ny_27Nv1tNwn' failed: 
+setupWebSocket @ client:536
+(anonymous) @ client:531
+client:536 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'wss://localhost:undefined/?token=Ny_27Nv1tNwn' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+setupWebSocket @ client:536
+fallback @ client:509
+(anonymous) @ client:555
+chunk-RPCDYKBN.js?v=b3ee60ca:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+GlobalVoiceManager.ts:15 Global Voice Manager initialized for: Standard browser
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: true, error: null, hierarchyConfig: undefined, hasLayers: undefined, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+UniversalAgentExecutionPopup.tsx:1901 🔌 UniversalAgentExecutionPopup WebSocket status: {executionId: undefined, isConnected: false, error: null}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: true, error: null, hierarchyConfig: undefined, hasLayers: undefined, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: true, error: null, hierarchyConfig: undefined, hasLayers: undefined, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: true, error: null, hierarchyConfig: undefined, hasLayers: undefined, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: true, error: null, hierarchyConfig: undefined, hasLayers: undefined, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: true, error: null, hierarchyConfig: undefined, hasLayers: undefined, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+EnhancedDashboard.tsx:336 handlePersonaSwitch called with targetPersona: rachel
+EnhancedDashboard.tsx:337 Current persona before switch: admin
+EnhancedDashboard.tsx:345 Making API call to /api/persona/switch
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'admin', isLoading: false, error: null, hierarchyConfig: {…}, hasLayers: 6, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+AgentHierarchy.tsx:80 AgentHierarchy Debug: {currentPersona: 'rachel', isLoading: true, error: null, hierarchyConfig: undefined, hasLayers: undefined, …}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+EnhancedDashboard.tsx:353 API response status: 200
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: false, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'admin'}
+EnhancedDashboard.tsx:362 API response result: {success: true, activePersona: 'rachel'}
+EnhancedDashboard.tsx:365 Updating local state to: rachel
+EnhancedDashboard.tsx:369 Invalidating all queries for complete dashboard refresh
+EnhancedDashboard.tsx:563 Briefing trigger from PersonaSwitcher: rachel
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: true, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: false, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+EnhancedDashboard.tsx:396 Persona switch completed successfully
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+GlobalVoiceManager.ts:104 Global Voice Manager: Starting speech for rachel
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+GlobalVoiceManager.ts:133 Global Voice Manager: Using voice: Microsoft Zira - English (United States)
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+GlobalVoiceManager.ts:174 Global Voice Manager: Speech started for rachel
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+EnhancedDashboard.tsx:400 Setting briefing persona to: rachel
+EnhancedDashboard.tsx:402 Setting showBriefing to true
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+GlobalVoiceManager.ts:178 Global Voice Manager: Speech ended
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null
+PersonaBriefingSystem.tsx:1215 PersonaBriefingSystem render check: {isVisible: true, hasCurrentBriefing: true, isDataLoading: false, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1225 PersonaConfig check: {personaConfig: null, detectedPersona: 'rachel'}
+PersonaBriefingSystem.tsx:1227 PersonaBriefingSystem: No personaConfig found, returning null

@@ -1,0 +1,236 @@
+ WebSocket connection to 'wss://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/?token=bbhCoCKfbhIm' failed: 
+setupWebSocket @ client:536
+client:536 Uncaught (in promise) 
+ Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+ Global Voice Manager initialized for: Standard browser
+ AgentHierarchy Debug: Object
+ 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+ AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+chunk-RPCDYKBN.js?v=75b82a16:521 Warning: Function components cannot be given refs. Attempts to access this ref will fail. Did you mean to use React.forwardRef()?
+
+Check the render method of `Primitive.button.SlotClone`.
+    at Badge (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/ui/badge.tsx:35:18)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=75b82a16:79:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=75b82a16:56:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=75b82a16:79:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=75b82a16:56:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-KADFZHNY.js?v=75b82a16:1929:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=75b82a16:198:13
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at Popper (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-KADFZHNY.js?v=75b82a16:1921:11)
+    at Tooltip (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=75b82a16:107:5)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=75b82a16:63:5)
+    at UniversalEnhancedTooltip (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/UniversalEnhancedTooltip.tsx:71:3)
+    at DatabaseTooltip (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/UniversalEnhancedTooltip.tsx:289:3)
+    at DatabaseSimpleTooltip (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/UniversalEnhancedTooltip.tsx:359:3)
+    at div
+    at VersionIndicators (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/UniversalAgentDirectory.tsx?t=1759052330248:218:3)
+    at div
+    at div
+    at div
+    at _c3 (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/ui/card.tsx:45:12)
+    at div
+    at _c (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/ui/card.tsx:20:11)
+    at div
+    at div
+    at UniversalAgentDirectory (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/UniversalAgentDirectory.tsx?t=1759052330248:391:3)
+    at div
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at Presence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-YE5GEEUL.js?v=75b82a16:24:11)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=75b82a16:175:13
+    at _c5 (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/ui/tabs.tsx:72:12)
+    at div
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=75b82a16:53:7
+    at div
+    at UniversalTabManager (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/UniversalTabManager.tsx:39:3)
+    at div
+    at JarvisCommandCenter (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/JarvisCommandCenter.tsx?t=1759052330248:50:21)
+    at div
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at Presence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-YE5GEEUL.js?v=75b82a16:24:11)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=75b82a16:175:13
+    at _c5 (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/ui/tabs.tsx:72:12)
+    at div
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=75b82a16:53:7
+    at div
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1759052330248:77:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=75b82a16:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=75b82a16:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1759052330248&v=ymKPO61PnuqqvRw4vC0ZQ:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=75b82a16:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=75b82a16:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=75b82a16:521
+@radix-ui_react-dialog.js?v=75b82a16:341 Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+(anonymous) @ @radix-ui_react-dialog.js?v=75b82a16:341
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+AgentHierarchy.tsx:92 AgentHierarchy Debug: Object
+@radix-ui_react-dialog.js?v=75b82a16:341 Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+(anonymous) @ @radix-ui_react-dialog.js?v=75b82a16:341
+@radix-ui_react-dialog.js?v=75b82a16:341 Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+(anonymous) @ @radix-ui_react-dialog.js?v=75b82a16:341
+/api/agents/73/tests:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+VersionHistoryPanel.tsx:335 Uncaught TypeError: versions.map is not a function
+    at VersionHistoryPanel (VersionHistoryPanel.tsx:335:26)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=75b82a16:11548:26)
+    at mountIndeterminateComponent (chunk-RPCDYKBN.js?v=75b82a16:14926:21)
+    at beginWork (chunk-RPCDYKBN.js?v=75b82a16:15914:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=75b82a16:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=75b82a16:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=75b82a16:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=75b82a16:19765:15)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=75b82a16:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=75b82a16:19137:13)
+VersionHistoryPanel.tsx:335 Uncaught TypeError: versions.map is not a function
+    at VersionHistoryPanel (VersionHistoryPanel.tsx:335:26)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=75b82a16:11548:26)
+    at mountIndeterminateComponent (chunk-RPCDYKBN.js?v=75b82a16:14926:21)
+    at beginWork (chunk-RPCDYKBN.js?v=75b82a16:15914:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=75b82a16:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=75b82a16:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=75b82a16:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=75b82a16:19765:15)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=75b82a16:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=75b82a16:19137:13)
+chunk-RPCDYKBN.js?v=75b82a16:14032 The above error occurred in the <VersionHistoryPanel> component:
+
+    at VersionHistoryPanel (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/VersionHistoryPanel.tsx:41:3)
+    at div
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at Presence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-YE5GEEUL.js?v=75b82a16:24:11)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=75b82a16:175:13
+    at _c5 (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/ui/tabs.tsx:72:12)
+    at div
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=75b82a16:53:7
+    at div
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-BNESBGCN.js?v=75b82a16:59:7
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=75b82a16:79:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=75b82a16:56:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-3UMUPYER.js?v=75b82a16:57:5
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-dialog.js?v=75b82a16:237:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-dialog.js?v=75b82a16:160:58
+    at Presence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-YE5GEEUL.js?v=75b82a16:24:11)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-dialog.js?v=75b82a16:151:64
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=75b82a16:79:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-2K77HOHX.js?v=75b82a16:56:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-BNESBGCN.js?v=75b82a16:258:22
+    at Presence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-YE5GEEUL.js?v=75b82a16:24:11)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at DialogPortal (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-dialog.js?v=75b82a16:113:11)
+    at _c3 (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/ui/dialog.tsx:52:12)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at Dialog (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-dialog.js?v=75b82a16:54:5)
+    at UniversalAgentModal (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/UniversalAgentModal.tsx?t=1759052330248:83:39)
+    at div
+    at UniversalAgentDirectory (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/UniversalAgentDirectory.tsx?t=1759052330248:391:3)
+    at div
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at Presence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-YE5GEEUL.js?v=75b82a16:24:11)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=75b82a16:175:13
+    at _c5 (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/ui/tabs.tsx:72:12)
+    at div
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=75b82a16:53:7
+    at div
+    at UniversalTabManager (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/UniversalTabManager.tsx:39:3)
+    at div
+    at JarvisCommandCenter (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/JarvisCommandCenter.tsx?t=1759052330248:50:21)
+    at div
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at Presence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-YE5GEEUL.js?v=75b82a16:24:11)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=75b82a16:175:13
+    at _c5 (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/ui/tabs.tsx:72:12)
+    at div
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-AXMZZQ2X.js?v=75b82a16:42:13
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=75b82a16:53:7
+    at div
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1759052330248:77:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=75b82a16:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=75b82a16:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1759052330248&v=ymKPO61PnuqqvRw4vC0ZQ:33:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=75b82a16:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=75b82a16:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=75b82a16:2805:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ chunk-RPCDYKBN.js?v=75b82a16:14032
+chunk-RPCDYKBN.js?v=75b82a16:9129 Uncaught TypeError: versions.map is not a function
+    at VersionHistoryPanel (VersionHistoryPanel.tsx:335:26)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=75b82a16:11548:26)
+    at mountIndeterminateComponent (chunk-RPCDYKBN.js?v=75b82a16:14926:21)
+    at beginWork (chunk-RPCDYKBN.js?v=75b82a16:15914:22)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=75b82a16:19753:22)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=75b82a16:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=75b82a16:19137:13)
+    at renderRootSync (chunk-RPCDYKBN.js?v=75b82a16:19116:15)
+    at recoverFromConcurrentError (chunk-RPCDYKBN.js?v=75b82a16:18736:28)
+    at performSyncWorkOnRoot (chunk-RPCDYKBN.js?v=75b82a16:18879:28)

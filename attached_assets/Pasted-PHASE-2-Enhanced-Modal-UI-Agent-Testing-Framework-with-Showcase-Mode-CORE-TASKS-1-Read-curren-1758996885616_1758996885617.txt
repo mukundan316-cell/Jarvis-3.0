@@ -1,0 +1,74 @@
+PHASE 2: Enhanced Modal UI & Agent Testing Framework with Showcase Mode
+CORE TASKS:
+1. Read current CreateNewAgentModal.tsx and preserve all existing form functionality
+2. Transform modal into 4-tab interface while keeping all current fields intact:
+   - Tab 1: "Configuration" (all existing form content - NO CHANGES)
+   - Tab 2: "Testing & QA" (new AgentTestingPanel component)
+   - Tab 3: "Lifecycle" (new AgentLifecyclePanel component)  
+   - Tab 4: "Version History" (new VersionHistoryPanel component, disabled for new agents)
+3. Create new testing table in shared/schema.ts:
+   - agent_test_results (id, agent_id, test_type, test_name, status, results, executed_at)
+4. Build AgentTestingPanel component with:
+   - Pre-configured test templates from ConfigService
+   - Test execution interface
+   - Results display with pass/fail indicators
+   - Integration with existing agent types and layers
+5. Build AgentLifecyclePanel component with:
+   - Maturity level progression display
+   - Dependency mapping interface
+   - Retirement planning controls
+   - Resource usage projections
+6. Build VersionHistoryPanel component with:
+   - Version timeline display
+   - Configuration diff viewer
+   - One-click rollback functionality
+   - Change impact analysis
+7. Extend UniversalExplainableAIGovernance Management tab:
+   - Add "Agent Lifecycle Management" card to existing grid (change from 2 to 3 columns)
+   - Display pending retirement agents
+   - Show version conflicts requiring attention
+   - Maintain existing Risk Assessment and Audit Trail cards
+8. Add testing API endpoints to server/routes.ts:
+   - POST /api/agents/:id/tests (execute test)
+   - GET /api/agents/:id/tests (get test results)
+   - GET /api/tests/templates (get test templates)
+SHOWCASE MODE TASKS:
+9. Enhance AgentTestingPanel with showcase mode:
+   - When showcase enabled, show optimized test results alongside real results
+   - Display "Current vs Potential" comparison views
+   - Add learning curve projections showing testing improvement over time
+   - Include AI-powered test optimization suggestions
+10. Enhance AgentLifecyclePanel with showcase projections:
+    - Show optimal lifecycle progression timelines
+    - Display enhanced maturity advancement predictions
+    - Include resource optimization projections
+    - Add dependency optimization recommendations
+11. Enhance VersionHistoryPanel with showcase insights:
+    - Show version performance comparisons with enhancement overlays
+    - Display configuration optimization suggestions
+    - Include rollback impact analysis with enhanced outcomes
+    - Add predictive version planning with showcase projections
+12. Add showcase mode controls to modal:
+    - Small toggle in modal header: "Show Potential" 
+    - When enabled, all panels show enhanced data with clear visual differentiation
+    - Include tooltip explaining showcase mode: "Showing optimized projections based on current data"
+VALIDATION CRITERIA:
+- Modal opens with existing "Configuration" tab showing all current fields
+- New tabs are functional and properly integrated
+- Testing framework can execute and display results
+- Version history shows meaningful data for existing agents
+- AI Governance Management tab includes lifecycle section without breaking existing layout
+- All existing modal functionality preserved (agent creation/editing works exactly as before)
+- All modal tabs respect showcase mode setting
+- Enhanced projections in testing show realistic improvement potential
+- Lifecycle projections demonstrate achievable optimization goals
+- Visual distinction between real and enhanced data is clear
+DELIVERABLES:
+- Enhanced CreateNewAgentModal.tsx with 4-tab interface
+- AgentTestingPanel, AgentLifecyclePanel, VersionHistoryPanel components
+- Updated shared/schema.ts with agent_test_results table
+- Extended UniversalExplainableAIGovernance.tsx Management tab
+- Testing API endpoints in server/routes.ts
+- ConfigService integration for test templates and lifecycle rules
+- Complete showcase mode integration across all modal tabs
+- Visual indicators and controls for showcase mode

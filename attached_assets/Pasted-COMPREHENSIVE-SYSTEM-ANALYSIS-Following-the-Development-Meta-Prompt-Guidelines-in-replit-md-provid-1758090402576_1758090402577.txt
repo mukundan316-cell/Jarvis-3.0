@@ -1,0 +1,95 @@
+COMPREHENSIVE SYSTEM ANALYSIS: Following the Development Meta-Prompt Guidelines in replit.md, provide a complete analysis of the JARVIS IntelliAgent V2.0 system before we proceed with TypeScript fixes and Commercial Property workflow integration.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Need complete understanding of current system state, architecture, and integration patterns
+ANALYZE: Review all code, database, configuration, and documentation for current capabilities and constraints
+REASON: Before making any changes, understand existing patterns to maintain architectural integrity
+SYNTHESIZE: Provide comprehensive analysis covering all aspects needed for safe incremental development
+CONCLUDE: Identify specific approach for TypeScript fixes and Commercial Property integration
+
+Part 2: Required Analysis Areas
+
+**1. AGENT ARCHITECTURE & DISTRIBUTION**
+- Current agent count: Experience(X), Meta Brain(X), Role(X), Process(X), System(X), Interface(X) 
+- Agent access by persona: Admin(X agents), Rachel(X agents), John(X agents)
+- Which agents have "invokingPersonas" vs global access?
+- Current Rachel-specific workflow agents and their capabilities
+- Existing commercial property or underwriting-related agents
+
+**2. TYPESCRIPT ERROR DETAILS**
+- List all 18 specific TypeScript errors with file names and line numbers
+- server/routes.ts errors: exact req.user property issues, activity object problems, email structure issues
+- server/storage.ts errors: missing imports, query chaining problems, method implementation issues
+- Impact assessment: which errors block compilation vs runtime issues?
+
+**3. DATABASE SCHEMA ANALYSIS**
+- Current submissions table structure and Commercial Property field support
+- Evidence_book, decision_ledger, risk_sheets table existence/structure
+- Effective-dating pattern implementation for business configurations
+- Audit trail implementation across all 24 tables
+- Database migration and versioning approach
+
+**4. CURRENT INTEGRATION PATTERNS**
+- UniversalAgentExecutionPopup: how does it work and what parameters does it accept?
+- Morning briefing system: how are persona-specific briefings generated?
+- Voice command processing: current patterns and command routing
+- Email system: template structure and delivery tracking implementation
+- Activity logging: current patterns and what gets tracked
+
+**5. SECURITY & CONFIGURATION IMPLEMENTATION**
+- How are business rules/thresholds currently stored and managed?
+- Authentication flow details and session management patterns
+- Environment variable usage and secrets management approach
+- Input validation patterns currently implemented
+- Error handling and logging patterns
+
+**6. PERSONA WORKFLOW PATTERNS**
+- Rachel's current dashboard components and KPI sources
+- How persona switching affects UI and available agents
+- Current workflow execution patterns through UniversalAgentExecutionPopup
+- Voice authentication and persona-specific responses
+- Activity feed and recent actions implementation
+
+**7. PERFORMANCE & SCALABILITY CURRENT STATE**
+- Database indexing currently implemented
+- Query optimization patterns in use
+- Caching implementation (if any)
+- Resource monitoring and alerting setup
+- Load testing or performance monitoring in place
+
+**8. TESTING & QUALITY INFRASTRUCTURE**
+- Current test files and testing patterns
+- Type checking configuration and CI/CD setup
+- Error monitoring and debugging tools available
+- Development workflow and deployment process
+
+**9. COMMERCIAL PROPERTY READINESS ASSESSMENT**
+- Which existing agents can support the 8-step workflow (Email Intake, Document Processing, etc.)?
+- Database schema gaps for COPE data, TIV, MPL/PML calculations
+- Integration points with existing UniversalAgentExecutionPopup
+- Voice command patterns that could support commercial property workflows
+
+**10. CONFIGURATION MANAGEMENT**
+- How are agent configurations stored and versioned?
+- Business rule engine implementation (if any)
+- Feature flag or environment-specific configuration patterns
+- ACORD standards implementation or preparation
+
+**Part 3: Implementation Standards Assessment**
+- Are there existing patterns that violate the "NO HARD-CODING" principle?
+- Current audit trail completeness for regulatory compliance
+- Security implementation gaps based on insurance industry requirements
+- Modular design adherence in current codebase
+
+**Part 4: Risk Assessment**
+- Breaking changes risk for TypeScript fixes
+- Dependencies and integration points that could be affected
+- Rollback strategy for incremental changes
+- Testing requirements for each incremental change
+
+Please provide this comprehensive analysis so we can create a systematic incremental approach that:
+1. Fixes all technical debt safely
+2. Extends Rachel's capabilities without breaking existing functionality  
+3. Implements Commercial Property workflow as modular "Lego blocks"
+4. Maintains insurance industry compliance and audit requirements
+5. Follows all meta-prompt guidelines for quality and security

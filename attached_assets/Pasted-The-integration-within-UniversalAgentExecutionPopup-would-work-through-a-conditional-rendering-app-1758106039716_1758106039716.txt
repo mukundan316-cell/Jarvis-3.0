@@ -1,0 +1,78 @@
+The integration within UniversalAgentExecutionPopup would work through a **conditional rendering approach** based on workflow type. Here's how the framework would handle it:
+
+## **Current UniversalAgentExecutionPopup Structure**
+```typescript
+// Current: Single execution view
+<UniversalAgentExecutionPopup>
+  <HierarchicalAgentView>
+    <ExperienceLayer />
+    <MetaBrainLayer />
+    <RoleLayer />
+    <ProcessLayer />
+    <SystemLayer />
+    <InterfaceLayer />
+  </HierarchicalAgentView>
+</UniversalAgentExecutionPopup>
+```
+
+## **Enhanced Framework Architecture**
+```typescript
+// Enhanced: Conditional workflow rendering
+<UniversalAgentExecutionPopup>
+  {workflowType === 'commercial-property' ? (
+    <StepBasedWorkflowView>
+      <WorkflowStepper currentStep={currentStep} totalSteps={8} />
+      <StepFormContainer>
+        <InteractiveStepForm stepNumber={currentStep} />
+      </StepFormContainer>
+      <HierarchicalAgentView mode="step-specific">
+        {/* Shows agents relevant to current step */}
+        <ProcessLayer agents={getStepAgents(currentStep).process} />
+        <SystemLayer agents={getStepAgents(currentStep).system} />
+        <InterfaceLayer agents={getStepAgents(currentStep).interface} />
+      </HierarchicalAgentView>
+    </StepBasedWorkflowView>
+  ) : (
+    <StandardAgentExecutionView>
+      {/* Existing single-execution pattern */}
+      <HierarchicalAgentView />
+    </StandardAgentExecutionView>
+  )}
+</UniversalAgentExecutionPopup>
+```
+
+## **Step Execution Flow**
+1. **Rachel triggers CP workflow** → Popup detects `workflowType: 'commercial-property'`
+2. **Step 1 displays** → Email Intake form + relevant agents (CP Intake Agent, Document Parser, Upload Interface)
+3. **User completes form** → Data validates + saves + triggers Process/System agents for that step
+4. **Step completes** → Agents execute in hierarchy view + step advances to Step 2
+5. **Step 2 displays** → Document Processing form + different agents (CP Document Processor, OCR Engine, Mapping Interface)
+6. **Process repeats** through all 8 steps with step-specific forms and agents
+
+## **Key Integration Points**
+
+**Workflow Detection:**
+- `workflowType` determined by submission content or explicit command
+- Same popup component handles both standard and CP workflows
+
+**Agent Mapping:**
+- Each step shows subset of agents relevant to that step
+- Experience/Meta Brain/Role layers remain consistent
+- Process/System/Interface layers change per step
+
+**Data Flow:**
+- Form data collected at each step
+- Validates before allowing progression
+- Persists to database with workflow state
+- Agents execute with real form data (not mock data)
+
+## **Technical Implementation**
+
+The popup would need these enhancements:
+1. **Step configuration system** - Database-driven step definitions
+2. **Dynamic form rendering** - Forms based on step configuration
+3. **Step-specific agent filtering** - Show relevant agents per step
+4. **Workflow state management** - Track progress and enable navigation
+5. **Data validation and persistence** - Real CRUD operations
+
+This approach maintains the existing popup architecture while adding step-based workflow capability through conditional rendering rather than building a separate system.

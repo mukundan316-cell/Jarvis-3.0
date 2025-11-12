@@ -1,0 +1,38 @@
+- **Jarvis Admin Workflow:**
+  - **Step 1: Authentication**
+    - Trigger: Voice command ("Jarvis, show admin dashboard") or text input ("Jarvis@Hexaware.com"/"Admin").
+    - Response: "Welcome to the Jarvis Admin Dashboard. Authentication successful. Loading your workspace."
+    - Persistence: Store authentication event in the `sessions` table (userId, activePersona: "Admin", createdAt).
+    - Error Handling: If authentication fails, display "Authentication failed. Please try again or use an alternative method." Log in `errors` table.
+  - **Step 2: View System Metrics**
+    - Trigger: Voice command ("Show metrics") or pill ("Show Metrics").
+    - **Agent Triggered:** Data Analysis Agent (System Layer).
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Data Analysis Agent (System): Fetching Meta Brain metrics..." (with loading spinner), then "Here are the current Meta Brain performance metrics: CPU usage at 45%, response time at 200ms, task completion rate at 98%." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table (input, response, mode, persona, agent: "Data Analysis", timestamp).
+    - Error Handling: If metrics retrieval fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 3: View Agent Hierarchy**
+    - Trigger: Voice command ("Show agent hierarchy") or pill ("View Hierarchy").
+    - **Agent Triggered:** None (this is a UI rendering step, not involving a Process/System/Interface Agent).
+    - Response: "Displaying the agent hierarchy: Meta Brain Layer → Cognitive Layer (AUW, IT Support Analyst) → Process Layer (Risk Assessment, Logging Tickets)."
+    - Persistence: Store command and response in the `commands` table.
+    - Error Handling: If hierarchy data is unavailable, display "An error occurred while fetching the agent hierarchy. Please try again." Log in `errors` table.
+  - **Step 4: Create New Agent**
+    - Trigger: Voice command ("Create a new agent") or pill ("Create Agent").
+    - **Agent Triggered:** None (this opens a form; the actual agent creation would involve a System Agent, but that’s not triggered here).
+    - Response: "I’ve opened the New Agent Factory form. Please provide the agent name, role, and configuration."
+    - Persistence: Store command and response in the `commands` table. On form submission, store new agent in the `agents` table (name, type, config, createdAt).
+    - Error Handling: If form submission fails, display "An error occurred while creating the agent. Please try again." Log in `errors` table.
+  - **Step 5: Check Integrations**
+    - Trigger: Voice command ("Check integrations") or pill ("Check Integrations").
+    - **Agent Triggered:** Data Analysis Agent (System Layer) for integration status checks.
+    - **Popup Display:** Opens next to Interaction Mode section. Shows: "Data Analysis Agent (System): Checking integration status..." (with loading spinner), then "Salesforce integration is active. Duck Creek integration is active. All systems are operational." Auto-closes after 5 seconds.
+    - Response: Displayed in the popup as above.
+    - Persistence: Store command, response, and agent details in the `commands` table.
+    - Error Handling: If an integration check fails, display in popup: "Agent execution failed. Please try again." Log in `errors` table.
+  - **Step 6: Persona Switching**
+    - Trigger: Voice command ("Jarvis, Rachel here") or manual text input ("Jarvis, Rachel here").
+    - **Agent Triggered:** None (persona switching is a session management task, not involving a Process/System/Interface Agent).
+    - Response: "Switching to Rachel Thompson’s AUW dashboard."
+    - Persistence: Update `sessions` table (activePersona: "Rachel Thompson"). Log switch in `activities` table.
+    - Error Handling: If switching fails, display "An error occurred while switching personas. Please try again." Log in `errors` table.

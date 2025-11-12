@@ -1,0 +1,1 @@
+ALTER TABLE "dashboard_kpis" ADD CONSTRAINT "dashboard_kpis_kpi_name_unique" UNIQUE("kpi_name");

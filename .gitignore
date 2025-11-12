@@ -1,0 +1,58 @@
+# Dependencies
+node_modules
+package-lock.json
+
+# Build outputs
+dist
+server/public
+
+# Environment variables (NEVER commit secrets!)
+.env
+.env.local
+.env.production
+
+# Database exports (too large for Git, store separately)
+database_export.sql
+database_backup.sql
+database_backup.sql.gz
+*.sql.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Replit files (auto-generated)
+.replit.nix
+.cache
+.config
+generated-icon.png
+.breakpoints
+.upm
+
+# TypeScript
+*.tsbuildinfo
+vite.config.ts.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.tmp
+.temp
+*.tar.gz
+
+# Test coverage
+coverage
+
+# Git files
+.git

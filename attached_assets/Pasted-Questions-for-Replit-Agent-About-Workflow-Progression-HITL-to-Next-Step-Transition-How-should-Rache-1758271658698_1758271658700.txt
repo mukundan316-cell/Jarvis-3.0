@@ -1,0 +1,31 @@
+Questions for Replit Agent About Workflow Progression
+HITL to Next Step Transition:
+How should Rachel progress from HITL review to Step 2 (Intelligent Ingestion)?
+- When she approves/overrides in the HITL modal, does this automatically trigger Step 2?
+- Should the "2 emails successfully auto-processed and ready for next workflow step" action item be the trigger for the 8-step workflow?
+- Where is the "Start 8-Step Underwriting Process" action that would begin the sequential popup workflow?
+Action Item Duplication Issue:
+There are duplicate/overlapping action items:
+- "Review 13 emails that failed automatic processing" (opens existing email review popup)
+- "Review field corrections for Willis submission" (HITL task)
+- "2 emails successfully auto-processed and ready for next workflow step" (progression indicator)
+
+How should these be consolidated for clear user experience?
+- Should the individual HITL tasks replace the general "Review Failed Emails"?
+- How does Rachel know which action progresses the workflow vs just reviews individual items?
+Workflow State Management:
+When emails are processed through Step 1 (Email Capture), what triggers the transition to Step 2?
+- Should successful email processing automatically create "Begin Step 2: Intelligent Ingestion" action items?
+- How are processed emails converted to submissions that enter the 8-step workflow?
+- Where does Rachel see "Start Underwriting Process for [Broker Submission]" actions?
+Expected User Experience Fix:
+The ideal flow should be:
+1. Rachel clicks "Review field corrections for Willis submission" → HITL modal opens
+2. She approves/corrects the data → HITL completes
+3. System creates "Begin underwriting for Willis submission" action item
+4. Rachel clicks that → Step 1 popup opens showing 6-layer email processing
+5. Step 1 completes → Step 2 popup auto-opens showing ingestion processing
+6. Continue through all 8 steps with 6-layer visibility
+
+Is this workflow progression currently implemented?
+The core issue is that HITL completion isn't triggering the next workflow step creation. We need clear action items that progress the workflow forward rather than just reviewing individual components.

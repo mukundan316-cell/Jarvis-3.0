@@ -1,0 +1,598 @@
+ WebSocket connection to 'wss://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/?token=HC9I4NdFCfWU' failed: 
+setupWebSocket @ client:536
+client:536 Uncaught (in promise) 
+ Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+ Global Voice Manager initialized for: Standard browser
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ handlePersonaSwitch called with targetPersona: rachel
+ Current persona before switch: admin
+ Making API call to /api/persona/switch
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ API response status: 200
+ API response result: Object
+ Updating local state to: rachel
+ Invalidating all queries for complete dashboard refresh
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Briefing trigger from PersonaSwitcher: rachel
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758904180261:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758904180261&v=3n9RsEHQjV9y_0hNOVf6r:32:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+ AgentHierarchy Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758904180261:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758904180261&v=3n9RsEHQjV9y_0hNOVf6r:32:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+ Persona switch completed successfully
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758904180261:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758904180261&v=3n9RsEHQjV9y_0hNOVf6r:32:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758904180261:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758904180261&v=3n9RsEHQjV9y_0hNOVf6r:32:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+ Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758904180261:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758904180261&v=3n9RsEHQjV9y_0hNOVf6r:32:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Global Voice Manager: Starting speech for rachel
+ Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758904180261:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758904180261&v=3n9RsEHQjV9y_0hNOVf6r:32:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+ Global Voice Manager: Using voice: Microsoft Zira - English (United States)
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758904180261:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758904180261&v=3n9RsEHQjV9y_0hNOVf6r:32:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+ Global Voice Manager: Speech started for rachel
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758904180261:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758904180261&v=3n9RsEHQjV9y_0hNOVf6r:32:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758904180261:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758904180261&v=3n9RsEHQjV9y_0hNOVf6r:32:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+ Global Voice Manager: Stopping all speech synthesis
+ Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758904180261:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758904180261&v=3n9RsEHQjV9y_0hNOVf6r:32:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+ Global Voice Manager: Speech error: interrupted
+utterance.onerror @ GlobalVoiceManager.ts:130
+ Warning: Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+    at AnimatePresence (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=b3ee60ca:7800:26)
+    at PersonaBriefingSystem (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/components/PersonaBriefingSystem.tsx:93:3)
+    at div
+    at EnhancedDashboard (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/pages/EnhancedDashboard.tsx?t=1758904180261:76:20)
+    at Route (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:323:16)
+    at Switch (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=b3ee60ca:379:17)
+    at Router (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/src/App.tsx?t=1758904180261&v=3n9RsEHQjV9y_0hNOVf6r:32:42)
+    at Provider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=b3ee60ca:38:15)
+    at TooltipProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=b3ee60ca:63:5)
+    at QueryClientProvider (https://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=b3ee60ca:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=b3ee60ca:521
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Dashboard handleCommand called: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Command executed successfully, updating activities only
+ 🔍 Command Success Debug: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🚀 Starting agent execution popup with executionId: exec_C0U4lfWfF7da
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+(anonymous) @ @radix-ui_react-dialog.js?v=b3ee60ca:341
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ WebSocket connection established: client_1758904249565_06569ky62
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Global Voice Manager: Starting speech for rachel
+ Global Voice Manager: Using voice: Microsoft Zira - English (United States)
+ Global Voice Manager: Speech started for rachel
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ WebSocket connection established: client_1758904255711_9hw7rttr3
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ WebSocket connection established: client_1758904256634_y8bsryb57
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ WebSocket connection established: client_1758904257553_9a6qghf2a
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ WebSocket connection established: client_1758904258484_jibhbty98
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ Global Voice Manager: Speech ended
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ WebSocket connection established: client_1758904259405_4y60scowm
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ WebSocket connection established: client_1758904260365_d60m19n7b
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+ 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:278 WebSocket connection established: client_1758904261280_337kjr664
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1770 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+/api/jarvis/agents/status:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+activities:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: Object
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfig: {…}, companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, layersCount: 6}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfig: {…}, companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, layersCount: 6}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfig: {…}, companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, layersCount: 6}
+UniversalAgentExecutionPopup.tsx:1798 🔍 UniversalAgentExecutionPopup unified config: {hierarchyConfig: {…}, companyName: 'Markel Insurance', agentsDataKeys: Array(6), experienceLayer: {…}, layersCount: 6}

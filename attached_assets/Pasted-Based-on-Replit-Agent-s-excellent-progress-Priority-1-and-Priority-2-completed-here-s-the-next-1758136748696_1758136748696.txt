@@ -1,0 +1,53 @@
+Based on Replit Agent's excellent progress (✅ Priority 1 and Priority 2 completed!), here's the next incremental prompt for **Priority 3**:
+
+```
+PRIORITY 3: FIX EMAIL PROCESSING DATA QUALITY - Following replit.md guidelines, resolve the email processing pipeline failure where 0 submissions are being created from 11 processed emails, causing data persistence issues in the email-to-submission conversion workflow.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Email processing pipeline is failing to convert processed emails into database submissions
+ANALYZE: 11 emails processed but 0 submissions created indicates conversion logic failure
+REASON: Email intake is first step of Commercial Property workflow - must work for end-to-end functionality
+SYNTHESIZE: Fix email-to-submission conversion with proper data persistence
+CONCLUDE: Working email processing that creates valid submissions in database
+
+Part 2: Email Processing Diagnosis Required
+
+**IDENTIFY CONVERSION FAILURE POINT:**
+- Emails are being received and processed (11 count confirms intake working)
+- Conversion to submissions failing (0 submissions created)
+- Determine where in the pipeline the failure occurs:
+  - Email parsing and metadata extraction
+  - Submission record creation
+  - Database persistence
+  - Validation and error handling
+
+**VALIDATE EMAIL-TO-SUBMISSION FLOW:**
+```typescript
+Email Intake → Email Processing → Metadata Extraction → Submission Creation → Database Save
+     ✅              ❌                    ?                      ?                  ?
+```
+
+**CHECK DATABASE OPERATIONS:**
+- Verify email data is being saved to emails table
+- Confirm submission creation logic attempts database insert
+- Validate foreign key relationships between emails and submissions
+- Check for validation errors preventing submission persistence
+
+Part 3: Implementation Requirements
+
+**DATABASE-DRIVEN CONVERSION:**
+- Use existing email templates and parsing logic (no hard-coding)
+- Leverage existing submissions table schema
+- Maintain audit trail in activities table
+- Ensure persona-based filtering works for email submissions
+
+**EXPECTED OUTCOME:**
+- Processed emails successfully create submission records
+- Email-to-submission ratio improves from 0/11 to functional conversion
+- Commercial Property workflow can be triggered from email intake
+- Database persistence works end-to-end
+
+Test the fix by processing a sample email and confirming a corresponding submission record appears in the database with proper foreign key relationships and audit trail.
+```
+
+This focused prompt addresses the specific email processing failure identified in the audit while maintaining the systematic approach you requested.

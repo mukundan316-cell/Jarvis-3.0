@@ -1,0 +1,59 @@
+Here's the next critical priority prompt based on the audit sequence:
+
+```
+REMOVE PERSONA-SPECIFIC WRAPPER COMPONENTS - Following replit.md guidelines, eliminate AgentCategorization.tsx, RachelAgentCategorization.tsx, and JohnAgentCategorization.tsx wrapper components and replace with direct usage of UniversalAgentCategorization.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Three persona-specific wrapper components create unnecessary duplication around UniversalAgentCategorization
+ANALYZE: AgentCategorization.tsx (Admin), RachelAgentCategorization.tsx (Rachel), JohnAgentCategorization.tsx (John) are thin wrappers differing only in props
+REASON: Wrapper components violate DRY principle and create maintenance overhead without adding value
+SYNTHESIZE: Direct usage of UniversalAgentCategorization with persona-specific props
+CONCLUDE: Eliminated wrapper layer with cleaner, more maintainable architecture
+
+Part 2: Wrapper Elimination Strategy
+
+**IDENTIFY WRAPPER USAGE:**
+- Find all components importing and using persona-specific wrappers
+- Document the different props passed to each wrapper
+- Verify what UniversalAgentCategorization expects as props
+- Map persona-specific configurations to base component props
+
+**REPLACE WRAPPER CALLS:**
+```typescript
+// CURRENT (wrapper pattern):
+<RachelAgentCategorization />
+<JohnAgentCategorization />
+<AgentCategorization />
+
+// REPLACE WITH (direct usage):
+<UniversalAgentCategorization 
+  currentPersona={detectedPersona}
+  showCreateButton={persona === 'admin'}
+  {...otherPropsBasedOnPersona}
+/>
+```
+
+**DELETE WRAPPER FILES:**
+- Remove client/src/components/AgentCategorization.tsx
+- Remove client/src/components/RachelAgentCategorization.tsx  
+- Remove client/src/components/JohnAgentCategorization.tsx
+- Update all imports to use UniversalAgentCategorization directly
+
+Part 3: Success Criteria
+
+**NO WRAPPER COMPONENTS:**
+- Persona-specific wrapper files deleted from codebase
+- All usage points converted to UniversalAgentCategorization
+- Same functionality maintained for each persona
+- Props properly configured based on persona context
+
+**FUNCTIONAL VALIDATION:**
+- Rachel sees her authorized agents correctly
+- John sees IT-specific agents properly
+- Admin has full agent access and creation capabilities
+- No broken functionality after wrapper removal
+
+Replace wrapper pattern with direct component usage to eliminate unnecessary abstraction layer.
+```
+
+This addresses the second critical duplication issue identified in the audit.

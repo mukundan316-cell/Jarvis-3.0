@@ -1,0 +1,878 @@
+# Email System & Agent Execution Recreation Prompt
+
+## Overview
+Create a comprehensive email generation and management system that gets triggered by the "Send Email" command in Rachel's JARVIS® workspace. This system includes intelligent agent execution, email composition, sending simulation, and inbox management for tracking all communications.
+
+---
+
+## 1. Email Generator Agent Architecture
+
+### Core Agent Structure
+```typescript
+interface EmailGeneratorAgent {
+  // Agent identification
+  id: string;
+  name: "Email Generator Agent";
+  type: "process";
+  status: "active" | "generating" | "complete";
+  
+  // Email generation capabilities
+  templates: EmailTemplate[];
+  recipientDatabase: BrokerContact[];
+  attachmentManager: AttachmentSystem;
+  
+  // Integration points
+  submissionContext: SubmissionData;
+  workflowTrigger: WorkflowType;
+  userPreferences: EmailPreferences;
+}
+
+interface EmailTemplate {
+  id: string;
+  type: "documentation" | "quote" | "claims" | "followup" | "custom";
+  subject: string;
+  content: string;
+  requiredFields: string[];
+  attachments: string[];
+  brokerType: string[];
+}
+```
+
+### Agent Execution Flow
+1. **Command Recognition**: Detect "Send Email" command from voice or text input
+2. **Context Analysis**: Determine email type based on current workflow
+3. **Template Selection**: Choose appropriate email template
+4. **Data Population**: Fill template with submission-specific information
+5. **Recipient Resolution**: Match broker contact information
+6. **Content Generation**: Generate personalized email content
+7. **Attachment Preparation**: Gather required documents
+8. **Review Stage**: Present email to Rachel for approval
+9. **Sending Simulation**: Execute email sending process
+10. **Inbox Storage**: Save sent email to inbox system
+
+---
+
+## 2. Email Templates System
+
+### Documentation Request Template
+```typescript
+const documentationTemplate: EmailTemplate = {
+  id: "doc-request-001",
+  type: "documentation",
+  subject: "Additional Documentation Required - Policy Application {{REFERENCE_NUMBER}}",
+  content: `Dear {{BROKER_NAME}},
+
+I hope this email finds you well. I am writing regarding the recent policy application submitted to our underwriting department for {{PROPERTY_ADDRESS}}.
+
+After conducting our initial review, we require the following additional documentation to proceed with the underwriting assessment:
+
+{{MISSING_DOCUMENTS_LIST}}
+
+Please provide these documents at your earliest convenience to avoid any delays in processing. Our underwriting team is ready to expedite the review once we receive the complete documentation.
+
+Timeline for submission: {{DEADLINE_DATE}}
+
+If you have any questions or need clarification on any of the requested documents, please don't hesitate to contact me directly at this email or {{PHONE_NUMBER}}.
+
+Thank you for your continued partnership.
+
+Best regards,
+{{UNDERWRITER_NAME}}
+{{TITLE}}
+{{COMPANY_NAME}}
+Automated via JARVIS® META BRAIN`,
+  requiredFields: [
+    "BROKER_NAME", "PROPERTY_ADDRESS", "MISSING_DOCUMENTS_LIST", 
+    "DEADLINE_DATE", "UNDERWRITER_NAME", "TITLE", "COMPANY_NAME", "PHONE_NUMBER"
+  ],
+  attachments: ["Required_Documents_Checklist.pdf", "Application_Guidelines.pdf"],
+  brokerType: ["all"]
+};
+```
+
+### Quote Generation Template
+```typescript
+const quoteTemplate: EmailTemplate = {
+  id: "quote-001",
+  type: "quote",
+  subject: "Commercial Property Insurance Quote - {{QUOTE_REFERENCE}}",
+  content: `Dear {{BROKER_NAME}},
+
+Thank you for your commercial property insurance inquiry. I am pleased to provide you with a competitive quote for your client's property at {{PROPERTY_ADDRESS}}.
+
+QUOTE DETAILS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Quote Reference: {{QUOTE_REFERENCE}}
+Annual Premium: {{ANNUAL_PREMIUM}}
+Coverage Period: {{COVERAGE_PERIOD}}
+Property Value: {{PROPERTY_VALUE}}
+Policy Type: {{POLICY_TYPE}}
+Effective Date: {{EFFECTIVE_DATE}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+COVERAGE HIGHLIGHTS:
+{{COVERAGE_DETAILS}}
+
+RISK ASSESSMENT SUMMARY:
+{{RISK_SUMMARY}}
+
+This quote includes comprehensive coverage with competitive terms based on our detailed risk assessment. All policy documents, terms & conditions, and schedule are attached for your review.
+
+IMPORTANT NOTES:
+• Quote validity: 30 days from issue date
+• Premium payment terms: {{PAYMENT_TERMS}}
+• Policy inception subject to final underwriting approval
+• All coverage subject to policy terms and conditions
+
+Please don't hesitate to contact me if you require any clarification or have additional questions about this quote.
+
+We look forward to providing coverage for your client.
+
+Best regards,
+{{UNDERWRITER_NAME}}
+{{TITLE}}
+{{COMPANY_NAME}}
+Direct Line: {{PHONE_NUMBER}}
+Email: {{EMAIL_ADDRESS}}
+
+Powered by JARVIS® META BRAIN Intelligent Underwriting`,
+  requiredFields: [
+    "BROKER_NAME", "PROPERTY_ADDRESS", "QUOTE_REFERENCE", "ANNUAL_PREMIUM",
+    "COVERAGE_PERIOD", "PROPERTY_VALUE", "POLICY_TYPE", "EFFECTIVE_DATE",
+    "COVERAGE_DETAILS", "RISK_SUMMARY", "PAYMENT_TERMS", "UNDERWRITER_NAME",
+    "TITLE", "COMPANY_NAME", "PHONE_NUMBER", "EMAIL_ADDRESS"
+  ],
+  attachments: [
+    "Quote_{{QUOTE_REFERENCE}}.pdf",
+    "Terms_and_Conditions.pdf", 
+    "Policy_Schedule.pdf",
+    "Coverage_Summary.pdf"
+  ],
+  brokerType: ["all"]
+};
+```
+
+### Claims Communication Template
+```typescript
+const claimsTemplate: EmailTemplate = {
+  id: "claims-001",
+  type: "claims",
+  subject: "Claims Assessment Update - {{PROPERTY_ADDRESS}}",
+  content: `Dear {{BROKER_NAME}},
+
+I am writing to provide you with an update regarding the claims assessment for the property at {{PROPERTY_ADDRESS}}.
+
+CLAIMS HISTORY SUMMARY:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+{{CLAIMS_HISTORY_DETAILS}}
+
+Total Claims Value: {{TOTAL_CLAIMS_VALUE}}
+Claims Frequency: {{CLAIMS_FREQUENCY}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RISK ASSESSMENT:
+Based on our comprehensive claims analysis, this property has been classified as {{RISK_CLASSIFICATION}}.
+
+UNDERWRITING DECISION:
+{{UNDERWRITING_DECISION}}
+
+ADDITIONAL REQUIREMENTS:
+{{ADDITIONAL_REQUIREMENTS}}
+
+Please review the attached detailed claims analysis report. If you have any questions about this assessment or would like to discuss risk mitigation strategies, please contact me directly.
+
+Best regards,
+{{UNDERWRITER_NAME}}
+{{TITLE}}
+{{COMPANY_NAME}}
+
+Analyzed by JARVIS® META BRAIN Claims Intelligence`,
+  requiredFields: [
+    "BROKER_NAME", "PROPERTY_ADDRESS", "CLAIMS_HISTORY_DETAILS", 
+    "TOTAL_CLAIMS_VALUE", "CLAIMS_FREQUENCY", "RISK_CLASSIFICATION",
+    "UNDERWRITING_DECISION", "ADDITIONAL_REQUIREMENTS", "UNDERWRITER_NAME",
+    "TITLE", "COMPANY_NAME"
+  ],
+  attachments: [
+    "Claims_Analysis_Report.pdf",
+    "Risk_Assessment_Summary.pdf",
+    "Underwriting_Guidelines.pdf"
+  ],
+  brokerType: ["all"]
+};
+```
+
+---
+
+## 3. Agent Execution Logic
+
+### Command Processing System
+```typescript
+class EmailAgentExecutor {
+  private templates: Map<string, EmailTemplate> = new Map();
+  private brokerDatabase: BrokerContact[] = [];
+  private currentSubmission: SubmissionData | null = null;
+  
+  constructor() {
+    this.loadTemplates();
+    this.loadBrokerDatabase();
+  }
+  
+  async executeEmailCommand(
+    command: string, 
+    context: WorkflowContext
+  ): Promise<EmailExecution> {
+    
+    // Step 1: Parse command and determine intent
+    const emailIntent = this.parseEmailIntent(command, context);
+    
+    // Step 2: Select appropriate template
+    const template = this.selectTemplate(emailIntent);
+    
+    // Step 3: Gather contextual data
+    const submissionData = await this.gatherSubmissionData(context);
+    
+    // Step 4: Populate template with data
+    const populatedEmail = await this.populateTemplate(template, submissionData);
+    
+    // Step 5: Resolve recipient information
+    const recipientInfo = await this.resolveRecipient(submissionData);
+    
+    // Step 6: Prepare attachments
+    const attachments = await this.prepareAttachments(template, submissionData);
+    
+    // Step 7: Create email execution object
+    const emailExecution: EmailExecution = {
+      id: this.generateExecutionId(),
+      template: template,
+      recipient: recipientInfo,
+      subject: populatedEmail.subject,
+      content: populatedEmail.content,
+      attachments: attachments,
+      status: 'ready_for_review',
+      createdAt: new Date(),
+      submissionReference: submissionData.id
+    };
+    
+    return emailExecution;
+  }
+  
+  private parseEmailIntent(command: string, context: WorkflowContext): EmailIntent {
+    // Analyze current workflow context
+    if (context.activeWorkflow === 'documentation_request') {
+      return {
+        type: 'documentation',
+        priority: 'high',
+        brokerType: context.brokerInfo.type
+      };
+    }
+    
+    if (context.activeWorkflow === 'quote_generation') {
+      return {
+        type: 'quote',
+        priority: 'normal',
+        brokerType: context.brokerInfo.type
+      };
+    }
+    
+    if (context.activeWorkflow === 'claims_review') {
+      return {
+        type: 'claims',
+        priority: 'high',
+        brokerType: context.brokerInfo.type
+      };
+    }
+    
+    // Default to custom email
+    return {
+      type: 'custom',
+      priority: 'normal',
+      brokerType: 'general'
+    };
+  }
+}
+```
+
+### Template Population Engine
+```typescript
+class TemplatePopulator {
+  async populateTemplate(
+    template: EmailTemplate, 
+    data: SubmissionData
+  ): Promise<PopulatedEmail> {
+    
+    let subject = template.subject;
+    let content = template.content;
+    
+    // Replace all template variables
+    const replacements = this.buildReplacementMap(data);
+    
+    for (const [placeholder, value] of replacements.entries()) {
+      const regex = new RegExp(`{{${placeholder}}}`, 'g');
+      subject = subject.replace(regex, value);
+      content = content.replace(regex, value);
+    }
+    
+    // Handle special cases like lists and tables
+    content = await this.handleSpecialFormatting(content, data);
+    
+    return {
+      subject: subject,
+      content: content,
+      metadata: {
+        templateId: template.id,
+        populatedAt: new Date(),
+        dataSource: data.id
+      }
+    };
+  }
+  
+  private buildReplacementMap(data: SubmissionData): Map<string, string> {
+    const map = new Map<string, string>();
+    
+    // Basic submission data
+    map.set('BROKER_NAME', data.broker.name);
+    map.set('PROPERTY_ADDRESS', data.property.address);
+    map.set('PROPERTY_VALUE', data.property.value);
+    map.set('QUOTE_REFERENCE', data.quoteReference || this.generateQuoteRef());
+    
+    // Underwriter information
+    map.set('UNDERWRITER_NAME', 'Rachel Thompson');
+    map.set('TITLE', 'Senior Assistant Underwriter');
+    map.set('COMPANY_NAME', 'Hexaware Insurance');
+    map.set('PHONE_NUMBER', '+44 20 1234 5678');
+    map.set('EMAIL_ADDRESS', 'rachel.thompson@hexaware-insurance.com');
+    
+    // Dynamic content based on workflow
+    if (data.workflowType === 'documentation') {
+      map.set('MISSING_DOCUMENTS_LIST', this.formatDocumentsList(data.missingDocuments));
+      map.set('DEADLINE_DATE', this.calculateDeadline(7)); // 7 days from now
+    }
+    
+    if (data.workflowType === 'quote') {
+      map.set('ANNUAL_PREMIUM', data.quote.annualPremium);
+      map.set('COVERAGE_PERIOD', '12 months');
+      map.set('POLICY_TYPE', 'Commercial Property Insurance');
+      map.set('COVERAGE_DETAILS', this.formatCoverageDetails(data.quote));
+      map.set('RISK_SUMMARY', this.formatRiskSummary(data.riskAssessment));
+    }
+    
+    if (data.workflowType === 'claims') {
+      map.set('CLAIMS_HISTORY_DETAILS', this.formatClaimsHistory(data.claimsHistory));
+      map.set('TOTAL_CLAIMS_VALUE', data.claimsHistory.totalValue);
+      map.set('CLAIMS_FREQUENCY', data.claimsHistory.frequency);
+      map.set('RISK_CLASSIFICATION', data.riskClassification);
+    }
+    
+    return map;
+  }
+}
+```
+
+---
+
+## 4. Email Inbox System
+
+### Inbox Data Structure
+```typescript
+interface EmailInbox {
+  id: string;
+  userId: string; // Rachel's user ID
+  emails: SentEmail[];
+  filters: EmailFilter[];
+  searchIndex: EmailSearchIndex;
+  stats: InboxStats;
+}
+
+interface SentEmail {
+  id: string;
+  messageId: string; // Unique message identifier
+  
+  // Email details
+  to: string;
+  from: string;
+  cc?: string[];
+  bcc?: string[];
+  subject: string;
+  body: string;
+  attachments: EmailAttachment[];
+  
+  // Metadata
+  sentAt: Date;
+  deliveryStatus: 'sent' | 'delivered' | 'read' | 'replied' | 'bounced';
+  priority: 'low' | 'normal' | 'high' | 'urgent';
+  emailType: 'documentation' | 'quote' | 'claims' | 'followup' | 'custom';
+  
+  // Submission linking
+  submissionId?: string;
+  workflowContext: string;
+  brokerInfo: BrokerContact;
+  
+  // Tracking
+  openedAt?: Date;
+  repliedAt?: Date;
+  bouncedAt?: Date;
+  clickTracking: ClickEvent[];
+  
+  // Agent information
+  generatedBy: {
+    agentId: string;
+    agentName: string;
+    executionId: string;
+  };
+}
+
+interface EmailAttachment {
+  id: string;
+  filename: string;
+  contentType: string;
+  size: number;
+  downloadUrl: string;
+  isGenerated: boolean; // True if generated by JARVIS
+  sourceDocument?: string;
+}
+```
+
+### Inbox Component Structure
+```typescript
+const EmailInbox = () => {
+  const [emails, setEmails] = useState<SentEmail[]>([]);
+  const [selectedEmail, setSelectedEmail] = useState<SentEmail | null>(null);
+  const [filters, setFilters] = useState<EmailFilter>({
+    type: 'all',
+    broker: 'all',
+    dateRange: 'all',
+    status: 'all'
+  });
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState<'date' | 'broker' | 'type'>('date');
+  
+  // Load emails from storage
+  useEffect(() => {
+    loadInboxEmails();
+  }, [filters, searchQuery, sortBy]);
+  
+  const loadInboxEmails = async () => {
+    try {
+      const response = await apiRequest('/api/emails/inbox', {
+        method: 'GET',
+        params: {
+          filters: JSON.stringify(filters),
+          search: searchQuery,
+          sort: sortBy
+        }
+      });
+      setEmails(response.emails);
+    } catch (error) {
+      console.error('Failed to load inbox emails:', error);
+    }
+  };
+  
+  return (
+    <div className="email-inbox">
+      {/* Inbox Header */}
+      <div className="inbox-header">
+        <h2>Email Communications</h2>
+        <div className="inbox-stats">
+          <StatCard label="Total Sent" value={emails.length} />
+          <StatCard label="This Week" value={getWeeklyCount(emails)} />
+          <StatCard label="Pending Replies" value={getPendingReplies(emails)} />
+        </div>
+      </div>
+      
+      {/* Filters and Search */}
+      <div className="inbox-controls">
+        <SearchInput 
+          value={searchQuery}
+          onChange={setSearchQuery}
+          placeholder="Search emails by broker, subject, or content..."
+        />
+        <FilterDropdown
+          options={[
+            { value: 'all', label: 'All Types' },
+            { value: 'documentation', label: 'Documentation Requests' },
+            { value: 'quote', label: 'Quote Emails' },
+            { value: 'claims', label: 'Claims Communications' }
+          ]}
+          value={filters.type}
+          onChange={(type) => setFilters({...filters, type})}
+        />
+        <SortDropdown
+          options={[
+            { value: 'date', label: 'Date Sent' },
+            { value: 'broker', label: 'Broker Name' },
+            { value: 'type', label: 'Email Type' }
+          ]}
+          value={sortBy}
+          onChange={setSortBy}
+        />
+      </div>
+      
+      {/* Email List */}
+      <div className="email-list">
+        {emails.map(email => (
+          <EmailListItem
+            key={email.id}
+            email={email}
+            isSelected={selectedEmail?.id === email.id}
+            onClick={() => setSelectedEmail(email)}
+          />
+        ))}
+      </div>
+      
+      {/* Email Details Panel */}
+      {selectedEmail && (
+        <EmailDetailsPanel
+          email={selectedEmail}
+          onClose={() => setSelectedEmail(null)}
+        />
+      )}
+    </div>
+  );
+};
+```
+
+### Email List Item Component
+```typescript
+const EmailListItem = ({ email, isSelected, onClick }: EmailListItemProps) => {
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'sent': return 'blue';
+      case 'delivered': return 'green';
+      case 'read': return 'purple';
+      case 'replied': return 'emerald';
+      case 'bounced': return 'red';
+      default: return 'gray';
+    }
+  };
+  
+  const getTypeIcon = (type: string) => {
+    switch (type) {
+      case 'documentation': return <FileText className="w-4 h-4" />;
+      case 'quote': return <Calculator className="w-4 h-4" />;
+      case 'claims': return <Shield className="w-4 h-4" />;
+      case 'followup': return <MessageCircle className="w-4 h-4" />;
+      default: return <Mail className="w-4 h-4" />;
+    }
+  };
+  
+  return (
+    <div 
+      className={`email-item ${isSelected ? 'selected' : ''}`}
+      onClick={onClick}
+    >
+      <div className="email-header">
+        <div className="email-type">
+          {getTypeIcon(email.emailType)}
+          <span className="type-label">{email.emailType}</span>
+        </div>
+        <div className="email-status">
+          <Badge 
+            className={`status-${getStatusColor(email.deliveryStatus)}`}
+          >
+            {email.deliveryStatus}
+          </Badge>
+        </div>
+      </div>
+      
+      <div className="email-content">
+        <div className="email-recipient">
+          <strong>{email.brokerInfo.name}</strong>
+          <span className="broker-company">({email.brokerInfo.company})</span>
+        </div>
+        <div className="email-subject">{email.subject}</div>
+        <div className="email-preview">
+          {email.body.substring(0, 100)}...
+        </div>
+      </div>
+      
+      <div className="email-footer">
+        <div className="email-timestamp">
+          {formatRelativeTime(email.sentAt)}
+        </div>
+        <div className="email-attachments">
+          {email.attachments.length > 0 && (
+            <div className="attachment-count">
+              <Paperclip className="w-3 h-3" />
+              <span>{email.attachments.length}</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+```
+
+---
+
+## 5. Agent Orchestration Integration
+
+### Command Center Integration
+```typescript
+const handleSendEmailCommand = async (context: WorkflowContext) => {
+  // Show agent activation
+  addAgentAction("Email Generator Agent", "Initializing", "Analyzing current workflow context");
+  
+  // Execute email generation
+  const emailExecution = await emailAgentExecutor.executeEmailCommand(
+    "send email", 
+    context
+  );
+  
+  // Show email preview dialog
+  setEmailPreview(emailExecution);
+  setShowEmailPreview(true);
+  
+  // Update agent status
+  addAgentAction("Email Generator Agent", "Email Generated", 
+    `${emailExecution.template.type} email prepared for ${emailExecution.recipient.name}`);
+};
+
+const confirmEmailSending = async (emailExecution: EmailExecution) => {
+  try {
+    // Simulate email sending
+    addAgentAction("Email Generator Agent", "Sending Email", 
+      "Transmitting via secure email gateway");
+    
+    // Save to inbox
+    const sentEmail = await saveToInbox(emailExecution);
+    
+    // Update status
+    addAgentAction("Email Generator Agent", "Email Sent", 
+      `Successfully delivered to ${emailExecution.recipient.email}`);
+    
+    // Show success notification
+    showNotification("Email sent successfully", "success");
+    
+    // Update chat history
+    addChatMessage("JARVIS", 
+      `Email sent to ${emailExecution.recipient.name} regarding ${emailExecution.template.type}. ` +
+      `Reference: ${sentEmail.messageId}`, 
+      "Email Generator Agent"
+    );
+    
+  } catch (error) {
+    // Handle error
+    addAgentAction("Email Generator Agent", "Send Failed", 
+      `Error: ${error.message}`);
+    showNotification("Failed to send email", "error");
+  }
+};
+```
+
+### Multi-Agent Coordination
+```typescript
+const EmailOrchestrationSystem = {
+  // When Risk Analysis Agent completes, trigger Email Generator
+  onRiskAnalysisComplete: (riskData: RiskAssessment) => {
+    if (riskData.requiresQuote) {
+      const emailContext = {
+        workflowType: 'quote',
+        submissionData: riskData.submission,
+        quoteData: riskData.quote,
+        brokerInfo: riskData.broker
+      };
+      
+      // Auto-trigger email generation
+      handleSendEmailCommand(emailContext);
+    }
+  },
+  
+  // When Claims Analysis completes, offer email communication
+  onClaimsAnalysisComplete: (claimsData: ClaimsAssessment) => {
+    const emailContext = {
+      workflowType: 'claims',
+      submissionData: claimsData.submission,
+      claimsHistory: claimsData.history,
+      riskAssessment: claimsData.riskLevel,
+      brokerInfo: claimsData.broker
+    };
+    
+    // Show email suggestion
+    showEmailSuggestion(emailContext);
+  },
+  
+  // When documentation is missing, auto-generate request
+  onDocumentationRequired: (docData: DocumentationRequest) => {
+    const emailContext = {
+      workflowType: 'documentation',
+      submissionData: docData.submission,
+      missingDocuments: docData.missingItems,
+      brokerInfo: docData.broker
+    };
+    
+    // Auto-execute documentation email
+    handleSendEmailCommand(emailContext);
+  }
+};
+```
+
+---
+
+## 6. Testing and Validation Requirements
+
+### Email Generation Tests
+```typescript
+const emailGenerationTests = [
+  {
+    name: "Documentation Request Email",
+    trigger: "Rachel says 'Start with Sarah' -> Email Generator activates",
+    expectedResult: "Email with missing documents list generated for Sarah Johnson",
+    validation: [
+      "Email contains proper broker name (John at WTK Brokers)",
+      "Missing documents list is formatted correctly",
+      "Professional tone and Hexaware branding present",
+      "Attachments include document checklist"
+    ]
+  },
+  
+  {
+    name: "Quote Email Generation", 
+    trigger: "Risk analysis completes -> 'Generate Quote' clicked",
+    expectedResult: "Quote email generated for Mr. Smith with accurate pricing",
+    validation: [
+      "Quote reference number generated (QT-2024-AOM-001)",
+      "Premium amount matches risk assessment (£2,469)",
+      "All policy details populated correctly",
+      "Quote attachments included"
+    ]
+  },
+  
+  {
+    name: "Claims Communication",
+    trigger: "Claims analysis shows high risk -> Email suggested",
+    expectedResult: "Claims communication email for Brian Williams",
+    validation: [
+      "Claims history formatted in table",
+      "Total claims value calculated (£23,700)",
+      "Risk classification marked as 'High Risk'",
+      "Professional recommendations included"
+    ]
+  }
+];
+```
+
+### Inbox System Tests
+```typescript
+const inboxTests = [
+  {
+    name: "Email Storage and Retrieval",
+    actions: [
+      "Send documentation email to Sarah",
+      "Send quote email to Mr. Smith", 
+      "Send claims email to Brian",
+      "Navigate to Inbox tab"
+    ],
+    expectedResult: "All three emails appear in inbox with correct details",
+    validation: [
+      "Emails show correct recipients and subjects",
+      "Email types categorized properly",
+      "Timestamps accurate",
+      "Delivery status shows 'sent'",
+      "Attachments listed correctly"
+    ]
+  },
+  
+  {
+    name: "Email Filtering and Search",
+    actions: [
+      "Use type filter to show only 'quote' emails",
+      "Search for 'Mr. Smith' in search box",
+      "Sort by broker name"
+    ],
+    expectedResult: "Inbox filters and displays emails correctly",
+    validation: [
+      "Type filter works properly",
+      "Search finds relevant emails",
+      "Sorting changes email order",
+      "Filter combinations work together"
+    ]
+  }
+];
+```
+
+---
+
+## 7. Integration with JARVIS Command System
+
+### Voice Command Processing
+```typescript
+const voiceCommandMappings = {
+  // Direct email commands
+  "send email": { action: "triggerEmailAgent", context: "current" },
+  "send documentation email": { action: "triggerEmailAgent", context: "documentation" },
+  "send quote": { action: "triggerEmailAgent", context: "quote" },
+  "email the broker": { action: "triggerEmailAgent", context: "current" },
+  
+  // Inbox commands
+  "show my emails": { action: "openInbox", filter: "all" },
+  "show sent emails": { action: "openInbox", filter: "sent" },
+  "check email status": { action: "openInbox", focus: "recent" },
+  
+  // Follow-up commands
+  "follow up with": { action: "triggerFollowUp", context: "broker" },
+  "send reminder": { action: "triggerReminder", context: "current" }
+};
+```
+
+### Chat Interface Integration
+```typescript
+const chatCommandProcessor = {
+  processEmailCommand: (message: string, context: WorkflowContext) => {
+    const lowerMessage = message.toLowerCase();
+    
+    if (lowerMessage.includes("send email") || lowerMessage.includes("email")) {
+      // Trigger email generation with context
+      return handleSendEmailCommand(context);
+    }
+    
+    if (lowerMessage.includes("inbox") || lowerMessage.includes("sent emails")) {
+      // Open inbox interface
+      return openInboxInterface();
+    }
+    
+    if (lowerMessage.includes("follow up")) {
+      // Extract broker name and trigger follow-up
+      const brokerName = extractBrokerName(message);
+      return triggerFollowUpEmail(brokerName);
+    }
+  }
+};
+```
+
+---
+
+## 8. Success Criteria
+
+The email system is working correctly when:
+
+### Email Generation
+- ✅ "Send Email" command triggers appropriate email type based on current workflow
+- ✅ Email templates populate with accurate submission data
+- ✅ Broker information resolves correctly from submission context
+- ✅ Attachments are prepared and linked appropriately
+- ✅ Email preview shows complete, professional content
+- ✅ Rachel can review and approve before sending
+
+### Email Delivery Simulation
+- ✅ Sent emails are stored in inbox with all metadata
+- ✅ Delivery status tracking works (sent → delivered → read)
+- ✅ Email references link back to originating submissions
+- ✅ Agent execution logs record all email activities
+
+### Inbox Management
+- ✅ All sent emails appear in inbox with correct categorization
+- ✅ Email filtering works by type, broker, date, and status
+- ✅ Email search finds relevant communications
+- ✅ Email details panel shows complete information
+- ✅ Attachment download links function properly
+- ✅ Inbox preserves state when navigating between tabs
+
+### Agent Coordination
+- ✅ Email Agent triggers automatically after other agents complete
+- ✅ Multiple agents can work simultaneously without conflicts
+- ✅ Agent actions log shows complete email generation workflow
+- ✅ Chat interface reflects email activities and confirmations
+
+This comprehensive email system provides Rachel with intelligent, context-aware email generation and complete communication tracking for her underwriting workflows.

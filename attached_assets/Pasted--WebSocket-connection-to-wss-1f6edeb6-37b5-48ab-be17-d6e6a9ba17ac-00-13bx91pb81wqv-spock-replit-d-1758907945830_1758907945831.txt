@@ -1,0 +1,228 @@
+ WebSocket connection to 'wss://1f6edeb6-37b5-48ab-be17-d6e6a9ba17ac-00-13bx91pb81wqv.spock.replit.dev/?token=rEfsEN7S71sx' failed: 
+setupWebSocket @ client:536
+client:536 Uncaught (in promise) 
+ Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+ Global Voice Manager initialized for: Standard browser
+ AgentHierarchy Debug: Object
+ 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ Dashboard handleCommand called: Object
+ AgentHierarchy Debug: Object
+ Command executed successfully, updating activities only
+ 🔍 Command Success Debug: Object
+ AgentHierarchy Debug: Object
+ 🚀 Starting agent execution popup with executionId: exec_bqQOL_efPNWR
+ AgentHierarchy Debug: Object
+ Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+(anonymous) @ @radix-ui_react-dialog.js?v=b3ee60ca:341
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ WebSocket connection established: client_1758907857374_fm65pf8nh
+ 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+ AgentHierarchy Debug: Object
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ AgentHierarchy Debug: Object
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ AgentHierarchy Debug: Object
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ AgentHierarchy Debug: Object
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ Global Voice Manager: Starting speech for admin
+ Global Voice Manager: Using voice: Microsoft David - English (United States)
+ 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+ AgentHierarchy Debug: Object
+ Global Voice Manager: Speech started for admin
+ 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+ WebSocket connection established: client_1758907862663_6q1k6dfhk
+ AgentHierarchy Debug: Object
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ AgentHierarchy Debug: Object
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ AgentHierarchy Debug: Object
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ AgentHierarchy Debug: Object
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ Error parsing WebSocket message: 
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:328
+ AgentHierarchy Debug: Object
+ AgentHierarchy Debug: Object
+ Global Voice Manager: Speech ended
+ AgentHierarchy Debug: Object
+UniversalAgentExecutionPopup.tsx:1894 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+UniversalAgentExecutionPopup.tsx:1894 🔌 UniversalAgentExecutionPopup WebSocket status: Object
+UniversalAgentExecutionPopup.tsx:294 WebSocket connection established: client_1758907868247_dx9houcup
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:294 WebSocket connection established: client_1758907869231_grpa2rq1d
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:294 WebSocket connection established: client_1758907870147_n5egh79zg
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+UniversalAgentExecutionPopup.tsx:294 WebSocket connection established: client_1758907871063_8i9ysrnzk
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:294 WebSocket connection established: client_1758907871990_tmpkwbirb
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+UniversalAgentExecutionPopup.tsx:294 WebSocket connection established: client_1758907872916_py79qs3qe
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+UniversalAgentExecutionPopup.tsx:294 WebSocket connection established: client_1758907873841_e2lt92anv
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+EnhancedDashboard.tsx:336 handlePersonaSwitch called with targetPersona: rachel
+EnhancedDashboard.tsx:337 Current persona before switch: admin
+EnhancedDashboard.tsx:345 Making API call to /api/persona/switch
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+AgentHierarchy.tsx:80 AgentHierarchy Debug: Object
+GlobalVoiceManager.ts:104 Global Voice Manager: Starting speech for admin
+GlobalVoiceManager.ts:133 Global Voice Manager: Using voice: Microsoft David - English (United States)
+EnhancedDashboard.tsx:353 API response status: 200
+GlobalVoiceManager.ts:96 Global Voice Manager: Speech already in progress, ignoring new request
+EnhancedDashboard.tsx:362 API response result: Object
+EnhancedDashboard.tsx:365 Updating local state to: rachel
+EnhancedDashboard.tsx:369 Invalidating all queries for complete dashboard refresh
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+GlobalVoiceManager.ts:174 Global Voice Manager: Speech started for admin
+EnhancedDashboard.tsx:561 Briefing trigger from PersonaSwitcher: rachel
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+UniversalAgentExecutionPopup.tsx:419 Error parsing WebSocket message: ReferenceError: setSteps is not defined
+    at ws.onmessage (UniversalAgentExecutionPopup.tsx:366:17)
+ws.onmessage @ UniversalAgentExecutionPopup.tsx:419
+GlobalVoiceManager.ts:96 Global Voice Manager: Speech already in progress, ignoring new request
+GlobalVoiceManager.ts:96 Global Voice Manager: Speech already in progress, ignoring new request
+GlobalVoiceManager.ts:178 Global Voice Manager: Speech ended
+EnhancedDashboard.tsx:396 Persona switch completed successfully
+EnhancedDashboard.tsx:336 handlePersonaSwitch called with targetPersona: broker
+EnhancedDashboard.tsx:337 Current persona before switch: rachel
+EnhancedDashboard.tsx:405 Error switching persona: Error: Invalid persona: broker
+    at handlePersonaSwitch (EnhancedDashboard.tsx:342:15)
+    at onPersonaChange (EnhancedDashboard.tsx:558:23)
+    at Object.onSuccess (PersonaSwitcher.tsx:77:7)
+    at _a6.execute (@tanstack_react-query.js?v=b3ee60ca:1233:73)
+handlePersonaSwitch @ EnhancedDashboard.tsx:405
+EnhancedDashboard.tsx:561 Briefing trigger from PersonaSwitcher: broker
+GlobalVoiceManager.ts:104 Global Voice Manager: Starting speech for rachel
+GlobalVoiceManager.ts:133 Global Voice Manager: Using voice: Microsoft Zira - English (United States)
+GlobalVoiceManager.ts:96 Global Voice Manager: Speech already in progress, ignoring new request
+GlobalVoiceManager.ts:174 Global Voice Manager: Speech started for rachel
+GlobalVoiceManager.ts:96 Global Voice Manager: Speech already in progress, ignoring new request
+GlobalVoiceManager.ts:96 Global Voice Manager: Speech already in progress, ignoring new request
+GlobalVoiceManager.ts:178 Global Voice Manager: Speech ended

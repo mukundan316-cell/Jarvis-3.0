@@ -1,0 +1,77 @@
+:
+
+🔍 Current State Discovery Prompts for Replit Agent
+Prompt 1: Current Dashboard Implementation
+Can you show me the current implementation of the JARVIS Admin dashboard? Specifically:
+1. What metrics are currently displayed in EnhancedDashboard.tsx?
+2. How is UniversalDashboardMetrics.tsx structured?
+3. What data sources feed these metrics (ConfigService, database tables, hardcoded)?
+Prompt 2: Existing KPI Configuration
+What KPIs are currently configured for JARVIS Admin persona:
+1. Are there any existing business metrics in the dashboardKpis table?
+2. What's in the current ConfigService for admin-specific metrics?
+3. Show me the structure of the kpiConfig if it exists.
+Prompt 3: Agent Hierarchy Current State
+How is the Agent Hierarchy currently implemented:
+1. What's the data structure for the 6-layer architecture?
+2. How are agents mapped to layers in the database?
+3. Is there any existing business context or categorization?
+4. Show me the AgentHierarchy.tsx component structure.
+Prompt 4: Persona Configuration
+How are personas currently managed:
+1. What persona-specific configurations exist for JARVIS Admin?
+2. Is there existing view/display preference storage?
+3. How does userPreferences table handle admin settings?
+4. Any existing role-based UI variations?
+Prompt 5: Command Center Implementation
+What's the current JARVIS Command Center implementation:
+1. What metrics are displayed (Processing Power, Memory, Users, Success Rate)?
+2. How are these metrics calculated or sourced?
+3. Is there any existing business context in the Command Center?
+4. Show the JarvisCommandCenter.tsx component if it exists.
+Prompt 6: ConfigService Capabilities
+What ConfigService entries currently exist for:
+1. Dashboard configuration (dashboard.config)?
+2. Metric definitions (metrics.config)?
+3. Persona-specific settings (admin.config)?
+4. Any existing view or display mode configurations?
+Prompt 7: Database Schema for Metrics
+What tables currently store metric/KPI data:
+1. Structure of dashboardKpis table?
+2. Any business metrics tables (claims, underwriting, revenue)?
+3. How are agent execution metrics stored?
+4. Any existing industry benchmark data?
+Prompt 8: Existing Business Logic
+Is there any existing business/insurance logic implemented:
+1. Claims processing metrics calculation?
+2. Underwriting efficiency measurements?
+3. Revenue or cost tracking?
+4. Combined ratio or other insurance KPIs?
+Prompt 9: Current UI Components
+What universal components exist that could be extended:
+1. Is there a UniversalToggle or view switcher component?
+2. Any existing card components for metrics display?
+3. How is the header/navigation structured for adding controls?
+4. Any existing tooltip or info overlay systems?
+Prompt 10: Activity & Monitoring
+How is current activity tracked:
+1. What's logged in the activities table for admin actions?
+2. Any existing view/interaction tracking?
+3. How are metric changes monitored over time?
+4. Any existing reporting or export capabilities?
+Prompt 11: Styling & Theme System
+What's the current styling approach:
+1. How are dark theme styles managed?
+2. Any existing style variants for different views?
+3. Where are color schemes and design tokens defined?
+4. Is there a theme provider or context?
+Prompt 12: Data Flow Architecture
+How does data flow to the admin dashboard:
+1. API endpoints serving admin metrics?
+2. Real-time updates via WebSocket?
+3. Caching or performance optimization?
+4. How often do metrics refresh?
+Should I ask these prompts one by one to get the current state, or would you like to provide answers to help me understand what's already implemented?
+
+Once we have this baseline understanding, I can provide enhancement recommendations that properly extend the existing architecture rather than making assumptions about what needs to be built.
+

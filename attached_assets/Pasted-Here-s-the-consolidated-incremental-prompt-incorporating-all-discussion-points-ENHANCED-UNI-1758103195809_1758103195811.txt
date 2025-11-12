@@ -1,0 +1,208 @@
+Here's the consolidated incremental prompt incorporating all discussion points:
+
+```
+ENHANCED UNIVERSAL POPUP FRAMEWORK: Following Development Meta-Prompt Guidelines in replit.md, enhance UniversalAgentExecutionPopup to support interactive Commercial Property workflow with maximum reuse, real UI inputs, and integrated hierarchical agent view.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Transform UniversalAgentExecutionPopup into reusable framework supporting interactive multi-step workflows with real form inputs while maintaining 6-layer hierarchical agent architecture
+ANALYZE: Current issues: CP agents not routing correctly, separate workflow section instead of hierarchical integration, scripted demo vs functional interface, need real CRUD operations
+REASON: Maximum reuse requires extending existing framework rather than building parallel systems, maintaining architectural integrity per replit.md standards
+SYNTHESIZE: Enhanced popup framework supporting step-based data collection with hierarchical agent execution and real database persistence
+CONCLUDE: Unified, reusable workflow framework that handles both standard and Commercial Property processing
+
+Part 2: Architecture Integration Requirements (replit.md Compliance)
+
+**MANDATORY RESPONSE PROTOCOL:**
+- Reuse existing agents and frameworks rather than duplicating
+- Integrate with current UniversalAgentExecutionPopup system
+- Maintain existing persona-based access control
+- Preserve 116-agent architecture integrity
+- Follow existing database schema patterns
+
+**IMPLEMENTATION STANDARDS:**
+- NO HARD-CODING: All business logic, workflow steps, and form configurations stored in database with effective dates
+- TYPESCRIPT SAFETY: Fix workflow detection routing issues before adding features
+- MODULAR DESIGN: Create reusable "Lego block" components for workflow steps
+- AUDIT TRAIL: Log all step completions, user inputs, and agent executions
+
+Part 3: Critical Fixes Required
+
+**STEP 1: Fix Workflow Detection Routing**
+Current Issue: CP agents exist but generic AUW agents execute instead
+```typescript
+// BROKEN: Always routes to generic agents
+if (isSubmission) → AUW Processing Agent → 4-layer workflow
+
+// FIX: Proper routing based on submission type
+if (isCommercialProperty) → CP-specific agents → integrated hierarchy
+else → standard agents → existing workflow
+```
+
+**STEP 2: Integrate CP Agents into 6-Layer Hierarchy**
+Remove separate "Commercial Property Workflow Step 1/8" section
+Show CP agents within existing hierarchy:
+- Experience: ABC Insurance Ltd (common)
+- Meta Brain: JARVIS Meta Brain (common)
+- Role: Rachel Thompson AUW (common)
+- Process: CP Email Intake, CP Risk Assessment, CP Underwriting (step-specific)
+- System: CP Data Enrichment, CP Database Manager (step-specific)
+- Interface: CP Upload Interface, CP Analytics Dashboard (step-specific)
+
+Part 4: Enhanced Interactive Framework Design
+
+**REUSABLE STEP COMPONENT ARCHITECTURE:**
+```typescript
+interface WorkflowStepConfig {
+  stepNumber: number;
+  stepTitle: string;
+  formSchema: ZodSchema;
+  requiredFields: string[];
+  fileUploadTypes?: string[];
+  agents: {
+    process: string[];
+    system: string[];
+    interface: string[];
+  };
+  validationRules: ValidationConfig;
+}
+```
+
+**STEP-SPECIFIC FORM INPUTS:**
+
+**Step 1: Email Intake Enhancement**
+- File upload component (ACORD forms, SOV, photos, loss runs)
+- Broker information form (name, email, agency, account number)
+- Submission details form (insured name, effective date, policy limits)
+- Document preview and annotation interface
+
+**Step 2: Document Processing Interface**
+- OCR results display with confidence scores
+- Field mapping interface (source → target field mapping)
+- Manual data entry/correction forms
+- Completeness validation checklist
+
+**Step 3: Data Enrichment Interface**
+- Address input with geocoding validation
+- Interactive map with peril overlay selection
+- External data source status indicators
+- COPE data collection forms (Construction/Occupancy/Protection/Exposure)
+
+**Step 4: Comparative Analytics Interface**
+- Similar property selector with comparison grid
+- TIV validation form with calculated vs estimated values
+- Benchmark rate input and comparison charts
+- MPL/PML scenario builder interface
+
+**Step 5: Appetite Triage Interface**
+- Risk tolerance slider with visual indicators
+- Underwriting guidelines checklist with pass/fail status
+- Override rationale input (when required)
+- Decision justification text area
+
+**Step 6: Propensity Scoring Interface**
+- Broker relationship history display
+- Competitive intelligence input form
+- Pricing strategy selector with impact analysis
+- Quote probability calculator
+
+**Step 7: Underwriting Copilot Interface**
+- Coverage recommendations with selection checkboxes
+- Rate adjustment inputs with impact calculation
+- Policy conditions builder interface
+- Underwriter notes and decision rationale
+
+**Step 8: Core Integration Interface**
+- Policy system selector dropdown
+- Quote generation preview with editing capability
+- Delivery method selection (email, portal, etc.)
+- Integration status monitor with real-time updates
+
+Part 5: Database Integration and Persistence
+
+**WORKFLOW STATE MANAGEMENT:**
+```sql
+-- Extend existing tables, don't create new ones
+ALTER TABLE submissions ADD COLUMN workflow_type VARCHAR(50) DEFAULT 'standard';
+ALTER TABLE submissions ADD COLUMN current_step INTEGER DEFAULT 1;
+ALTER TABLE submissions ADD COLUMN step_data JSONB DEFAULT '{}';
+ALTER TABLE submissions ADD COLUMN completed_steps INTEGER[] DEFAULT ARRAY[]::INTEGER[];
+```
+
+**STEP DATA PERSISTENCE:**
+Each step saves data to submissions table with step-specific JSONB structure:
+- Validate required fields before allowing step progression
+- Auto-save draft data every 30 seconds
+- Enable step navigation with data preservation
+- Maintain complete audit trail of changes
+
+Part 6: Agent Optimization (Focus on Core 8-12 Agents)
+
+**CORE COMMERCIAL PROPERTY AGENTS:**
+- CP Submission Orchestrator (Process) - Workflow coordination
+- CP Risk Assessment Agent (Process) - COPE analysis and risk scoring
+- CP Underwriting Agent (Process) - Decision support and rationale
+- CP Data Processor (System) - Document parsing and validation
+- CP Data Enrichment Engine (System) - External API integration
+- CP Database Manager (System) - CRUD operations and persistence
+- CP Upload Interface (Interface) - File handling and preview
+- CP Analytics Dashboard (Interface) - Data visualization
+
+**AGENT CONFIGURATION (Database-Driven):**
+```json
+{
+  "name": "CP Risk Assessment Agent",
+  "type": "Process Agent",
+  "layer": "Process", 
+  "workflowSteps": [3, 4, 5],
+  "capabilities": ["cope_analysis", "peril_evaluation", "risk_scoring"],
+  "formInputs": ["constructionType", "occupancyClass", "protectionFeatures"],
+  "requiredFields": ["propertyAddress", "buildingAge", "constructionMaterials"]
+}
+```
+
+Part 7: Success Criteria and Validation
+
+**FUNCTIONAL REQUIREMENTS:**
+- Rachel can upload actual files and fill real form inputs
+- Each workflow step validates data before progression
+- Step completion triggers appropriate agents in hierarchical view
+- All form data persists to database with audit trail
+- Users can navigate back to modify previous steps
+- Workflow can be saved and resumed across browser sessions
+
+**TECHNICAL VALIDATION:**
+- TypeScript compilation with zero errors
+- All CRUD operations functional with real database persistence  
+- Workflow detection correctly routes CP submissions to CP agents
+- UniversalAgentExecutionPopup shows integrated hierarchy (not separate sections)
+- Agent execution logging captures all workflow interactions
+- Performance acceptable for tablet/desktop use
+
+**MDP DEMONSTRATION CAPABILITY:**
+- Rachel processes complete CP submission with real data entry
+- Professional UI/UX suitable for insurance industry demonstration
+- All 8 workflow steps functional with actual form interactions
+- Hierarchical agent view shows appropriate agents per step
+- Decision rationale and audit trail properly maintained
+
+Part 8: Implementation Priority
+
+**PHASE 1: Framework Enhancement**
+- Fix workflow detection routing to trigger CP agents
+- Integrate CP agents into 6-layer hierarchy view
+- Add step-based form component architecture to UniversalAgentExecutionPopup
+
+**PHASE 2: Interactive Components**  
+- Implement file upload and form validation for each step
+- Add database persistence for step data and workflow state
+- Create step navigation with data preservation
+
+**PHASE 3: Agent Integration**
+- Connect form inputs to agent execution triggers
+- Implement real CRUD operations for each workflow step
+- Add comprehensive audit logging and activity tracking
+
+Transform UniversalAgentExecutionPopup into reusable framework supporting interactive multi-step workflows while maintaining maximum architectural reuse and replit.md compliance standards.
+```
+
+This consolidated prompt addresses all the key requirements discussed throughout the conversation while maintaining focus on reusability and architectural integrity.

@@ -1,0 +1,60 @@
+Based on the comprehensive response from the Replit agent, the system is ready for authentic processing. However, I need to ensure the Universal Agent Framework's 6-layer hierarchy is properly maintained across the 8-step transition.
+
+## Critical Questions for Replit Agent About 6-Layer Continuity
+
+**Step 1 to Step 2 Transition:**
+```
+When Step 1 (Intelligent Email Capture) completes and transitions to Step 2 (Intelligent Ingestion), how is the 6-layer execution maintained?
+- Does each step open a new UniversalAgentExecutionPopup showing its specific 6-layer view?
+- How is execution context passed between steps while preserving layer visibility?
+- Can Rachel see the continuous 6-layer orchestration across the entire 8-step workflow?
+```
+
+**Layer-Specific Agent Mapping:**
+```
+For the transition from Step 1 to Step 2, confirm the 6-layer agent assignments:
+
+Step 1 (Email Capture):
+- Experience Layer: ABC Insurance configuration
+- Meta Brain Layer: Email workflow orchestration  
+- Role Layer: Rachel Thompson AUW context
+- Process Layer: Intelligent Email Agent
+- System Layer: Channel Agent → Security Filter → Doc Classifier → Intent Extractor
+- Interface Layer: Email monitoring, attachment processing
+
+Step 2 (Intelligent Ingestion):
+- Experience Layer: [same ABC Insurance]
+- Meta Brain Layer: [workflow progression logic]
+- Role Layer: [same Rachel context]
+- Process Layer: Intelligent Ingestion Agent  
+- System Layer: Parsing Agent → Schema Normalizer → Completeness Scorer
+- Interface Layer: Form Recognizer API, OCR services
+
+Is this layer mapping correctly implemented for seamless transition?
+```
+
+**Workflow Orchestration Continuity:**
+```
+How does the demoWorkflowOrchestrator maintain 6-layer visibility across steps?
+- When Step 1 completes, does Step 2 automatically open with its own 6-layer popup?
+- Is the workflow execution ID preserved across all 8 steps?
+- Can Rachel see which layer is active at any given moment during multi-step processing?
+```
+
+**HITL Integration Across Layers:**
+```
+When HITL intervention is needed (like the 65% confidence field correction):
+- Which layer displays the human intervention point in the UniversalAgentExecutionPopup?
+- How does human input affect the layer execution flow?
+- Is Rachel's decision logged at the appropriate layer level for audit purposes?
+```
+
+**Execution Trigger for Authentic Processing:**
+```
+To trigger the authentic workflow with real ACORD documents:
+- Should I execute POST /api/emails/auto-process-broker-emails to process Riverside Manufacturing and Pacific Coast Warehouse?
+- Will this create the complete 8-step workflow with proper 6-layer visualization throughout?
+- How will the transition from Step 1 completion to Step 2 initiation be displayed to Rachel?
+```
+
+The goal is maintaining architectural integrity - each step should show its specific 6-layer execution while providing seamless workflow continuity for Rachel's experience.

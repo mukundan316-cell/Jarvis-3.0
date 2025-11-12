@@ -1,0 +1,217 @@
+Great question! Let me search for any previous discussions about the morning briefing implementation and then provide a comprehensive technical approach.Based on the JARVIS Universal framework architecture, here's how the **"Highlight new commercial property submission from broker"** step would be technically implemented:
+
+## 🔧 **Technical Implementation Approach**
+
+### **1. Database Foundation**
+```sql
+-- Submissions tracking table
+CREATE TABLE submissions (
+  id UUID PRIMARY KEY,
+  broker_email VARCHAR(255),
+  broker_name VARCHAR(255),
+  submission_type VARCHAR(50), -- 'commercial_property', 'auto', etc.
+  priority VARCHAR(20), -- 'urgent', 'high', 'normal'
+  status VARCHAR(30), -- 'new', 'processing', 'quoted', 'bound'
+  received_at TIMESTAMP,
+  assigned_persona VARCHAR(50), -- 'rachel_thompson', 'john_stevens'
+  submission_data JSONB, -- ACORD forms, SOV, etc.
+  workflow_status VARCHAR(30) -- 'pending', 'in_progress', 'completed'
+);
+```
+
+### **2. Real-Time Submission Detection**
+```typescript
+// Email monitoring service
+class SubmissionMonitoringService {
+  async processIncomingEmail(email: EmailData) {
+    // Extract broker and submission type
+    const brokerInfo = this.extractBrokerInfo(email);
+    const submissionType = this.detectSubmissionType(email.attachments);
+    
+    // Create submission record
+    const submission = await this.createSubmission({
+      broker_email: email.from,
+      broker_name: brokerInfo.name,
+      submission_type: submissionType,
+      priority: this.calculatePriority(brokerInfo, submissionType),
+      status: 'new',
+      assigned_persona: this.assignToPersona(submissionType),
+      submission_data: this.extractSubmissionData(email)
+    });
+    
+    // Trigger real-time update
+    this.broadcastSubmissionUpdate(submission);
+  }
+}
+```
+
+### **3. Morning Briefing Component**
+```typescript
+// PersonaBriefingSystem component
+const MorningBriefing: React.FC = () => {
+  const [submissions, setSubmissions] = useState<Submission[]>([]);
+  const { persona } = useAuth(); // Rachel Thompson context
+  
+  // Real-time submissions using WebSocket
+  useWebSocket('/submissions/live', {
+    onMessage: (data) => {
+      if (data.type === 'new_submission' && 
+          data.submission.assigned_persona === persona.id) {
+        setSubmissions(prev => [data.submission, ...prev]);
+        
+        // Highlight animation
+        highlightNewSubmission(data.submission.id);
+        
+        // Voice announcement if enabled
+        if (persona.voiceEnabled) {
+          announceNewSubmission(data.submission);
+        }
+      }
+    }
+  });
+  
+  // ConfigService-based filtering
+  const filteredSubmissions = useConfigFilter(
+    submissions,
+    'persona-submission-filters',
+    persona.id
+  );
+  
+  return (
+    <div className="morning-briefing">
+      <VoiceBriefingPanel />
+      <SubmissionQueue 
+        submissions={filteredSubmissions}
+        onProcessSubmission={triggerWorkflow}
+      />
+    </div>
+  );
+};
+```
+
+### **4. Submission Highlighting Logic**
+```typescript
+// Highlighting and prioritization
+const SubmissionCard: React.FC<{submission: Submission}> = ({submission}) => {
+  const isNew = submission.status === 'new';
+  const isUrgent = submission.priority === 'urgent';
+  const isCommercialProperty = submission.submission_type === 'commercial_property';
+  
+  const highlightClass = useMemo(() => {
+    if (isNew && isUrgent) return 'bg-red-100 border-red-500 animate-pulse';
+    if (isNew) return 'bg-blue-100 border-blue-500';
+    if (isCommercialProperty) return 'bg-green-50 border-green-300';
+    return 'bg-gray-50 border-gray-300';
+  }, [isNew, isUrgent, isCommercialProperty]);
+  
+  return (
+    <div className={`submission-card ${highlightClass}`}>
+      <div className="flex justify-between items-center">
+        <div>
+          <h3 className="font-semibold">{submission.broker_name}</h3>
+          <p className="text-sm text-gray-600">
+            {submission.submission_type} • TIV: ${submission.submission_data?.tiv}
+          </p>
+          <div className="flex items-center gap-2 mt-2">
+            {isNew && <span className="badge badge-new">NEW</span>}
+            {isUrgent && <span className="badge badge-urgent">URGENT</span>}
+            <span className="text-xs text-gray-500">
+              {formatDistanceToNow(submission.received_at)} ago
+            </span>
+          </div>
+        </div>
+        
+        <button 
+          onClick={() => triggerWorkflow(submission)}
+          className="btn btn-primary"
+        >
+          Process Submission
+        </button>
+      </div>
+    </div>
+  );
+};
+```
+
+### **5. Workflow Trigger Integration**
+```typescript
+// Trigger the 8-step workflow
+const triggerWorkflow = async (submission: Submission) => {
+  // Update status
+  await updateSubmissionStatus(submission.id, 'processing');
+  
+  // Start orchestration via Universal Agent Execution
+  const workflowExecution = await orchestrationService.startWorkflow({
+    workflowType: 'commercial_property_underwriting',
+    input: {
+      submissionId: submission.id,
+      submissionData: submission.submission_data,
+      persona: 'rachel_thompson'
+    },
+    metadata: {
+      broker: submission.broker_name,
+      priority: submission.priority,
+      demoMode: true // For demo purposes
+    }
+  });
+  
+  // Open first UniversalAgentExecutionPopup
+  openAgentExecutionPopup({
+    workflowId: workflowExecution.id,
+    step: 1,
+    agent: 'intelligent_email_capture'
+  });
+};
+```
+
+### **6. ConfigService Integration**
+```typescript
+// Persona-based submission filtering
+const configRules = {
+  'persona-submission-filters': {
+    'rachel_thompson': {
+      submission_types: ['commercial_property'],
+      priority_threshold: 'normal',
+      auto_highlight: true,
+      voice_announce: true
+    },
+    'john_stevens': {
+      submission_types: ['cyber', 'technology'],
+      priority_threshold: 'high',
+      auto_highlight: false,
+      voice_announce: false
+    }
+  }
+};
+```
+
+### **7. Real-Time Updates & Voice Integration**
+```typescript
+// Voice announcements for new submissions
+const announceNewSubmission = (submission: Submission) => {
+  const message = `New ${submission.submission_type} submission received from ${submission.broker_name}. 
+                   Priority: ${submission.priority}. 
+                   Total insured value: ${formatCurrency(submission.submission_data?.tiv)}.
+                   Ready to process?`;
+  
+  voiceService.speak(message, {
+    persona: 'rachel_thompson',
+    urgency: submission.priority === 'urgent' ? 'high' : 'normal'
+  });
+};
+```
+
+## 🎯 **Demo Flow Implementation**
+
+**Step 1**: Rachel logs in → Morning briefing loads with existing submissions
+**Step 2**: New email arrives from Willis Towers Watson with ACORD forms
+**Step 3**: System detects commercial property submission → Creates database record
+**Step 4**: WebSocket pushes update → Submission appears with highlighting animation
+**Step 5**: Voice announcement: "New commercial property submission from Willis Towers Watson"
+**Step 6**: Card appears with "NEW" and "URGENT" badges, pulsing animation
+**Step 7**: Rachel clicks "Process Submission" → Triggers 8-step workflow
+**Step 8**: First UniversalAgentExecutionPopup opens showing Step 1 execution
+
+This approach leverages the existing JARVIS Universal framework components while providing the real-time highlighting and workflow integration needed for an impressive demo!
+
+**Would you like me to elaborate on any specific part of this implementation or show you the Replit agent's response for comparison?**

@@ -1,0 +1,44 @@
+ELIMINATE DASHBOARD DUPLICATION - Following replit.md guidelines, consolidate Dashboard.tsx and EnhancedDashboard.tsx into single unified dashboard component to eliminate code duplication and maintain clean architecture.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Two dashboard components exist with duplicate functionality requiring consolidation
+ANALYZE: Dashboard.tsx vs EnhancedDashboard.tsx creating maintenance burden and architectural violation
+REASON: Code duplication violates replit.md "Lego block" principles and creates inconsistent user experience
+SYNTHESIZE: Single unified dashboard serving all personas with proper configuration-driven behavior
+CONCLUDE: One dashboard component with persona-specific customization through props/database config
+
+Part 2: Dashboard Consolidation Strategy
+
+**AUDIT CURRENT IMPLEMENTATIONS:**
+- Compare functionality between Dashboard.tsx and EnhancedDashboard.tsx
+- Identify unique features in each component
+- Determine which component has more complete/modern implementation
+- Assess integration with existing routing and persona switching
+
+**CONSOLIDATION APPROACH:**
+- Keep the more feature-complete dashboard as base
+- Migrate unique functionality from the other dashboard
+- Ensure persona-specific customization works through props
+- Maintain all existing functionality during consolidation
+
+**REMOVE DUPLICATE:**
+- Delete the redundant dashboard file
+- Update all imports and routing references
+- Test that all persona workflows still function
+- Verify no functionality is lost in consolidation
+
+Part 3: Success Criteria
+
+**SINGLE DASHBOARD COMPONENT:**
+- Only one dashboard component exists in codebase
+- All personas (Rachel, Admin, John) use same component
+- Persona-specific behavior driven by props/database config
+- No functionality lost from either original dashboard
+
+**PROPER INTEGRATION:**
+- Routing updated to use unified dashboard
+- All persona switching works correctly
+- Dashboard metrics and KPIs display properly for each persona
+- No broken imports or references remain
+
+Consolidate dashboards to eliminate critical code duplication while preserving all functionality.

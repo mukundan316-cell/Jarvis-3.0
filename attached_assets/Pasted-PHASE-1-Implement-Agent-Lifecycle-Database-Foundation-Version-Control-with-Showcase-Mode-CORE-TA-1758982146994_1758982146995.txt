@@ -1,0 +1,67 @@
+PHASE 1: Implement Agent Lifecycle Database Foundation & Version Control with Showcase Mode
+CORE TASKS:
+1. Examine current shared/schema.ts and agents table structure - preserve existing ID types and relationships
+2. Extend agents table with lifecycle fields using safe column additions:
+   - lifecycle_stage (varchar, default: 'development')
+   - config_version (varchar, default: '1.0.0') 
+   - retirement_date (timestamp, nullable)
+   - depends_on_agents (text array, default: [])
+   - last_config_update (timestamp, default: current)
+   - has_unsaved_changes (boolean, default: false)
+   - monthly_cost (numeric, default: 0)
+   - cost_efficiency (varchar, nullable)
+   - cost_trend (varchar, nullable)
+   - cost_change (numeric, nullable)
+3. Create new lifecycle tables:
+   - agent_versions (id, agent_id, version, config_snapshot, created_at, rollback_data)
+   - agent_resource_usage (id, agent_id, cpu_usage, memory_usage, cost_per_hour, timestamp)
+   - agent_dependencies (id, parent_agent_id, dependent_agent_id, dependency_type, created_at)
+4. Extend ConfigService in server/configService.ts with lifecycle namespaces:
+   - lifecycle.maturity.definitions
+   - lifecycle.test.templates  
+   - lifecycle.cost.thresholds
+   - agent.{agentId}.lifecycle
+   - agent.{agentId}.versions
+5. Add version control API endpoints to server/routes.ts:
+   - POST /api/agents/:id/versions (create version snapshot)
+   - GET /api/agents/:id/versions (list versions)
+   - POST /api/agents/:id/rollback/:version (rollback to version)
+6. Create useAgentVersions hook in client/src/hooks/
+7. Add basic version indicators to UniversalAgentDirectory agent cards
+SHOWCASE MODE TASKS:
+8. Implement Showcase Mode foundation in ConfigService:
+   - Add 'platform.showcase.enabled' setting (default: false)
+   - Add 'platform.showcase.enhancement_multipliers' with configurable enhancement ratios
+   - Create showcase enhancement utilities in server/utils/showcase.ts
+9. Create showcase enhancement functions:
+   - enhanceVersionControlMetrics() - show optimized version management
+   - enhanceAgentPerformance() - display potential performance gains (20-40% realistic improvements)
+   - generateOptimalScenarios() - create realistic but enhanced projections
+10. Add showcase toggle to UniversalAgentDirectory:
+    - Small toggle in filter bar: "Showcase Mode" with enhanced/realistic data switch
+    - When enabled, agent cards show enhanced metrics with "Potential" badges
+    - Preserve real data as baseline, overlay enhancement projections
+11. Implement showcase-aware data fetching:
+    - Modify useAgentData hook to check showcase mode setting
+    - Apply enhancements only to display layer, never to actual database
+    - Add visual indicators (subtle "Enhanced" badges) when showcase mode active
+12. Use npm run db:push --force to safely sync schema changes
+VALIDATION CRITERIA:
+- All existing agents display correctly with new default values
+- Version control API endpoints return proper responses
+- Agent cards show version information without breaking existing layout
+- ConfigService can store and retrieve lifecycle settings
+- Showcase mode toggle switches between real and enhanced data seamlessly
+- Enhanced projections look realistic and achievable (not fantasy numbers)
+- Base real data remains completely unchanged
+- Visual indicators clearly show when showcase mode is active
+- No existing functionality is broken
+DELIVERABLES:
+- Updated shared/schema.ts with new tables and extended agents table
+- Enhanced server/configService.ts with lifecycle namespaces
+- New API endpoints in server/routes.ts for version control
+- useAgentVersions hook for frontend integration
+- Basic version display in agent directory cards
+- Complete showcase mode foundation with enhancement utilities
+- Showcase toggle in UniversalAgentDirectory with visual indicators
+- Successful database migration with npm run db:push --force

@@ -1,0 +1,133 @@
+CRITICAL UI FRAMEWORK ANALYSIS: Analyze the current UniversalAgentExecutionPopup framework and design the UI evolution needed to support the 8-step Commercial Property agentic workflow.
+
+Part 1: Question Deconstruction
+UNDERSTAND: Current UniversalAgentExecutionPopup capabilities and limitations for multi-step workflows
+ANALYZE: UI components needed for each Commercial Property workflow step
+REASON: How to extend existing framework without breaking current functionality
+SYNTHESIZE: Complete UI architecture for sequential agentic workflows
+CONCLUDE: Specific implementation plan for UI framework evolution
+
+Part 2: Current UI Framework Analysis Required
+
+**STEP 1: UniversalAgentExecutionPopup Current State**
+- How does the current popup work? (props, state management, component structure)
+- What types of agent interactions does it currently support?
+- How does it handle single-step vs multi-step workflows?
+- What UI components are currently available within the popup?
+- How does it integrate with voice commands and real-time updates?
+
+**STEP 2: Commercial Property UI Requirements by Step**
+
+**Step 1 - Email Intake UI Needs:**
+- Email thread visualization with attachments
+- Document preview (ACORD forms, SOVs, PDFs, photos)
+- Metadata extraction display
+- Intake ticket summary view
+
+**Step 2 - Document Ingestion UI Needs:**
+- OCR progress visualization
+- Before/after document comparison
+- Schema mapping interface
+- Field confidence scoring display
+- Data quality report visualization
+
+**Step 3 - Data Enrichment UI Needs:**
+- Interactive map for geocoding results
+- Peril overlay visualization (flood zones, wildfire risk)
+- Evidence book interface showing sources and confidence
+- External data integration status dashboard
+
+**Step 4 - Comparative Analytics UI Needs:**
+- Similar risks comparison table
+- Benchmark pricing charts
+- TIV analysis dashboard
+- MPL/PML scenario modeling interface
+
+**Step 5 - Appetite Triage UI Needs:**
+- Green/Yellow/Red decision visualization
+- Rationale card with expandable explanations
+- "What would it take" suggestion interface
+- Override capability for Rachel with rationale input
+
+**Step 6 - Propensity Scoring UI Needs:**
+- Broker behavior analysis charts
+- Propensity score visualization
+- Priority ranking interface
+- Quote strategy recommendation display
+
+**Step 7 - Underwriting Copilot UI Needs:**
+- Side-by-side risk comparison
+- Rate adequacy meters and charts
+- Coverage recommendation interface
+- Protective safeguards selection
+- Quote scenario builder
+
+**Step 8 - Core Integration UI Needs:**
+- PolicyCenter integration status
+- Document generation progress
+- Real-time feedback loop visualization
+- Analytics sink data flow display
+
+**STEP 3: UI Framework Evolution Requirements**
+
+**Sequential Workflow Navigation:**
+- How to implement step-by-step progression?
+- Progress indicator/stepper component needed?
+- How to handle step dependencies and validation?
+- Back/forward navigation with state preservation?
+
+**Multi-Modal Interface Support:**
+- How to handle different UI layouts per step?
+- Component composition strategy for varied interfaces?
+- Responsive design for different data visualization needs?
+
+**Real-Time Data Flow:**
+- How to show live processing status across steps?
+- WebSocket integration for real-time updates?
+- Progress indicators for long-running processes?
+
+**Exception Handling UI:**
+- How to display errors and intervention points?
+- Manual override interfaces for Rachel's decisions?
+- Retry mechanisms and workflow restart capabilities?
+
+**Integration with Existing Components:**
+- How does this work with current dashboard metrics?
+- Integration with activity feed and recent actions?
+- Voice command integration for step navigation?
+
+**STEP 4: Technical Implementation Questions**
+
+**Component Architecture:**
+- Should we extend UniversalAgentExecutionPopup or create CommercialPropertyWorkflowPopup?
+- How to implement step-specific component loading?
+- State management strategy for multi-step workflow data?
+- How to handle component cleanup and memory management?
+
+**Data Flow Architecture:**
+- How does data pass between steps?
+- Where is intermediate workflow state stored?
+- How to handle browser refresh/navigation during workflow?
+- Integration with existing backend API patterns?
+
+**Responsive Design:**
+- How to handle complex data visualizations on different screen sizes?
+- Mobile/tablet support for workflow steps?
+- Accessibility requirements for insurance compliance?
+
+**STEP 5: Persona Integration**
+- How does Rachel's persona affect the UI presentation?
+- Role-based UI component visibility and capabilities?
+- Integration with existing morning briefing and dashboard?
+- Voice command patterns for workflow navigation?
+
+Please provide:
+1. **Current UniversalAgentExecutionPopup analysis** (structure, capabilities, limitations)
+2. **Detailed UI mockup/specification** for each of the 8 Commercial Property steps
+3. **Component architecture plan** for extending the framework
+4. **State management strategy** for multi-step workflows
+5. **Integration plan** with existing dashboard, voice, and activity systems
+6. **Implementation roadmap** with UI component priorities
+7. **Risk assessment** for UI framework changes
+
+This analysis will ensure the Commercial Property workflow has a seamless, professional UI experience that integrates perfectly with Rachel's existing workflow patterns.

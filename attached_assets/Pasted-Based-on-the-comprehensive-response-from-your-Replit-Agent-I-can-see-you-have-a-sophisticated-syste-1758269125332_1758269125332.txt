@@ -1,0 +1,70 @@
+Based on the comprehensive response from your Replit Agent, I can see you have a sophisticated system already in place. Before providing recommendations for HITL (Human-in-the-Loop) integration, I need to ask the Replit Agent several clarification questions about the current human-agent coordination:
+
+## Critical Questions for Replit Agent
+
+**1. Current HITL Implementation:**
+```
+How are Human-in-the-Loop decision points currently handled in the existing workflows?
+- Are there existing HITL gates in the 8-step commercial property workflow?
+- How does the system pause for human input/approval during agent execution?
+- What UI components exist for human decision points?
+```
+
+**2. UniversalAgentExecutionPopup HITL Display:**
+```
+Does the UniversalAgentExecutionPopup currently show human intervention points?
+- How are human approval steps displayed in the 6-layer architecture?
+- Can the popup pause execution and wait for human input?
+- What happens when an agent needs human validation before proceeding?
+```
+
+**3. Rachel Thompson AUW Persona Integration:**
+```
+How does the current system coordinate between Rachel Thompson (human underwriter) and the AUW persona role agent?
+- Are there defined handoff points between human and AI decision making?
+- How does the system track which decisions were made by human vs AI?
+- Where in the workflow does Rachel need to provide expertise or approval?
+```
+
+**4. Workflow State Management for HITL:**
+```
+What workflow states exist for human intervention?
+- Is there a "pending_human_review" or similar status in commercial_property_workflows?
+- How does the system queue items for human attention?
+- What happens to workflow execution when human input is required?
+```
+
+**5. Morning Briefing Human Tasks:**
+```
+How are pending human tasks currently displayed in the morning briefing?
+- Are HITL review items shown in the action items?
+- How does Rachel know when her expertise is needed in active workflows?
+- What's the relationship between the "13 need review" emails and human decision points?
+```
+
+**6. Agent Coordination UI:**
+```
+Is there existing UI for showing human-AI collaboration?
+- How are joint decisions (human + AI) recorded and displayed?
+- Does the system show AI recommendations alongside human override options?
+- Are there approval/rejection flows for AI-generated recommendations?
+```
+
+## Specific Use Case Clarification
+
+For the **Intelligent Email Capture** step specifically:
+```
+In the current EmailProcessingPipeline with 4 agents, where do humans currently intervene?
+- Do the 13 failed emails require human review before proceeding to Step 2?
+- How does Rachel review and approve/reject the Intent Extraction results?
+- What UI exists for human validation of document classification?
+- Can Rachel override or correct AI decisions at each agent level?
+```
+
+These answers will help me provide targeted recommendations that:
+- Leverage existing HITL infrastructure rather than building new systems
+- Properly integrate human oversight into the 6-layer architecture display
+- Show seamless human-AI partnership without duplicating functionality
+- Use existing database schemas and UI patterns for consistency
+
+Once we have these clarifications, I can provide specific instructions for enhancing the UniversalAgentExecutionPopup and workflow coordination to properly display the human-AI partnership you're looking for.

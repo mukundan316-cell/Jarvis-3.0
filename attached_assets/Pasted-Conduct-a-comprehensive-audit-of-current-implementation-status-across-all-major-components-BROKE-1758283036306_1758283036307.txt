@@ -1,0 +1,37 @@
+Conduct a comprehensive audit of current implementation status across all major components:
+
+BROKER PERSONA & AUTHENTICATION:
+1. Is Mike Stevens broker persona actually implemented and accessible?
+2. Can you log in as Mike Stevens and access a broker-specific interface?
+3. Does persona switching include broker option in the UI?
+4. Are broker credentials properly configured in the authentication system?
+
+DOCUMENT UPLOAD & EMAIL CREATION:
+1. Is the CPEmailIntake component integrated into Mike Stevens' broker dashboard?
+2. Can Mike actually upload ACORD forms, SOV files, and loss runs?
+3. Does document upload create new email records in the database (not seed data)?
+4. Are uploaded files properly stored as attachments in JSONB format?
+
+4-AGENT PROCESSING PIPELINE:
+1. Does the 4-agent pipeline process newly uploaded documents (not just seed data)?
+2. Is OpenAI Vision API actually extracting data from uploaded ACORD forms?
+3. Are real confidence scores being calculated and stored?
+4. Does the pipeline complete successfully for new submissions?
+
+HITL TASK GENERATION:
+1. Do low confidence scores automatically create HITL tasks in the database?
+2. Are these HITL tasks appearing in Rachel's morning briefing?
+3. Is the HITL modal functional with real extracted data (not hardcoded)?
+4. Does "Task Complete" button update workflow progression?
+
+RACHEL'S MORNING BRIEFING:
+1. Are new submissions from Mike Stevens appearing in Rachel's briefing?
+2. Do HITL tasks show actual confidence percentages and submission details?
+3. Can Rachel see real-time updates when Mike uploads new documents?
+
+STEP 1 TO STEP 2 PROGRESSION:
+1. After Step 1 completes, does Step 2 (Intelligent Ingestion) actually trigger?
+2. Is the 8-step workflow progression functional beyond just Step 1?
+3. Does the UniversalAgentExecutionPopup show proper 6-layer execution?
+
+Provide specific test results: Try uploading a document as Mike Stevens and trace what actually happens versus what should happen.
