@@ -18,7 +18,7 @@ JARVIS IntelliAgent 3.0 is an AI-powered insurance automation platform featuring
 
 ### Technology Stack
 - **Frontend**: React 18, TypeScript, Tailwind CSS, shadcn/ui, Radix UI, Wouter routing, TanStack Query.
-- **Backend**: Node.js, Express.js, PostgreSQL, Drizzle ORM, GitHub OAuth (passport-github2).
+- **Backend**: Node.js, Express.js, PostgreSQL, Drizzle ORM, Local Authentication (passport-local with bcrypt).
 - **Integrations**: SendGrid, Google Analytics, OpenAI, WebSocket for real-time monitoring.
 
 ### Multi-Persona Dashboard System
@@ -49,7 +49,7 @@ Supports optional parallel processing with WebSocket real-time monitoring.
 - **Showcase Mode**: Scenario-based performance demonstrations.
 
 ## External Dependencies
-- **Authentication**: GitHub OAuth with dynamic callback URLs (domain-independent)
+- **Authentication**: Local username/password (passport-local with bcrypt hashing). Default: admin/admin
 - **Email**: SendGrid
 - **Analytics**: Google Analytics
 - **AI/LLM**: OpenAI

@@ -2,8 +2,10 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 16.9 (165f042)
--- Dumped by pg_dump version 16.9
+\restrict gIohNMTLxqeMist92Gcxw6dCIYT0hqKiLia4INDIxk4xGOOrCsA2fKRyUb45Kfc
+
+-- Dumped from database version 16.11 (b740647)
+-- Dumped by pg_dump version 16.10
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -2163,7 +2165,9 @@ CREATE TABLE public.users (
     last_name character varying,
     profile_image_url character varying,
     created_at timestamp without time zone DEFAULT now(),
-    updated_at timestamp without time zone DEFAULT now()
+    updated_at timestamp without time zone DEFAULT now(),
+    username character varying,
+    password_hash character varying
 );
 
 
@@ -3177,6 +3181,14 @@ ALTER TABLE ONLY public.users
 
 
 --
+-- Name: users users_username_key; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_username_key UNIQUE (username);
+
+
+--
 -- Name: voice_transcripts voice_transcripts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -3758,4 +3770,6 @@ ALTER TABLE ONLY public.voice_transcripts
 --
 -- PostgreSQL database dump complete
 --
+
+\unrestrict gIohNMTLxqeMist92Gcxw6dCIYT0hqKiLia4INDIxk4xGOOrCsA2fKRyUb45Kfc
 

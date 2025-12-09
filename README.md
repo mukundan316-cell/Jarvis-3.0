@@ -7,7 +7,6 @@ An AI-powered insurance automation platform featuring a 6-layer agent architectu
 ### Prerequisites
 - Node.js 20+
 - PostgreSQL 14+
-- GitHub OAuth App credentials
 - npm or yarn
 
 ### Local Setup
@@ -76,9 +75,11 @@ See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for complete Replit deployment instruct
 **Backend**
 - Node.js + Express
 - PostgreSQL + Drizzle ORM
-- passport-github2 (authentication)
+- passport-local + bcrypt (authentication)
 - WebSocket (real-time updates)
 - OpenAI, SendGrid integrations
+
+**Default Login**: username: `admin` / password: `admin`
 
 ## 📁 Project Structure
 
@@ -99,7 +100,7 @@ jarvis-intelliagent/
 │   ├── routes.ts             # API route definitions
 │   ├── storage.ts            # Database abstraction layer
 │   ├── db.ts                 # Drizzle database connection
-│   ├── replitAuth.ts         # GitHub OAuth authentication
+│   ├── replitAuth.ts         # Local username/password authentication
 │   ├── configService.ts      # Configuration management
 │   └── *.ts                  # Seed data and services
 │
