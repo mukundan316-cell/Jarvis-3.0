@@ -128,7 +128,7 @@ export default function Landing() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                minLength={6}
+                minLength={5}
                 className="bg-slate-800 border-slate-600 text-white placeholder:text-gray-400 text-center pr-10"
                 data-testid="input-password"
               />

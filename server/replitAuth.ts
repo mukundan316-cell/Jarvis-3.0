@@ -113,8 +113,8 @@ export async function setupAuth(app: Express) {
         return res.status(400).json({ message: "Username must be at least 3 characters" });
       }
       
-      if (password.length < 6) {
-        return res.status(400).json({ message: "Password must be at least 6 characters" });
+      if (password.length < 5) {
+        return res.status(400).json({ message: "Password must be at least 5 characters" });
       }
       
       const existingUser = await storage.getUserByUsername(username);
