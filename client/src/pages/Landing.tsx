@@ -1,10 +1,43 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { BrainCircuit } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { BrainCircuit, Eye, EyeOff, Loader2 } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { apiRequest } from '@/lib/queryClient';
 
 export default function Landing() {
-  const handleLogin = () => {
-    window.location.href = '/api/login';
+  const [isLogin, setIsLogin] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
+      const response = await apiRequest(endpoint, 'POST', { username, password });
+
+      if (response.success) {
+        toast({
+          title: isLogin ? "Welcome back!" : "Account created!",
+          description: "Logging you in...",
+        });
+        window.location.href = '/';
+      }
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message || (isLogin ? "Login failed" : "Registration failed"),
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -75,18 +108,63 @@ export default function Landing() {
           </Card>
         </div>
 
-        {/* Login Button */}
-        <div className="pt-8">
-          <Button
-            onClick={handleLogin}
-            size="lg"
-            className="bg-[#3B82F6] hover:bg-[#1E40AF] text-white px-8 py-3 text-lg font-bold"
+        {/* Login Form - Replaces "Login with Replit" button */}
+        <div className="pt-8 max-w-sm mx-auto">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <Input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              minLength={3}
+              className="bg-slate-800 border-slate-600 text-white placeholder:text-gray-400 text-center"
+              data-testid="input-username"
+            />
+            <div className="relative">
+              <Input
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength={6}
+                className="bg-slate-800 border-slate-600 text-white placeholder:text-gray-400 text-center pr-10"
+                data-testid="input-password"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+              >
+                {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              </button>
+            </div>
+            <Button
+              type="submit"
+              disabled={isLoading}
+              size="lg"
+              className="w-full bg-[#3B82F6] hover:bg-[#1E40AF] text-white px-8 py-3 text-lg font-bold"
+              data-testid="button-submit"
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  {isLogin ? 'Signing in...' : 'Creating account...'}
+                </>
+              ) : (
+                isLogin ? 'Sign In' : 'Create Account'
+              )}
+            </Button>
+          </form>
+          <button
+            type="button"
+            onClick={() => setIsLogin(!isLogin)}
+            className="mt-4 text-[#60A5FA] hover:text-[#3B82F6] text-sm"
+            data-testid="button-toggle-mode"
           >
-            Login with Replit
-          </Button>
-          <p className="text-[#9CA3AF] text-sm mt-3">
-            Secure authentication powered by Replit
-          </p>
+            {isLogin ? "New user? Create account" : "Have an account? Sign in"}
+          </button>
         </div>
       </div>
     </div>

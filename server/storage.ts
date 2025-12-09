@@ -126,6 +126,11 @@ export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
   upsertUser(user: UpsertUser): Promise<User>;
   
+  // Local authentication operations
+  getUserByUsername(username: string): Promise<User | undefined>;
+  getUserByEmail(email: string): Promise<User | undefined>;
+  createUserWithPassword(data: { username: string; password: string; email?: string; firstName?: string; lastName?: string }): Promise<User>;
+  
   // Session operations
   getUserSession(userId: string): Promise<UserSession | undefined>;
   upsertUserSession(session: InsertUserSession): Promise<UserSession>;
@@ -314,6 +319,36 @@ export class DatabaseStorage implements IStorage {
           ...userData,
           updatedAt: new Date(),
         },
+      })
+      .returning();
+    return user;
+  }
+
+  // Local authentication operations
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username.toLowerCase()));
+    return user;
+  }
+
+  async getUserByEmail(email: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.email, email.toLowerCase()));
+    return user;
+  }
+
+  async createUserWithPassword(data: { username: string; password: string; email?: string; firstName?: string; lastName?: string }): Promise<User> {
+    const bcrypt = await import('bcryptjs');
+    const passwordHash = await bcrypt.hash(data.password, 10);
+    const id = `local_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    
+    const [user] = await db
+      .insert(users)
+      .values({
+        id,
+        username: data.username.toLowerCase(),
+        passwordHash,
+        email: data.email?.toLowerCase(),
+        firstName: data.firstName || data.username,
+        lastName: data.lastName || '',
       })
       .returning();
     return user;
